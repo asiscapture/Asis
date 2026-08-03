@@ -1,0 +1,185 @@
+{
+  "kodak-pixpro-fz55": {
+    "front": "images/products/kodak-pixpro-fz55/front.png",
+    "hover": "images/products/kodak-pixpro-fz55/hover.png",
+    "gallery": [],
+    "lifestyle": false
+  },
+  "kodak-pixpro-c1": {
+    "front": "images/products/kodak-pixpro-c1/front.png",
+    "hover": "images/products/kodak-pixpro-c1/hover.png",
+    "gallery": [
+      "images/products/kodak-pixpro-c1/extra-1.png",
+      "images/products/kodak-pixpro-c1/extra-2.png"
+    ],
+    "lifestyle": false
+  },
+  "kodak-ektar-h35": {
+    "front": "images/products/kodak-ektar-h35/front.png",
+    "hover": "images/products/kodak-ektar-h35/hover.png",
+    "gallery": [],
+    "lifestyle": false
+  },
+  "kodak-m35": {
+    "front": "images/products/kodak-m35/front.png",
+    "hover": null,
+    "gallery": [
+      "images/products/kodak-m35/extra-1.png",
+      "images/products/kodak-m35/extra-2.png"
+    ],
+    "lifestyle": false
+  },
+  "instax-mini-evo": {
+    "front": "images/products/instax-mini-evo/front.png",
+    "hover": "images/products/instax-mini-evo/hover.png",
+    "gallery": [
+      "images/products/instax-mini-evo/extra-1.png",
+      "images/products/instax-mini-evo/extra-2.png"
+    ],
+    "lifestyle": false
+  },
+  "instax-square-sq40": {
+    "front": "images/products/instax-square-sq40/front.png",
+    "hover": "images/products/instax-square-sq40/hover.png",
+    "gallery": [
+      "images/products/instax-square-sq40/extra-1.png"
+    ],
+    "lifestyle": false
+  },
+  "instax-mini-12": {
+    "front": "images/products/instax-mini-12/front.png",
+    "hover": "images/products/instax-mini-12/hover.png",
+    "gallery": [
+      "images/products/instax-mini-12/extra-1.png"
+    ],
+    "lifestyle": false
+  },
+  "video-capsule": {
+    "front": "images/products/video-capsule/front.png",
+    "hover": "images/products/video-capsule/hover.png",
+    "gallery": [
+      "images/products/video-capsule/extra-1.png"
+    ],
+    "lifestyle": false
+  },
+  "vintage-video-guestbook": {
+    "front": "images/products/vintage-video-guestbook/front.png",
+    "hover": null,
+    "gallery": [],
+    "lifestyle": false
+  },
+  "keepsake-album": {
+    "front": "images/products/keepsake-album/front.png",
+    "hover": "images/products/keepsake-album/hover.png",
+    "gallery": [
+      "images/products/keepsake-album/extra-1.jpg",
+      "images/products/keepsake-album/extra-2.jpg"
+    ],
+    "lifestyle": false
+  },
+  "film-book": {
+    "front": "images/products/film-book/front.jpg",
+    "hover": "images/products/film-book/hover.jpg",
+    "gallery": [
+      "images/products/film-book/extra-1.jpg",
+      "images/products/film-book/extra-2.jpg"
+    ],
+    "lifestyle": true
+  },
+  "film-photo-booklet": {
+    "front": "images/products/film-photo-booklet/front.jpg",
+    "hover": "images/products/film-photo-booklet/hover.jpg",
+    "gallery": [
+      "images/products/film-photo-booklet/extra-1.jpg"
+    ],
+    "lifestyle": true
+  },
+  "holy-trinity-bundle": {
+    "front": "images/products/holy-trinity-bundle/front.png",
+    "hover": null,
+    "gallery": [
+      "images/products/kodak-pixpro-fz55/front.png",
+      "images/products/kodak-ektar-h35/front.png",
+      "images/products/instax-square-sq40/front.png"
+    ],
+    "lifestyle": false
+  },
+  "weekender-bundle": {
+    "front": "images/products/weekender-bundle/front.png",
+    "hover": null,
+    "gallery": [
+      "images/products/kodak-pixpro-c1/front.png",
+      "images/products/instax-mini-12/front.png"
+    ],
+    "lifestyle": false
+  },
+  "happily-ever-after-bundle": {
+    "front": "images/products/happily-ever-after-bundle/front.png",
+    "hover": null,
+    "gallery": [
+      "images/products/instax-mini-evo/front.png",
+      "images/products/instax-mini-12/front.png",
+      "images/products/instax-square-sq40/front.png",
+      "images/products/vintage-video-guestbook/front.png",
+      "images/products/keepsake-album/front.png",
+      "images/products/film-photo-booklet/front.jpg"
+    ],
+    "lifestyle": false
+  },
+  "the-baby-bundle": {
+    "front": "images/products/the-baby-bundle/front.png",
+    "hover": null,
+    "gallery": [
+      "images/products/kodak-m35/front.png",
+      "images/products/instax-mini-12/front.png",
+      "images/products/keepsake-album/front.png",
+      "images/products/film-photo-booklet/front.jpg"
+    ],
+    "lifestyle": false
+  },
+  "party-bundle": {
+    "front": "images/products/party-bundle/front.png",
+    "hover": null,
+    "gallery": [
+      "images/products/instax-mini-evo/front.png",
+      "images/products/kodak-pixpro-c1/front.png",
+      "images/products/kodak-m35/front.png",
+      "images/products/addon-film/front.png"
+    ],
+    "lifestyle": false
+  },
+  "wedding-table-pack": {
+    "front": "images/products/wedding-table-pack/front.png",
+    "hover": null,
+    "gallery": [
+      "images/products/instax-mini-evo/front.png",
+      "images/products/addon-film/front.png"
+    ],
+    "lifestyle": false
+  },
+  "addon-film": {
+    "front": "images/products/addon-film/front.png",
+    "hover": null,
+    "gallery": [
+      "images/products/addon-film/extra-1.png"
+    ],
+    "lifestyle": false
+  },
+  "addon-develop-scan": {
+    "front": "images/products/addon-develop-scan/front.jpg",
+    "hover": "images/products/addon-develop-scan/hover.jpg",
+    "gallery": [
+      "images/products/addon-develop-scan/extra-1.jpg"
+    ],
+    "lifestyle": true
+  },
+  "addon-prints": {
+    "front": "images/products/addon-prints/front.jpg",
+    "hover": "images/products/addon-prints/hover.jpg",
+    "gallery": [
+      "images/products/addon-prints/extra-1.jpg",
+      "images/products/addon-prints/extra-2.jpg"
+    ],
+    "lifestyle": true
+  }
+}
