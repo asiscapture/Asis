@@ -655,17 +655,6 @@ const CATALOGUE = [
     hook: "Extra film so nobody runs out mid-celebration.",
     audience:
       "Perfect for longer weekends, bigger guest lists and Instant-heavy parties. Add it whenever one roll or pack won’t be enough.",
-    benefits: [
-      "Keeps the cameras shooting through longer events",
-      "Available for 35mm and Instant formats",
-      "Matched to your camera type when you enquire",
-      "Easy add-on alongside any hire",
-      "Peace of mind for guest-heavy days",
-    ],
-    includes: [
-      "Extra 35mm colour rolls or Instant packs",
-      "Matched to your hired cameras",
-    ],
     features: ["35mm rolls from $22", "Instax Mini packs $20", "Instax Square packs $26"],
     tone: "soft",
     image: "images/products/addon-film/front.png",
@@ -679,30 +668,26 @@ const CATALOGUE = [
     name: "Develop & Scan",
     category: "addons",
     tag: "Add-on",
-    detail: "Per 35mm roll",
-    price: "$25",
-    blurb: "Once your camera is returned, we’ll organise developing and scans so you can see the day again.",
+    detail: "Per 35mm colour roll · High res · ~4 business days",
+    price: "$29",
+    blurb:
+      "Once your camera is returned, we’ll organise developing and digital scans so you can see the day again.",
     hook: "We’ll organise developing and digital scans once your film comes home.",
-    audience:
-      "Perfect if you want the film look without hunting down a lab yourself. Ideal after weekends, weddings and first-time film hires.",
     benefits: [
-      "Unload and develop handled for you",
-      "Digital scans so you can revisit the day",
-      "No need to find a lab yourself",
-      "Pairs naturally with film camera hire",
-      "A simple way to finish the Keep step",
+      "Standard colour (C-41) develop & high-res scans for $29 per roll",
+      "Typical turnaround about 4 business days after we receive your film",
+      "Max-res scans, rush, B&W and slide available — ask when you enquire",
     ],
     includes: [
-      "Film unload & develop",
-      "Digital scans of your roll",
+      "Film develop (C-41 colour)",
+      "High-resolution digital scans of your roll",
     ],
-    features: ["Unload & develop", "Digital scans", "Part of Keep"],
+    features: [
+      "Colour develop & high-res scan $29 / roll",
+      "Max res, rush, B&W & slide on enquiry",
+    ],
     tone: "cool",
     image: "images/products/addon-develop-scan/front.jpg",
-    imageHover: "images/products/addon-develop-scan/hover.jpg",
-    gallery: [
-      "images/products/addon-develop-scan/extra-1.jpg"
-    ],
     lifestyle: true,
     alt: "Film developing and scanning service add-on",
   },
@@ -711,30 +696,21 @@ const CATALOGUE = [
     name: "Printed Photo Pack",
     category: "addons",
     tag: "Add-on",
-    detail: "From $18",
-    price: "From $18",
-    blurb: "Physical prints from your favourite frames — memories you can gift, pin up, or pass around.",
-    hook: "Physical prints from your favourite frames — memories you can hold and gift.",
-    audience:
-      "Perfect after digital or film hires when you want something tangible. Ideal for gifting, pinning up or filling a keepsake album.",
-    benefits: [
-      "Turn favourite frames into prints you can hold",
-      "Easy to gift, pin up or pass around",
-      "Pairs naturally with albums and guestbooks",
-      "A simple way to keep moments off the phone",
-      "Flexible packs to match how many you want",
+    detail: "Per 35mm roll · Full set of 6×4 lustre prints",
+    price: "$24",
+    blurb: "A full set of 6×4 lustre prints from your developed roll — memories you can gift, pin up, or pass around.",
+    hook: "A full set of 6×4 lustre prints from your roll — memories you can hold and gift.",
+    benefits: [      "Full set of 6×4 lustre prints for one 35mm roll",
+      "One print per frame from your developed roll",
+      "Half-frame (the Ektar H35) needs two print orders",
+      "Allow about 2–3 extra business days after develop & scan",
     ],
     includes: [
-      "Printed photo pack from your selected frames",
+      "Full set of 6×4 lustre prints for one 35mm roll",
     ],
-    features: ["Print packs from $18", "Pairs with keepsakes"],
+    features: ["$24 per 35mm roll", "Ektar H35 = two print orders"],
     tone: "warm",
-    image: "images/products/addon-prints/front.jpg",
-    imageHover: "images/products/addon-prints/hover.jpg",
-    gallery: [
-      "images/products/addon-prints/extra-1.jpg",
-      "images/products/addon-prints/extra-2.jpg"
-    ],
+    image: "images/photos.jpg?v=2",
     lifestyle: true,
     alt: "Printed photo pack keepsake from Vera",
   },
@@ -910,6 +886,7 @@ function renderProductModal() {
   const featureHeading = item.featureHeading || "What’s included";
   const description = item.description || item.blurb;
   const isPurchase = /purchase/i.test(item.tag || "") || /purchase/i.test(item.detail || "");
+  const isAddon = item.category === "addons" || /add-?on/i.test(item.tag || "");
 
   const colours = (item.colours || [])
     .map(
@@ -1012,13 +989,13 @@ function renderProductModal() {
             ? `<h3 class="product-subhead">How it works</h3><ol class="product-steps">${howItWorks}</ol>`
             : ""
         }
-        <p class="product-note">
-          ${
-            isPurchase
-              ? "Purchase · yours to keep · mention your preferred colour in the enquiry."
-              : "Flexible 4-day hire · $70 refundable bond per camera (guestbook $70) · Brisbane pickup/delivery or Australia-wide post from $18 (confirmed on enquiry)."
-          }
-        </p>
+        ${
+          isPurchase
+            ? `<p class="product-note">Purchase · yours to keep · mention your preferred colour in the enquiry.</p>`
+            : isAddon
+              ? ""
+              : `<p class="product-note">Flexible 4-day hire · $70 refundable bond per camera (guestbook $70) · Brisbane pickup or local delivery from $18 (confirmed on enquiry).</p>`
+        }
         <div class="product-actions">
           ${qtyControlsMarkup(item.id, state.productQty, "product")}
           <button type="button" class="btn btn-add" data-product-add="${item.id}">
@@ -1280,8 +1257,17 @@ catalogueEl?.addEventListener("click", (event) => {
 
   const openBtn = event.target.closest("[data-open-product]");
   if (openBtn) {
+    event.preventDefault();
     openProduct(openBtn.dataset.openProduct);
   }
+});
+
+document.addEventListener("click", (event) => {
+  if (event.target.closest(".catalogue")) return;
+  const openBtn = event.target.closest("[data-open-product]");
+  if (!openBtn) return;
+  event.preventDefault();
+  openProduct(openBtn.dataset.openProduct);
 });
 
 if (productPanel) {
@@ -1420,28 +1406,29 @@ form?.addEventListener("submit", async (event) => {
     return;
   }
 
-  if (!cartUnitCount()) {
-    formStatus.textContent = "Add at least one item to your cart before sending.";
-    formStatus.classList.add("is-error");
-    return;
-  }
-
   const data = new FormData(form);
-  const firstName = (data.get("first_name") || "").toString().trim();
-  const lastName = (data.get("last_name") || "").toString().trim();
+  const name = (data.get("name") || "").toString().trim();
   const eventType = (data.get("event_type") || "").toString().trim();
-  const eventDate = (data.get("event_date") || "").toString().trim();
+  const hireStart = (data.get("hire_start") || "").toString().trim();
+  const hireEnd = (data.get("hire_end") || "").toString().trim();
 
-  if (!eventType) {
-    formStatus.textContent = "Please choose an event type.";
+  if (!name) {
+    formStatus.textContent = "Please enter your name.";
+    formStatus.classList.add("is-error");
+    form.querySelector('[name="name"]')?.focus();
+    return;
+  }
+
+  if (hireStart && hireEnd && hireEnd < hireStart) {
+    formStatus.textContent = "Hire end date needs to be on or after the start date.";
     formStatus.classList.add("is-error");
     return;
   }
 
-  data.set("name", `${firstName} ${lastName}`.trim());
+  data.set("name", name);
   data.set(
     "message",
-    `${data.get("message")}\n\nEnquiry cart: ${selectedItemsField.value}\nEvent date: ${eventDate}\nEvent type: ${eventType}`
+    `${data.get("message") || ""}\n\nEnquiry cart: ${selectedItemsField.value || "None"}\nHire start: ${hireStart || "—"}\nHire end: ${hireEnd || "—"}\nEvent type: ${eventType || "—"}`
   );
 
   submitBtn.disabled = true;
@@ -1463,6 +1450,9 @@ form?.addEventListener("submit", async (event) => {
     saveCart();
     updateCartUI();
     renderCatalogue();
+    const hireStartEl = document.getElementById("hire-start");
+    const hireEndEl = document.getElementById("hire-end");
+    if (hireStartEl && hireEndEl) hireEndEl.min = hireStartEl.min;
     formStatus.textContent = "Enquiry sent — we’ll aim to reply within one business day.";
   } catch (error) {
     formStatus.textContent =
@@ -1475,17 +1465,27 @@ form?.addEventListener("submit", async (event) => {
   }
 });
 
-function setupEventDateMin() {
-  const eventDate = document.getElementById("event-date");
-  if (!eventDate) return;
-  const d = new Date();
-  const y = d.getFullYear();
-  const m = String(d.getMonth() + 1).padStart(2, "0");
-  const day = String(d.getDate()).padStart(2, "0");
-  eventDate.min = `${y}-${m}-${day}`;
+function setupHireDates() {
+  const startEl = document.getElementById("hire-start");
+  const endEl = document.getElementById("hire-end");
+  if (!startEl || !endEl) return;
+
+  const today = new Date();
+  const y = today.getFullYear();
+  const m = String(today.getMonth() + 1).padStart(2, "0");
+  const day = String(today.getDate()).padStart(2, "0");
+  const min = `${y}-${m}-${day}`;
+  startEl.min = min;
+  endEl.min = min;
+
+  startEl.addEventListener("change", () => {
+    if (!startEl.value) return;
+    endEl.min = startEl.value;
+    if (endEl.value && endEl.value < startEl.value) endEl.value = startEl.value;
+  });
 }
 
-setupEventDateMin();
+setupHireDates();
 
 function setupReveal() {
   const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
@@ -1604,25 +1604,40 @@ function setupFilmGuide() {
   const guestsEl = document.getElementById("guest-count");
   const shotsEl = document.getElementById("shots-per-guest");
   const out = document.getElementById("film-guide-result");
+  const guide = document.getElementById("film-guide");
   if (!guestsEl || !shotsEl || !out) return;
+
+  const isParty = guide?.dataset.variant === "party";
 
   const update = () => {
     const guests = Math.max(1, Number(guestsEl.value) || 0);
     const per = Number(shotsEl.value) || 2.5;
     const shots = Math.ceil(guests * per);
     const packs = Math.ceil(shots / 10);
-    const cams4 = 4;
-    const cams6 = 6;
-    const fit4 = shots <= cams4 * 10;
-    const fit6 = shots <= cams6 * 10;
     let tip = `About <strong>${shots} shots</strong> → <strong>${packs} Instax Mini packs</strong> (10 shots each).`;
-    if (fit4) {
-      tip += ` A <strong>Wedding Table Pack (4 cameras / 40 shots)</strong> covers this guest count at your chosen pace.`;
-    } else if (fit6) {
-      tip += ` Ask for the <strong>6-camera table pack</strong> on enquiry, or add extra Mini packs.`;
+
+    if (isParty) {
+      if (shots <= 20) {
+        tip += ` The <strong>Weekender</strong> (1 Mini pack included) plus an extra pack usually covers a smaller night.`;
+      } else if (shots <= 30) {
+        tip += ` The <strong>Party Camera Kit</strong> already includes 3 Mini packs (30 shots) — a strong match for this count.`;
+      } else if (shots <= 50) {
+        tip += ` Start with the <strong>Party Camera Kit</strong> and add <strong>extra Mini packs</strong> so guests don’t run out.`;
+      } else {
+        tip += ` Add plenty of <strong>extra Mini film</strong>, or ask us to build a bigger Instant kit for the crowd.`;
+      }
     } else {
-      tip += ` Pair a table pack with <strong>extra Mini film</strong> add-ons so guests don’t run out.`;
+      const fit4 = shots <= 40;
+      const fit6 = shots <= 60;
+      if (fit4) {
+        tip += ` A <strong>Wedding Table Pack (4 cameras / 40 shots)</strong> covers this guest count at your chosen pace.`;
+      } else if (fit6) {
+        tip += ` Ask for the <strong>6-camera table pack</strong> on enquiry, or add extra Mini packs.`;
+      } else {
+        tip += ` Pair a table pack with <strong>extra Mini film</strong> add-ons so guests don’t run out.`;
+      }
     }
+
     out.innerHTML = tip;
   };
 

@@ -1,6 +1,6 @@
 # Vera website
 
-Lifestyle camera hire site for **Vera** — *capture life as is*. Brisbane & Australia-wide.
+Lifestyle camera hire site for **Vera** — *capture life as is*. Brisbane hire.
 
 ## Open locally
 
@@ -38,7 +38,6 @@ Enquiries use [Web3Forms](https://web3forms.com) → `asis.capture@gmail.com`.
 | `keepsakes.html` | Guestbooks & albums |
 | `wedding-camera-hire.html` | Wedding landing SEO page |
 | `party-camera-hire.html` | Party landing SEO page |
-| `australia-camera-hire.html` | National postal hire SEO page |
 
 ## Photos
 

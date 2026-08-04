@@ -167,19 +167,10 @@
   },
   "addon-develop-scan": {
     "front": "images/products/addon-develop-scan/front.jpg",
-    "hover": "images/products/addon-develop-scan/hover.jpg",
-    "gallery": [
-      "images/products/addon-develop-scan/extra-1.jpg"
-    ],
     "lifestyle": true
   },
   "addon-prints": {
-    "front": "images/products/addon-prints/front.jpg",
-    "hover": "images/products/addon-prints/hover.jpg",
-    "gallery": [
-      "images/products/addon-prints/extra-1.jpg",
-      "images/products/addon-prints/extra-2.jpg"
-    ],
+    "front": "images/photos.jpg",
     "lifestyle": true
   }
 }

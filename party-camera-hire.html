@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en-AU">
   <head>
     <meta charset="UTF-8" />
@@ -6,18 +6,32 @@
     <title>Party Camera Hire Brisbane | Birthdays &amp; Events | Vera</title>
     <meta
       name="description"
-      content="Party camera hire in Brisbane — digicams, Instax &amp; film for birthdays, hens, baby showers and nights out. Party Camera Kit from $149. Australia-wide."
+      content="Party camera hire in Brisbane — digicams, Instax &amp; film for birthdays, hens, baby showers and nights out. Party Camera Kit from $149. Pickup or local delivery."
     />
     <meta name="robots" content="index, follow" />
+    <meta name="author" content="Vera" />
     <link rel="canonical" href="https://asiscapture.com.au/party-camera-hire.html" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="en_AU" />
+    <meta property="og:site_name" content="Vera" />
     <meta property="og:title" content="Party Camera Hire Brisbane | Vera" />
     <meta
       property="og:description"
       content="Easy point-and-shoot camera hire for parties and celebrations. Party Camera Kit $149 · Weekender $75."
     />
-    <meta property="og:type" content="website" />
     <meta property="og:url" content="https://asiscapture.com.au/party-camera-hire.html" />
-    <meta property="og:image" content="https://asiscapture.com.au/images/hero.jpg" />
+    <meta property="og:image" content="https://asiscapture.com.au/images/discover/bundle-party.jpg" />
+    <meta property="og:image:alt" content="Party camera hire kit from Vera Brisbane" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Party Camera Hire Brisbane | Vera" />
+    <meta
+      name="twitter:description"
+      content="Digicams, Instax and film for birthdays, hens and nights out — Brisbane hire from $75."
+    />
+    <meta name="twitter:image" content="https://asiscapture.com.au/images/discover/bundle-party.jpg" />
+
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -30,10 +44,12 @@
         "@context": "https://schema.org",
         "@type": "Service",
         "name": "Party camera hire Brisbane",
+        "serviceType": "Camera hire",
         "provider": {
           "@type": "LocalBusiness",
           "name": "Vera",
           "email": "asis.capture@gmail.com",
+          "url": "https://asiscapture.com.au/",
           "address": {
             "@type": "PostalAddress",
             "addressLocality": "Brisbane",
@@ -42,8 +58,29 @@
             "addressCountry": "AU"
           }
         },
-        "areaServed": "Australia",
-        "description": "Camera hire for birthdays, hens nights, baby showers and celebrations including Party Camera Kit from $149."
+        "areaServed": {
+          "@type": "City",
+          "name": "Brisbane"
+        },
+        "description": "Camera hire for birthdays, hens nights, baby showers and celebrations in Brisbane, including Party Camera Kit from $149 and The Weekender from $75.",
+        "offers": [
+          {
+            "@type": "Offer",
+            "name": "Party Camera Kit",
+            "price": "149",
+            "priceCurrency": "AUD",
+            "availability": "https://schema.org/InStock",
+            "url": "https://asiscapture.com.au/cameras.html?filter=bundles&product=party-bundle"
+          },
+          {
+            "@type": "Offer",
+            "name": "The Weekender",
+            "price": "75",
+            "priceCurrency": "AUD",
+            "availability": "https://schema.org/InStock",
+            "url": "https://asiscapture.com.au/cameras.html?filter=bundles&product=weekender-bundle"
+          }
+        ]
       }
     </script>
   </head>
@@ -53,7 +90,10 @@
       <a class="logo" href="index.html">Vera</a>
       <nav class="nav" aria-label="Primary">
         <a href="cameras.html">Cameras</a>
-        <a href="australia-camera-hire.html">Australia-wide</a>
+        <a href="keepsakes.html">Keepsakes</a>
+        <a href="wedding-camera-hire.html">Wedding</a>
+        <a href="party-camera-hire.html">Party</a>
+        <a href="index.html#how">How to hire</a>
         <a href="index.html#enquire" class="nav-cta">Hire now</a>
       </nav>
       <button class="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false">
@@ -67,23 +107,95 @@
         <h1>Party camera hire in Brisbane</h1>
         <p class="lede">
           Pass around digicams, Instax and film — no settings stress, just photos people will pass
-          around for years. 4-day hire from Brisbane, postage Australia-wide.
+          around for years. Flexible 4-day hire with Brisbane pickup or local delivery.
         </p>
         <div class="hero-actions">
           <a class="btn btn-primary" href="index.html#enquire">Enquire for your party</a>
-          <a class="btn btn-ghost landing-ghost" href="cameras.html">Browse cameras</a>
+          <a class="btn btn-ghost landing-ghost" href="cameras.html?filter=bundles">Browse party bundles</a>
         </div>
       </header>
 
+      <figure class="landing-media">
+        <img
+          src="images/discover/bundle-party.jpg"
+          alt="Friends celebrating with Instant and digicam hire — Vera party camera hire Brisbane"
+          width="1200"
+          height="800"
+          loading="eager"
+        />
+      </figure>
+
       <section class="landing-block">
         <h2>Popular party picks</h2>
+        <p>
+          Easy kits guests can pass around all night — Instant film and digital shareables included
+          where it counts.
+        </p>
         <ul class="landing-list">
-          <li><strong>The Weekender</strong> — PIXPRO C1 &amp; Instax Mini 12 · $75</li>
-          <li><strong>Party Camera Kit</strong> — Mini Evo, C1 &amp; M35 + extra Mini film · $149</li>
-          <li><strong>Kodak PIXPRO FZ55</strong> — early-2000s digicam vibes from $39</li>
-          <li><strong>Instax Mini 12 &amp; Instax Mini Evo</strong> — instant prints, film pack included</li>
-          <li><strong>Kodak M35 / Ektar H35</strong> — film look with 1 colour roll included</li>
+          <li>
+            <button type="button" class="landing-pick" data-open-product="weekender-bundle">
+              <strong>The Weekender</strong>
+            </button>
+            — PIXPRO C1 &amp; Instax Mini 12 · $75
+          </li>
+          <li>
+            <button type="button" class="landing-pick" data-open-product="party-bundle">
+              <strong>Party Camera Kit</strong>
+            </button>
+            — Mini Evo, C1 &amp; M35 + extra Mini film · $149
+          </li>
+          <li>
+            <button type="button" class="landing-pick" data-open-product="kodak-pixpro-fz55">
+              <strong>Kodak PIXPRO FZ55</strong>
+            </button>
+            — early-2000s digicam vibes from $39
+          </li>
+          <li>
+            <button type="button" class="landing-pick" data-open-product="instax-mini-12">
+              <strong>Instax Mini 12</strong>
+            </button>
+            &amp;
+            <button type="button" class="landing-pick" data-open-product="instax-mini-evo">
+              <strong>Instax Mini Evo</strong>
+            </button>
+            — instant prints, film pack included
+          </li>
+          <li>
+            <button type="button" class="landing-pick" data-open-product="kodak-m35">
+              <strong>Kodak M35</strong>
+            </button>
+            /
+            <button type="button" class="landing-pick" data-open-product="kodak-ektar-h35">
+              <strong>Ektar H35</strong>
+            </button>
+            — film look with 1 colour roll included
+          </li>
         </ul>
+
+        <div class="film-guide" id="film-guide" data-variant="party">
+          <h2>How much Instant film do I need?</h2>
+          <p>For parties, plan about 2–3 Instax shots per guest. We’ll match packs to the night.</p>
+          <div class="film-guide-controls">
+            <label class="field">
+              <span>Guest count</span>
+              <input type="number" id="guest-count" min="5" max="150" value="30" />
+            </label>
+            <label class="field">
+              <span>Shots per guest</span>
+              <select id="shots-per-guest">
+                <option value="2">2 (light)</option>
+                <option value="2.5" selected>2.5 (typical)</option>
+                <option value="3">3 (generous)</option>
+              </select>
+            </label>
+          </div>
+          <p class="film-guide-result" id="film-guide-result" aria-live="polite"></p>
+          <p>
+            <button type="button" class="text-link" data-open-product="party-bundle">
+              Browse Party Camera Kit →
+            </button>
+          </p>
+        </div>
       </section>
 
       <section class="landing-block">
@@ -92,14 +204,101 @@
           Guests stay in the night instead of in their camera rolls. You get a shared set of frames —
           and we can help with developing, scans and print packs when cameras come back.
         </p>
+      </section>
+
+      <section class="landing-block">
+        <h2>How party hire works</h2>
+        <p>
+          Book your dates → we pack cameras (film loaded if you want) → Brisbane pickup or local
+          delivery → return via studio or drop box → optional develop, scan &amp; print packs.
+        </p>
+        <p>
+          Every film and Instant hire includes film in the listed price. A $70 refundable bond
+          applies per camera. Tell us your guest count and we’ll help you choose the right kit.
+        </p>
         <p><a class="text-link" href="index.html#enquire">Send a party enquiry →</a></p>
       </section>
+
+      <section class="landing-block" id="faq">
+        <h2>Party hire FAQs</h2>
+        <div class="faq-list landing-faq">
+          <details>
+            <summary>Is film included?</summary>
+            <p>
+              Yes — every film and Instant camera hire includes colour rolls or Instant packs in the
+              listed price. The Party Camera Kit also includes two extra Mini packs so the night
+              lasts longer.
+            </p>
+          </details>
+          <details>
+            <summary>What about the bond?</summary>
+            <p>
+              A <strong>$70 refundable bond</strong> applies per camera. It’s returned when gear
+              comes back on time and undamaged.
+            </p>
+          </details>
+          <details>
+            <summary>How does pickup and delivery work?</summary>
+            <p>
+              Brisbane pickup is free. Local delivery starts from about $18 depending on kit size —
+              we’ll confirm with your enquiry. Returns can go to the studio or our 24-hour drop box.
+            </p>
+          </details>
+        </div>
+      </section>
+
+      <aside class="selection-bar" id="selection-bar" hidden>
+        <div class="selection-summary">
+          <span id="selection-count">0 items</span>
+          <span class="selection-divider" aria-hidden="true">·</span>
+          <span id="selection-names">Cart is empty</span>
+        </div>
+        <div class="selection-actions">
+          <button type="button" class="btn btn-ghost-dark" id="view-cart-btn">View cart</button>
+          <a class="btn btn-primary" href="index.html#enquire">Continue to enquire</a>
+        </div>
+      </aside>
+
+      <div class="cart-drawer" id="cart-drawer" hidden>
+        <button type="button" class="cart-backdrop" id="cart-backdrop" aria-label="Close cart"></button>
+        <aside class="cart-panel" role="dialog" aria-modal="true" aria-labelledby="cart-title">
+          <header class="cart-header">
+            <h2 id="cart-title">Your enquiry cart</h2>
+            <button type="button" class="cart-close" id="cart-close" aria-label="Close cart">
+              Close
+            </button>
+          </header>
+          <div class="cart-body" id="cart-body"></div>
+          <footer class="cart-footer">
+            <a class="btn btn-primary btn-wide" href="index.html#enquire" id="cart-enquire-btn">
+              Continue to enquire
+            </a>
+          </footer>
+        </aside>
+      </div>
+
+      <div class="product-modal" id="product-modal" hidden>
+        <button
+          type="button"
+          class="product-backdrop"
+          id="product-backdrop"
+          aria-label="Close product"
+        ></button>
+        <div
+          class="product-panel"
+          role="dialog"
+          aria-modal="true"
+          aria-labelledby="product-title"
+          id="product-panel"
+        ></div>
+      </div>
     </main>
 
     <footer class="site-footer">
       <div class="footer-brand">
         <p class="logo">Vera</p>
         <p class="footer-aka">Capture life as is</p>
+        <p class="footer-tagline">Film · Instant · Digital camera hire · Keepsakes</p>
         <address class="nap">
           <span class="nap-name">Vera</span><br />
           <span class="nap-address">Brisbane, QLD 4000, Australia</span><br />
@@ -107,7 +306,15 @@
         </address>
       </div>
       <div class="footer-meta">
-        <p><a href="index.html">Home</a> · <a href="wedding-camera-hire.html">Wedding hire</a></p>
+        <nav class="footer-nav" aria-label="Footer">
+          <a href="cameras.html">Cameras</a>
+          <a href="keepsakes.html">Keepsakes</a>
+          <a href="cameras.html?filter=bundles">Bundles</a>
+          <a href="wedding-camera-hire.html">Wedding</a>
+          <a href="party-camera-hire.html">Party</a>
+          <a href="index.html#faq">FAQs</a>
+        </nav>
+        <p>© <span id="year"></span> Vera</p>
       </div>
     </footer>
     <script src="app.js"></script>
