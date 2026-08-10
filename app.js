@@ -147,7 +147,7 @@ const CATALOGUE = [
     category: "instant",
     tag: "Instant",
     detail: "Includes 1 Mini film pack (10 shots)",
-    price: "$55",
+    price: "$65",
     blurb:
       "Instant prints with creative modes — perfect for parties, guestbooks, and sharing on the spot.",
     hook: "A hybrid Instant favourite — preview and select before you print, so there’s no wasted film.",
@@ -294,7 +294,7 @@ const CATALOGUE = [
       "Works with any photo size or orientation",
       "Layer photos, handwritten notes, stickers and flat mementos",
       "Reposition as many times as you like without damaging prints",
-      "Linen cover with a photo window on the front — yours to keep",
+      "Linen cover with a photo window on the front",
     ],
     includes: [
       "Keepsake Album (yours to keep)",
@@ -318,7 +318,7 @@ const CATALOGUE = [
     ],
     tone: "soft",
     image: "images/products/keepsake-album/front.png",
-    imageHover: "images/products/keepsake-album/hover.png",
+    imageHover: "images/products/keepsake-album/hover.jpg",
     gallery: [
       "images/products/keepsake-album/extra-1.jpg",
       "images/products/keepsake-album/extra-2.jpg"
@@ -567,7 +567,7 @@ const CATALOGUE = [
     tag: "Bundle",
     subtitle: "Digicam, film & Instax Mini",
     detail: "3 cameras · Extra Mini film",
-    price: "$149",
+    price: "$159",
     blurb:
       "Birthdays, hens and nights out — digicam, film and Instax Mini with extra packs for the crowd.",
     hook: "Built for birthdays, hens and nights out — digicam, film and Instax Mini for the crowd.",
@@ -609,7 +609,7 @@ const CATALOGUE = [
     tag: "Bundle",
     subtitle: "4 Instax Mini cameras for guest tables",
     detail: "4 cameras · Film included · Ask for 6",
-    price: "$199",
+    price: "$229",
     blurb:
       "Pass Instant cameras around the tables — enough Mini film for guests to shoot, share and stick in a book.",
     hook: "Four Instant cameras for the guest tables — shoot, share and stick prints in a book.",
