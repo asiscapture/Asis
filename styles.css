@@ -442,11 +442,12 @@ textarea {
 
 .story-copy h2 {
   margin-bottom: 1.25rem;
+  font-size: clamp(1.75rem, 3.8vw, 2.6rem);
 }
 
 .story-copy p {
   margin: 0 0 1rem;
-  font-size: clamp(1.1rem, 2vw, 1.3rem);
+  font-size: clamp(0.98rem, 1.5vw, 1.1rem);
   max-width: 42ch;
   color: var(--ink-soft);
 }
