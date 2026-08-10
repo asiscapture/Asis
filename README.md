@@ -1,6 +1,6 @@
-# Vera website
+# unposed website
 
-Lifestyle camera hire site for **Vera** — *capture life as is*. Brisbane hire.
+Lifestyle camera hire site for **unposed** — *capture life as is*. Brisbane hire.
 
 ## Open locally
 
@@ -14,7 +14,7 @@ npx --yes serve .
 
 Canonical URLs, Open Graph and `sitemap.xml` currently use **`https://asiscapture.com.au`**.
 
-When your real Vera domain is ready, find-and-replace that URL in:
+When your real unposed domain is ready, find-and-replace that URL in:
 
 - `index.html`, landing pages, `robots.txt`, `sitemap.xml`
 
@@ -38,6 +38,8 @@ Enquiries use [Web3Forms](https://web3forms.com) → `asis.capture@gmail.com`.
 | `keepsakes.html` | Guestbooks & albums |
 | `wedding-camera-hire.html` | Wedding landing SEO page |
 | `party-camera-hire.html` | Party landing SEO page |
+| `terms.html` | Terms & conditions |
+| `privacy.html` | Privacy policy |
 
 ## Photos
 

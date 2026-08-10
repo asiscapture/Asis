@@ -1,4 +1,4 @@
-/* Vera — soft analog lifestyle */
+/* unposed — soft analog lifestyle */
 :root {
   --bg: #e4dfd6;
   --bg-deep: #d8d1c6;
@@ -247,7 +247,7 @@ textarea {
 .brand {
   font-family: var(--font-display);
   font-weight: 800;
-  font-size: clamp(3.4rem, 12vw, 7.5rem);
+  font-size: clamp(1.75rem, 5.5vw, 3.15rem);
   line-height: 0.9;
   letter-spacing: -0.04em;
   margin: 0 0 1.1rem;
@@ -1363,14 +1363,14 @@ body.product-open {
 
 .selection-bar {
   position: sticky;
-  bottom: 1rem;
+  bottom: 0.6rem;
   z-index: 30;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 1rem;
-  margin-top: 2rem;
-  padding: 1rem 1.25rem;
+  gap: 0.75rem;
+  margin-top: 1.25rem;
+  padding: 0.55rem 0.7rem 0.55rem 1rem;
   background: rgba(28, 25, 21, 0.92);
   color: #f5f0e8;
   backdrop-filter: blur(10px);
@@ -1381,22 +1381,24 @@ body.product-open {
   display: flex;
   flex-wrap: wrap;
   gap: 0.35rem 0.6rem;
-  font-size: 0.95rem;
+  font-size: 0.9rem;
   min-width: 0;
 }
 
+.selection-divider,
 #selection-names {
-  color: rgba(245, 240, 232, 0.7);
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  max-width: min(40vw, 24rem);
+  display: none;
 }
 
 .selection-actions {
   display: flex;
   flex-shrink: 0;
-  gap: 0.55rem;
+  gap: 0.45rem;
+}
+
+.selection-bar .btn {
+  min-height: 2.45rem;
+  padding: 0.5rem 0.95rem;
 }
 
 .selection-bar .btn-primary {
@@ -1781,6 +1783,63 @@ body.cart-open {
   text-align: left;
 }
 
+/* Legal pages */
+.legal {
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: clamp(6rem, 12vh, 8rem) var(--space) 4rem;
+}
+
+.legal-doc {
+  max-width: 42rem;
+  margin: 0 auto;
+}
+
+.legal-doc h1 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(2rem, 4.5vw, 3.1rem);
+  letter-spacing: -0.035em;
+  line-height: 1.05;
+  margin: 0.5rem 0 0.75rem;
+}
+
+.legal-updated {
+  margin: 0 0 2rem;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.legal-doc h2 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.15rem;
+  letter-spacing: -0.02em;
+  margin: 2rem 0 0.65rem;
+}
+
+.legal-doc p,
+.legal-doc li {
+  color: var(--ink-soft);
+}
+
+.legal-doc p {
+  margin: 0 0 0.9rem;
+}
+
+.legal-doc ul {
+  margin: 0 0 1rem;
+  padding-left: 1.25rem;
+}
+
+.legal-doc li {
+  margin: 0 0 0.4rem;
+}
+
+.legal-doc a {
+  color: var(--accent);
+}
+
 /* Landing pages */
 .landing {
   max-width: var(--max);
@@ -1961,6 +2020,26 @@ body.cart-open {
 }
 
 .footer-nav a:hover {
+  color: var(--accent);
+}
+
+.footer-legal {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 0.55rem 1rem;
+  margin: 0 0 0.65rem;
+  font-size: 0.88rem;
+}
+
+.footer-legal a {
+  color: var(--muted);
+  text-decoration: underline;
+  text-underline-offset: 0.22em;
+  text-decoration-thickness: 1px;
+}
+
+.footer-legal a:hover {
   color: var(--accent);
 }
 
@@ -2284,18 +2363,49 @@ body.cart-open {
   }
 
   .selection-bar {
-    flex-direction: column;
-    align-items: stretch;
-    bottom: 0.75rem;
+    position: fixed;
+    left: 0.75rem;
+    right: 0.75rem;
+    bottom: max(0.6rem, env(safe-area-inset-bottom));
+    flex-direction: row;
+    align-items: center;
+    gap: 0.75rem;
+    margin-top: 0;
+    padding: 0.55rem 0.7rem 0.55rem 1rem;
+  }
+
+  .selection-summary {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .selection-divider,
+  #selection-names,
+  .selection-bar .btn-primary {
+    display: none;
   }
 
   .selection-actions {
-    flex-direction: column;
+    flex-direction: row;
+    flex-shrink: 0;
   }
 
-  #selection-names {
-    white-space: normal;
-    max-width: none;
+  .selection-bar .btn-ghost-dark {
+    min-height: 2.45rem;
+    padding: 0.5rem 0.95rem;
+    background: var(--surface-solid);
+    border-color: transparent;
+    color: var(--ink);
+  }
+
+  .selection-bar .btn-ghost-dark:hover {
+    background: #fff;
+    border-color: transparent;
+    color: var(--ink);
+  }
+
+  body:has(#selection-bar:not([hidden])) {
+    padding-bottom: 5.25rem;
   }
 
   .item-actions {
@@ -2313,6 +2423,10 @@ body.cart-open {
 
   .footer-meta {
     text-align: left;
+  }
+
+  .footer-legal {
+    justify-content: flex-start;
   }
 
   .hero-content {

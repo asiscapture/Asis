@@ -1,4 +1,4 @@
-/* Vera — camera hire catalogue */
+/* unposed — camera hire catalogue */
 
 /*
   Photos: put files in /images then refresh.
@@ -712,7 +712,7 @@ const CATALOGUE = [
     tone: "warm",
     image: "images/photos.jpg?v=2",
     lifestyle: true,
-    alt: "Printed photo pack keepsake from Vera",
+    alt: "Printed photo pack keepsake from unposed",
   },
 ]
 
@@ -720,7 +720,7 @@ const CATALOGUE = [
 const CAMERA_CATEGORIES = new Set(["digital", "film", "instant"]);
 const CAMERA_PAGE_CATEGORIES = new Set(["digital", "film", "instant", "bundles", "addons"]);
 const KEEPSAKE_PAGE_CATEGORIES = new Set(["guestbooks", "keepsakes"]);
-const CART_STORAGE_KEY = "vera-enquiry-cart";
+const CART_STORAGE_KEY = "unposed-enquiry-cart";
 const catalogueScope = document.body.dataset.catalogue || "all";
 
 const BROWSE_BY_SCOPE = {
@@ -763,14 +763,19 @@ const productBackdrop = document.getElementById("product-backdrop");
 if (yearEl) yearEl.textContent = String(new Date().getFullYear());
 
 function loadCart() {
+  state.cart.clear();
   try {
-    const raw = localStorage.getItem(CART_STORAGE_KEY);
+    let raw = localStorage.getItem(CART_STORAGE_KEY);
+    const legacy = localStorage.getItem("vera-enquiry-cart");
+    if (!raw && legacy) raw = legacy;
     if (!raw) return;
     const data = JSON.parse(raw);
     Object.entries(data).forEach(([id, qty]) => {
       const n = Number(qty);
       if (getItem(id) && n > 0) state.cart.set(id, Math.min(99, n));
     });
+    saveCart();
+    localStorage.removeItem("vera-enquiry-cart");
   } catch {
     /* ignore bad storage */
   }
@@ -1315,7 +1320,7 @@ productBackdrop?.addEventListener("click", closeProduct);
 function handleCartQtyClick(event) {
   const removeBtn = event.target.closest("[data-remove]");
   if (removeBtn) {
-    state.cart.delete(removeBtn.dataset.remove);
+    setCartQty(removeBtn.dataset.remove, 0);
     updateCartUI();
     return;
   }
@@ -1554,11 +1559,11 @@ function setupReveal() {
     observer.observe(node);
   });
 
-  window.__veraRevealObserver = observer;
+  window.__unposedRevealObserver = observer;
 }
 
 function refreshItemReveal() {
-  const observer = window.__veraRevealObserver;
+  const observer = window.__unposedRevealObserver;
   const items = document.querySelectorAll(".item:not(.is-visible)");
   if (!observer) {
     items.forEach((item) => item.classList.add("is-visible"));
