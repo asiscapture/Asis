@@ -14,24 +14,14 @@ const CATALOGUE = [
     detail: "32GB SD included",
     price: "$39",
     blurb:
-      "Early-2000s compact camera feel with crisp, shareable photos. Simple point-and-shoot so you can enjoy the moment.",
-    hook: "The digicam that feels like the early 2000s — crisp, shareable photos with zero fuss.",
-    audience:
-      "Perfect for beginners, guests and anyone who wants that classic compact-camera look without learning settings. Great for parties, weekends, weddings and travel.",
-    benefits: [
-      "Beginner-friendly point-and-shoot design — just frame and shoot",
-      "Crisp digital photos and Full HD video, ready to share",
-      "Slim, lightweight body that’s easy to pass around",
-      "5× optical zoom and a wide-angle lens for groups, details and everyday moments",
-      "Built-in flash for indoor and evening shots",
+      "A compact digicam with that early-2000s feel — crisp, shareable photos and Full HD video. Simple point-and-shoot so anyone can pick it up and shoot.",
+    description:
+      "Slim enough to pass around, with 5× optical zoom and a built-in flash for indoor and evening shots.",
+    details: [
+      { label: "Format", value: "Digital" },
+      { label: "Storage", value: "32GB SD included" },
+      { label: "Includes", value: "Camera, SD card, rechargeable battery, instruction card" },
     ],
-    includes: [
-      "Kodak PIXPRO FZ55 camera",
-      "32GB SD card",
-      "Rechargeable battery",
-      "Instruction card",
-    ],
-    features: ["Digicam-style photos & video", "32GB SD card included", "Instruction card included"],
     tone: "cool",
     image: "images/products/kodak-pixpro-fz55/front.png",
     imageHover: "images/products/kodak-pixpro-fz55/hover.png",
@@ -45,24 +35,14 @@ const CATALOGUE = [
     detail: "32GB SD included",
     price: "$35",
     blurb:
-      "Easy digital capture for guests and weekends — point, shoot, and keep the night without fussing over settings.",
-    hook: "A compact digicam with a flip screen — made for selfies, group shots and guests who just want to shoot.",
-    audience:
-      "Perfect for beginners and event guests. Great for parties, weekends and nights when you want shareable photos without film or settings.",
-    benefits: [
-      "Beginner-friendly point-and-shoot design",
-      "Flip screen for selfies and group shots",
-      "Retro compact look that feels fun to pass around",
-      "Digital photos ready to share — no developing wait",
-      "Lightweight and easy for guests to use",
+      "An easy compact digicam with a flip screen — made for selfies, group shots and nights when you just want to shoot.",
+    description:
+      "Digital photos ready to share, with no film or settings to learn. Lightweight and simple for anyone to use.",
+    details: [
+      { label: "Format", value: "Digital" },
+      { label: "Storage", value: "32GB SD included" },
+      { label: "Includes", value: "Camera, SD card, battery, instruction card" },
     ],
-    includes: [
-      "Kodak PIXPRO C1 camera",
-      "32GB SD card",
-      "Battery",
-      "Instruction card",
-    ],
-    features: ["Point & shoot", "32GB SD card included", "Beginner-friendly"],
     tone: "soft",
     image: "images/products/kodak-pixpro-c1/front.png",
     imageHover: "images/products/kodak-pixpro-c1/hover.png",
@@ -78,28 +58,18 @@ const CATALOGUE = [
     id: "kodak-ektar-h35",
     name: "Kodak Ektar H35",
     category: "film",
-    tag: "Film",
-    detail: "Includes 1 colour roll (36 exposures · up to 72 shots)",
+    tag: "Film (half frame)",
+    detail: "Includes 1 colour roll (72 shots)",
     price: "$45",
     blurb:
-      "Nostalgic film with a simple point-and-shoot experience. Half-frame means up to 72 photos on a standard 36-exposure roll.",
-    hook: "The perfect half-frame film camera for anyone wanting more nostalgic shots without more fuss.",
-    audience:
-      "Ideal for people who love the look of film and want plenty of frames. Great for weddings, weekends, travel and parties.",
-    benefits: [
-      "Beginner-friendly point-and-shoot design",
-      "Half-frame format — gives you 72 shots from a 36-exposure roll",
-      "Creates authentic film photos with nostalgic colours",
-      "Built-in flash for indoor and evening moments",
-      "Lightweight and easy to carry all day",
+      "A half-frame film camera for nostalgic colour without the fuss. One standard roll gives you up to 72 shots.",
+    description:
+      "Simple point-and-shoot with a built-in flash — light enough to carry all day.",
+    details: [
+      { label: "Format", value: "Film (half frame)" },
+      { label: "Film", value: "1 colour roll included (36 exposures · up to 72 shots)" },
+      { label: "Includes", value: "Camera, film, battery, instruction card" },
     ],
-    includes: [
-      "Kodak Ektar H35 camera",
-      "1 standard colour film roll (36 exposures · up to 72 half-frame shots)",
-      "Battery",
-      "Instruction card",
-    ],
-    features: ["Includes 1 colour roll (36 exposures · up to 72 shots)", "Battery & instruction card included"],
     tone: "warm",
     image: "images/products/kodak-ektar-h35/front.png",
     imageHover: "images/products/kodak-ektar-h35/hover.png",
@@ -114,29 +84,16 @@ const CATALOGUE = [
     price: "$39",
     blurb:
       "The nostalgic film look of a disposable — in a reusable, more sustainable design. Up to 36 photos per roll.",
-    hook: "The perfect point-and-shoot film camera for anyone wanting effortless, nostalgic memories.",
-    audience:
-      "Perfect for beginners. Designed for people who love the look of film without the complexity. Great for weddings, birthdays, travel and everyday moments.",
-    benefits: [
-      "Beginner-friendly point-and-shoot design",
-      "Lightweight and easy to carry",
-      "Built-in flash for indoor and evening photos",
-      "Creates authentic film photos with nostalgic colours",
-      "Reusable — a more sustainable alternative to disposable cameras",
+    description:
+      "Simple point-and-shoot with a built-in flash. Easy enough for anyone to use.",
+    details: [
+      { label: "Format", value: "Film (35mm)" },
+      { label: "Film", value: "1 colour roll included (36 shots)" },
+      { label: "Includes", value: "Camera, film, battery, instruction card" },
     ],
-    includes: [
-      "Kodak M35 camera",
-      "1 standard colour film roll (36 shots)",
-      "Battery",
-      "Instruction card",
-    ],
-    features: ["Includes 1 standard colour roll (36 shots)", "Up to 36 photos per roll", "Battery & instruction card included"],
     tone: "soft",
     image: "images/products/kodak-m35/front.png",
-    gallery: [
-      "images/products/kodak-m35/extra-1.png",
-      "images/products/kodak-m35/extra-2.png"
-    ],
+    imageHover: "images/products/kodak-m35/hover.png",
     alt: "Kodak M35 yellow reusable 35mm film camera for hire",
   },
 
@@ -149,24 +106,14 @@ const CATALOGUE = [
     detail: "Includes 1 Mini film pack (10 shots)",
     price: "$65",
     blurb:
-      "Instant prints with creative modes — perfect for parties, guestbooks, and sharing on the spot.",
-    hook: "A hybrid Instant favourite — preview and select before you print, so there’s no wasted film.",
-    audience:
-      "Perfect for parties, guest tables and anyone who wants prints during the event. Great for weddings, birthdays and nights out.",
-    benefits: [
-      "Preview and select photos before printing — no wasted film",
-      "Print mini Instax frames in the moment",
-      "Creative shooting modes for a playful, personal look",
-      "Easy for guests to pick up and use",
-      "Ideal for sticking favourites straight into a guestbook or album",
+      "A hybrid Instant camera — preview and select before you print, so there’s no wasted film. Creative modes for a playful, personal look.",
+    description:
+      "Mini prints in the moment, easy enough for anyone to pick up and use.",
+    details: [
+      { label: "Format", value: "Instax Mini" },
+      { label: "Film", value: "1 Mini pack included (10 shots)" },
+      { label: "Includes", value: "Camera, film, battery, instruction card" },
     ],
-    includes: [
-      "Fujifilm Instax Mini Evo camera",
-      "1 Instax Mini film pack (10 shots)",
-      "Battery",
-      "Instruction card",
-    ],
-    features: ["Includes 1 Instax Mini pack (10 shots)", "Creative shooting modes", "Event favourite"],
     tone: "soft",
     image: "images/products/instax-mini-evo/front.png",
     imageHover: "images/products/instax-mini-evo/hover.png",
@@ -184,24 +131,14 @@ const CATALOGUE = [
     detail: "Includes 1 Mini film pack (10 shots)",
     price: "$49",
     blurb:
-      "Simple Instant Mini prints for spontaneous days — beginners love how easy it is to shoot and share.",
-    hook: "The simplest Instax Mini — twist to turn on, shoot, and print in the moment.",
-    audience:
-      "Perfect for beginners, guest tables and spontaneous days. Ideal when you want classic Mini prints without creative modes or settings.",
-    benefits: [
-      "Beginner-friendly — twist the lens to power on and shoot",
-      "Classic Instax Mini prints guests can share on the spot",
-      "Lightweight and easy to pass around",
-      "Automatic exposure for indoor and outdoor moments",
-      "A sweet Instant option for weekends, parties and intimate events",
+      "The simplest Instax Mini — twist to turn on, shoot, and print in the moment. Classic Mini prints with no creative modes or settings to learn.",
+    description:
+      "Light enough to pass around, with automatic exposure for indoor and outdoor shots.",
+    details: [
+      { label: "Format", value: "Instax Mini" },
+      { label: "Film", value: "1 Mini pack included (10 shots)" },
+      { label: "Includes", value: "Camera, film, battery, instruction card" },
     ],
-    includes: [
-      "Fujifilm Instax Mini 12 camera",
-      "1 Instax Mini film pack (10 shots)",
-      "Battery",
-      "Instruction card",
-    ],
-    features: ["Includes 1 Instax Mini pack (10 shots)", "Beginner-friendly", "Classic Mini prints"],
     tone: "warm",
     image: "images/products/instax-mini-12/front.png",
     imageHover: "images/products/instax-mini-12/hover.png",
@@ -218,24 +155,14 @@ const CATALOGUE = [
     detail: "Includes 1 Square film pack (10 shots)",
     price: "$59",
     blurb:
-      "Square Instax prints with a classic look — ideal for tables, guestbooks, and keepsake walls.",
-    hook: "Square Instant prints with a classic retro look — made for tables, books and keepsake walls.",
-    audience:
-      "Great for weddings, parties and anyone who wants a larger Instant print than Mini. Perfect when guests will shoot and share during the day.",
-    benefits: [
-      "Square format with a classic Instant look",
-      "Simple controls so anyone can shoot",
-      "Ideal for guestbooks, tables and photo walls",
-      "Prints in the moment — no waiting for a lab",
-      "A polished option for celebrations and milestones",
+      "Square Instant prints with a classic retro look — made for tables, books and keepsake walls. A larger print than Mini, with simple controls.",
+    description:
+      "Prints in the moment, with no waiting for a lab.",
+    details: [
+      { label: "Format", value: "Instax Square" },
+      { label: "Film", value: "1 Square pack included (10 shots)" },
+      { label: "Includes", value: "Camera, film, battery, instruction card" },
     ],
-    includes: [
-      "Fujifilm Instax Square SQ40 camera",
-      "1 Instax Square film pack (10 shots)",
-      "Battery",
-      "Instruction card",
-    ],
-    features: ["Includes 1 Instax Square pack (10 shots)", "Square Instax format", "Guestbook ready"],
     tone: "cool",
     image: "images/products/instax-square-sq40/front.png",
     imageHover: "images/products/instax-square-sq40/hover.png",
@@ -251,26 +178,17 @@ const CATALOGUE = [
     name: "Vintage Video Guestbook",
     category: "guestbooks",
     tag: "Guestbook",
-    detail: "4-day hire · $70 refundable bond",
+    detail: "Video guestbook · Footage to take home",
     price: "$199",
     blurb:
-      "Guests pick up the handset and leave spoken memories you’ll actually rewatch — a vintage-feel guestbook for weddings and milestones.",
-    hook: "A vintage-feel guestbook guests actually use — spoken memories you’ll want to rewatch.",
-    audience:
-      "Perfect for weddings, anniversaries and milestone parties. Ideal if you want something warmer than a paper guestbook, without asking everyone for a speech.",
-    benefits: [
-      "Guests leave spoken (and visual) messages on camera",
-      "Warmer and more personal than a written guestbook",
-      "Easy for guests — pick up the handset and talk",
-      "Take the footage home to rewatch later",
-      "A favourite for weddings and milestone celebrations",
+      "A vintage-feel guestbook — pick up the handset and leave spoken memories you’ll actually rewatch. Warmer than a paper book, without asking anyone for a speech.",
+    description:
+      "Easy to use on the day, with footage to take home after the hire.",
+    details: [
+      { label: "Type", value: "Video guestbook hire" },
+      { label: "Bond", value: "$50 refundable" },
+      { label: "Includes", value: "Guestbook, setup guidance, footage to take home" },
     ],
-    includes: [
-      "Vintage Video Guestbook",
-      "Setup guidance for your event",
-      "Footage to take home after the hire",
-    ],
-    features: ["Spoken + video messages", "Wedding & event favourite", "Take the footage home"],
     tone: "warm",
     image: "images/products/vintage-video-guestbook/front.png",
     alt: "Vintage Video Guestbook telephone for wedding hire Brisbane",
@@ -285,21 +203,14 @@ const CATALOGUE = [
     detail: "Purchase · Yours to keep · 2 colours",
     price: "$85",
     blurb:
-      "A linen-cover DIY album with self-adhesive pages — arrange prints, notes and mementos your way, then seal them under clear film.",
-    hook: "A linen DIY album made to hold Instant prints, notes and mementos your way.",
-    audience:
-      "Perfect after weddings, parties and weekends — for anyone who wants a personal album that lives off the phone. Designed for Instant prints, film prints and flat keepsakes.",
-    benefits: [
-      "Self-adhesive pages hold photos securely — no glue or photo corners",
-      "Works with any photo size or orientation",
-      "Layer photos, handwritten notes, stickers and flat mementos",
-      "Reposition as many times as you like without damaging prints",
-      "Linen cover with a photo window on the front",
-    ],
-    includes: [
-      "Keepsake Album (yours to keep)",
-      "Self-adhesive pages ready to fill",
-      "Your choice of black or white — tell us when you enquire",
+      "A linen DIY album with self-adhesive pages — arrange Instant prints, notes and mementos your way, then seal them under clear film.",
+    description:
+      "Works with any photo size. Reposition as many times as you like without damaging prints.",
+    details: [
+      { label: "Type", value: "Purchase · yours to keep" },
+      { label: "Cover", value: "Linen · black or white" },
+      { label: "Pages", value: "Self-adhesive with clear protective film" },
+      { label: "Includes", value: "Album ready to fill · choose black or white when you enquire" },
     ],
     colours: [
       { name: "Black Linen", swatch: "#1C1A18" },
@@ -311,76 +222,60 @@ const CATALOGUE = [
       "Reposition until the layout feels right",
       "Press the film down to seal and protect everything in place",
     ],
-    features: [
-      "Self-adhesive pages hold photos securely — no glue or photo corners",
-      "Works with any photo size or orientation",
-      "Fully customisable for a personalised DIY keepsake",
-    ],
     tone: "soft",
     image: "images/products/keepsake-album/front.png",
-    imageHover: "images/products/keepsake-album/hover.jpg",
+    imageHover: "images/products/keepsake-album/extra-1.jpg",
     gallery: [
-      "images/products/keepsake-album/extra-1.jpg",
-      "images/products/keepsake-album/extra-2.jpg"
+      "images/products/keepsake-album/extra-2.jpg",
+      "images/products/keepsake-album/hover.jpg"
     ],
     alt: "Keepsake Album linen DIY self-adhesive photo album in black and white",
   },
   {
     id: "film-book",
-    name: "Film Strip Album",
+    name: "Accordion Album",
     category: "keepsakes",
     tag: "Purchase",
-    detail: "Purchase · Yours to keep",
-    price: "$19",
+    detail: "Palm-sized · Personalised · Yours to keep",
+    price: "$25",
     blurb:
-      "An accordion film-strip album that folds out into a strip of prints — a display piece guests love to open.",
-    hook: "An accordion film-strip album that folds out into a line of Instant prints.",
-    audience:
-      "Perfect as a gift, table display or small keepsake after an Instant-filled day. Ideal for Instax Mini prints.",
-    benefits: [
-      "Folds out into a display strip guests love to open",
-      "Compact and giftable",
-      "Made for Instant prints that deserve to live off the phone",
-      "A simple way to keep favourite frames together",
-      "Yours to keep after the day",
+      "A palm-sized accordion album that folds out into a strip of see-through film-paper photos — choose the photos, and we’ll make it for you.",
+    description:
+      "Compact, giftable, and made to open and share. Allow about a week for personalisation.",
+    details: [
+      { label: "Type", value: "Purchase · yours to keep · personalised" },
+      { label: "Size", value: "Palm-sized" },
+      { label: "Photos", value: "See-through film-paper prints · you choose the photos" },
+      { label: "Turnaround", value: "About 1 week" },
+      { label: "Includes", value: "Personalised Accordion Album" },
     ],
-    includes: [
-      "Film Strip Album (yours to keep)",
-    ],
-    features: ["Accordion film-strip layout", "Fits Instax Mini", "Yours to keep"],
     tone: "warm",
     image: "images/products/film-book/front.jpg",
-    imageHover: "images/products/film-book/hover.jpg",
+    imageHover: "images/products/film-book/extra-1.jpg",
     gallery: [
-      "images/products/film-book/extra-1.jpg",
-      "images/products/film-book/extra-2.jpg"
+      "images/products/film-book/extra-2.jpg",
+      "images/products/film-book/hover.jpg"
     ],
     lifestyle: true,
-    alt: "Film Strip Album accordion keepsake for Instant prints",
+    alt: "Palm-sized personalised Accordion Album with see-through film-paper photos",
   },
   {
     id: "film-photo-booklet",
-    name: "Film Wall Album",
+    name: "Pop-up Gallery",
     category: "keepsakes",
     tag: "Purchase",
-    detail: "Purchase · Yours to keep",
-    price: "$38",
+    detail: "Personalised · Yours to keep",
+    price: "$39",
     blurb:
-      "A compact photo-wall album for favourite prints — small enough for a shelf, made to live off the phone.",
-    hook: "A compact photo-wall album for the Instant and film prints you’ll want to keep.",
-    audience:
-      "Ideal for favourite frames from weddings, weekends and celebrations. Perfect if you want something shelf-friendly that still feels special.",
-    benefits: [
-      "Compact photo-wall format for Instant and film prints",
-      "Small enough for a shelf or side table",
-      "A lasting home for the day’s best frames",
-      "Pairs naturally with Instant camera hire",
-      "Yours to keep after the day",
+      "A personalised pop-up gallery filled with see-through film-paper photos — choose the photos, and we’ll make it for you.",
+    description:
+      "A tiered tabletop display that folds out into a small 3D gallery. Allow about a week for personalisation.",
+    details: [
+      { label: "Type", value: "Purchase · yours to keep · personalised" },
+      { label: "Photos", value: "See-through film-paper prints · you choose the photos" },
+      { label: "Turnaround", value: "About 1 week" },
+      { label: "Includes", value: "Personalised Pop-up Gallery" },
     ],
-    includes: [
-      "Film Wall Album (yours to keep)",
-    ],
-    features: ["Compact photo-wall format", "Holds Instant & film prints", "Yours to keep"],
     tone: "cool",
     image: "images/products/film-photo-booklet/front.jpg",
     imageHover: "images/products/film-photo-booklet/hover.jpg",
@@ -388,7 +283,7 @@ const CATALOGUE = [
       "images/products/film-photo-booklet/extra-1.jpg"
     ],
     lifestyle: true,
-    alt: "Film Wall Album keepsake for printed photos",
+    alt: "Personalised Pop-up Gallery with see-through film-paper photos",
   },
 
   /* ——— Bundles ——— */
@@ -401,29 +296,15 @@ const CATALOGUE = [
     detail: "3 cameras · Film & SD included",
     price: "$129",
     blurb:
-      "One kit, three formats — digicam shareables, nostalgic film, and square Instant prints.",
-    hook: "One kit, three formats — digicam, film and Instant, curated so you don’t have to choose.",
-    audience:
-      "Perfect when you want variety for mixed guest crowds. Great for weekends, parties and celebrations where one camera style isn’t enough.",
-    benefits: [
-      "Digital shareables, nostalgic film and Instant prints in one hire",
-      "Curated so you skip picking each camera yourself",
-      "Film and SD included where it counts",
-      "Easy for guests — something for every shooting style",
-      "A strong all-rounder for weekends and events",
-    ],
-    includes: [
-      "Kodak PIXPRO FZ55 (32GB SD included)",
-      "Kodak Ektar H35 (1 colour roll · 36 exposures / up to 72 shots)",
-      "Fujifilm Instax Square SQ40 (1 Square pack · 10 shots)",
-    ],
-    features: [
-      "Kodak PIXPRO FZ55 (32GB SD included)",
-      "Kodak Ektar H35 (1 colour roll · 36 exposures / up to 72 shots)",
-      "Fujifilm Instax Square SQ40 (1 Square pack · 10 shots)",
+      "One kit, three formats — digicam shareables, nostalgic film and square Instant prints. Curated so you don’t have to choose.",
+    description:
+      "Film and SD included where each camera needs it.",
+    details: [
+      { label: "Cameras", value: "3 · digital, film & Instant" },
+      { label: "Includes", value: "Kodak PIXPRO FZ55 (32GB SD) · Kodak Ektar H35 (1 colour roll · up to 72 shots) · Fujifilm Instax Square SQ40 (1 Square pack · 10 shots)" },
     ],
     tone: "cool",
-    image: "images/products/holy-trinity-bundle/front.png",
+    image: "images/products/holy-trinity-bundle/front-dual-bg-backup.png",
     gallery: [
       "images/products/kodak-pixpro-fz55/front.png",
       "images/products/kodak-ektar-h35/front.png",
@@ -441,26 +322,14 @@ const CATALOGUE = [
     price: "$75",
     blurb:
       "Light and easy for a short escape — digicam shareables plus Instant Mini prints.",
-    hook: "Light and easy for a short escape — digicam shareables plus Instant Mini prints.",
-    audience:
-      "Perfect for weekends away, date trips and small celebrations. Ideal if you want something simple without a full event kit.",
-    benefits: [
-      "Two formats that travel light",
-      "Digital photos to share plus Mini prints in the moment",
-      "Beginner-friendly cameras guests can use",
-      "Film and SD included",
-      "Curated for short escapes, not big productions",
-    ],
-    includes: [
-      "Kodak PIXPRO C1 (32GB SD included)",
-      "Fujifilm Instax Mini 12 (1 Mini pack · 10 shots)",
-    ],
-    features: [
-      "Kodak PIXPRO C1 (32GB SD included)",
-      "Fujifilm Instax Mini 12 (1 Mini pack · 10 shots)",
+    description:
+      "Two beginner-friendly cameras that travel light, with film and SD included.",
+    details: [
+      { label: "Cameras", value: "2 · digital & Instant" },
+      { label: "Includes", value: "Kodak PIXPRO C1 (32GB SD) · Fujifilm Instax Mini 12 (1 Mini pack · 10 shots)" },
     ],
     tone: "warm",
-    image: "images/products/weekender-bundle/front.png",
+    image: "images/products/weekender-bundle/front-dual-bg-backup.png",
     gallery: [
       "images/products/kodak-pixpro-c1/front.png",
       "images/products/instax-mini-12/front.png"
@@ -476,36 +345,16 @@ const CATALOGUE = [
     detail: "3 cameras · Guestbook · Books · Bundle saving",
     price: "$399",
     blurb:
-      "Our wedding hero kit — Instant prints for the tables, a video guestbook, and albums to keep forever.",
-    hook: "Our wedding hero kit — Instant cameras, a video guestbook and albums to keep forever.",
-    audience:
-      "Designed for weddings and engagements. Perfect if you want guest shots, spoken memories and keepsakes covered without piecing it together yourself.",
-    benefits: [
-      "Instant cameras for guest tables and in-the-moment prints",
-      "Video guestbook for spoken memories you’ll rewatch",
-      "Albums included so the day has a home afterwards",
-      "Curated as a complete wedding capture kit",
-      "Better value than hiring each piece separately",
-    ],
-    includes: [
-      "Fujifilm Instax Mini Evo (1 Mini pack · 10 shots)",
-      "Fujifilm Instax Mini 12 (1 Mini pack · 10 shots)",
-      "Fujifilm Instax Square SQ40 (1 Square pack · 10 shots)",
-      "Vintage Video Guestbook hire",
-      "Keepsake Album (yours to keep)",
-      "Film Wall Album (yours to keep)",
-    ],
-    features: [
-      "Fujifilm Instax Mini Evo (1 Mini pack · 10 shots)",
-      "Fujifilm Instax Mini 12 (1 Mini pack · 10 shots)",
-      "Fujifilm Instax Square SQ40 (1 Square pack · 10 shots)",
-      "Vintage Video Guestbook hire (bundle rate)",
-      "Keepsake Album (purchase · yours to keep)",
-      "Film Wall Album (purchase · yours to keep)",
-      "Save vs hiring each item separately",
+      "Our wedding hero kit — Instant cameras for the tables, a video guestbook, and albums to keep forever.",
+    description:
+      "Guest shots, spoken memories and keepsakes covered in one hire — better value than piecing it together yourself.",
+    details: [
+      { label: "Cameras", value: "3 Instant · Mini Evo, Mini 12 & Square SQ40" },
+      { label: "Also includes", value: "Vintage Video Guestbook hire · Keepsake Album · Pop-up Gallery" },
+      { label: "Film", value: "1 pack with each camera (Mini ×2, Square ×1)" },
     ],
     tone: "warm",
-    image: "images/products/happily-ever-after-bundle/front.png",
+    image: "images/products/happily-ever-after-bundle/front-pre-heal-backup.png",
     gallery: [
       "images/products/instax-mini-evo/front.png",
       "images/products/instax-mini-12/front.png",
@@ -517,50 +366,6 @@ const CATALOGUE = [
     alt: "Happily Ever After wedding bundle — instant cameras, video guestbook and photo albums",
   },
   {
-    id: "the-baby-bundle",
-    name: "Little Moments",
-    category: "bundles",
-    tag: "Bundle",
-    subtitle: "Film, Instant & albums for new arrivals",
-    detail: "2 cameras · Books · Prints",
-    price: "$169",
-    blurb:
-      "Soft film and Instant Mini moments for a new arrival — plus books and a print pack to keep.",
-    hook: "Soft film and Instant Mini for a new arrival — plus albums and prints to keep.",
-    audience:
-      "Curated for baby showers, first weeks home and quiet celebrations. Ideal for capturing early days in a way you can hold.",
-    benefits: [
-      "Gentle film and Instant Mini formats for soft, lasting photos",
-      "Albums included so prints have a home",
-      "Printed photo pack included",
-      "Easy cameras for family and friends to use",
-      "A thoughtful kit for new-arrival moments",
-    ],
-    includes: [
-      "Kodak M35 (1 colour roll · 36 shots)",
-      "Fujifilm Instax Mini 12 (1 Mini pack · 10 shots)",
-      "Keepsake Album (yours to keep)",
-      "Film Wall Album (yours to keep)",
-      "Printed Photo Pack",
-    ],
-    features: [
-      "Kodak M35 (1 colour roll · 36 shots)",
-      "Fujifilm Instax Mini 12 (1 Mini pack · 10 shots)",
-      "Keepsake Album (purchase · yours to keep)",
-      "Film Wall Album (purchase · yours to keep)",
-      "Printed Photo Pack included",
-    ],
-    tone: "soft",
-    image: "images/products/the-baby-bundle/front.png",
-    gallery: [
-      "images/products/kodak-m35/front.png",
-      "images/products/instax-mini-12/front.png",
-      "images/products/keepsake-album/front.png",
-      "images/products/film-photo-booklet/front.jpg"
-    ],
-    alt: "Little Moments bundle — Kodak M35, Instax Mini 12, keepsake albums and print pack",
-  },
-  {
     id: "party-bundle",
     name: "Party Camera Kit",
     category: "bundles",
@@ -569,36 +374,19 @@ const CATALOGUE = [
     detail: "3 cameras · Extra Mini film",
     price: "$159",
     blurb:
-      "Birthdays, hens and nights out — digicam, film and Instax Mini with extra packs for the crowd.",
-    hook: "Built for birthdays, hens and nights out — digicam, film and Instax Mini for the crowd.",
-    audience:
-      "Perfect for parties where guests will pass cameras around. Ideal when you want energy, variety and enough Instant film to last the night.",
-    benefits: [
-      "Three formats guests can share throughout the party",
-      "Extra Instax Mini packs included for bigger crowds",
-      "Easy point-and-shoot cameras — no host managing settings",
-      "Digital, film and Instant covered in one kit",
-      "Curated for celebrations, not quiet weekends",
-    ],
-    includes: [
-      "Fujifilm Instax Mini Evo (1 Mini pack · 10 shots)",
-      "Kodak PIXPRO C1 (32GB SD included)",
-      "Kodak M35 (1 colour roll · 36 shots)",
-      "+2 extra Instax Mini packs (20 shots)",
-    ],
-    features: [
-      "Fujifilm Instax Mini Evo (1 Mini pack · 10 shots)",
-      "Kodak PIXPRO C1 (32GB SD included)",
-      "Kodak M35 (1 colour roll · 36 shots)",
-      "+2 extra Instax Mini packs (20 shots)",
+      "Built for birthdays, hens and nights out — digicam, film and Instax Mini with extra packs for the crowd.",
+    description:
+      "Three easy point-and-shoot formats, plus extra Mini film so the Instant cameras last the night.",
+    details: [
+      { label: "Cameras", value: "3 · Instant, digital & film" },
+      { label: "Includes", value: "Instax Mini Evo (1 Mini pack) · Kodak PIXPRO C1 (32GB SD) · Kodak M35 (1 colour roll) · +2 extra Mini packs (20 shots)" },
     ],
     tone: "warm",
     image: "images/products/party-bundle/front.png",
     gallery: [
       "images/products/instax-mini-evo/front.png",
       "images/products/kodak-pixpro-c1/front.png",
-      "images/products/kodak-m35/front.png",
-      "images/products/addon-film/front.png"
+      "images/products/kodak-m35/front.png"
     ],
     alt: "Party Camera Kit — Instax Mini Evo, PIXPRO C1 and Kodak M35",
   },
@@ -611,86 +399,23 @@ const CATALOGUE = [
     detail: "4 cameras · Film included · Ask for 6",
     price: "$229",
     blurb:
-      "Pass Instant cameras around the tables — enough Mini film for guests to shoot, share and stick in a book.",
-    hook: "Four Instant cameras for the guest tables — shoot, share and stick prints in a book.",
-    audience:
-      "Made for wedding crowds who want prints in the moment. Ideal when you want cameras circulating across tables rather than one central kit.",
-    benefits: [
-      "Enough cameras to pass around guest tables",
-      "Mini film included so guests can shoot and share",
-      "Instruction cards with each camera",
-      "Perfect for sticking prints into a guestbook or album",
-      "Need more for a bigger wedding? Ask for six when you enquire",
-    ],
-    includes: [
-      "4× Fujifilm Instax Mini Evo",
-      "4 Instax Mini film packs (40 shots)",
-      "Instruction cards for each camera",
-    ],
-    features: [
-      "4× Fujifilm Instax Mini Evo",
-      "4 Instax Mini film packs included (40 shots)",
-      "Instruction cards for each camera",
-      "Ideal for ~40–60 guests at 2–3 shots each",
-      "Need 6 cameras? Mention it when you enquire",
+      "Four Instant cameras for the tables — enough Mini film to shoot, share and stick prints in a book.",
+    description:
+      "Made for cameras circulating across tables. Need more for a bigger day? Ask for six when you enquire.",
+    details: [
+      { label: "Cameras", value: "4× Fujifilm Instax Mini Evo" },
+      { label: "Film", value: "4 Mini packs included (40 shots)" },
+      { label: "Also includes", value: "Instruction cards for each camera" },
     ],
     tone: "warm",
-    image: "images/products/wedding-table-pack/front.png",
+    image: "images/products/wedding-table-pack/front-dual-bg-backup.png",
     gallery: [
-      "images/products/instax-mini-evo/front.png",
-      "images/products/addon-film/front.png"
+      "images/products/instax-mini-evo/front.png"
     ],
     alt: "Wedding Table Pack — four Instax Mini Evo cameras for guest tables",
   },
 
   /* ——— Add-ons ——— */
-  {
-    id: "addon-film",
-    name: "Extra Film",
-    category: "addons",
-    tag: "Add-on",
-    detail: "35mm from $22 · Mini $20 · Square $26",
-    price: "From $20",
-    blurb: "Extra 35mm rolls or instant film packs for longer weekends and bigger guest lists.",
-    hook: "Extra film so nobody runs out mid-celebration.",
-    audience:
-      "Perfect for longer weekends, bigger guest lists and Instant-heavy parties. Add it whenever one roll or pack won’t be enough.",
-    features: ["35mm rolls from $22", "Instax Mini packs $20", "Instax Square packs $26"],
-    tone: "soft",
-    image: "images/products/addon-film/front.png",
-    gallery: [
-      "images/products/addon-film/extra-1.png"
-    ],
-    alt: "Extra Kodak colour film roll add-on for camera hire",
-  },
-  {
-    id: "addon-develop-scan",
-    name: "Develop & Scan",
-    category: "addons",
-    tag: "Add-on",
-    detail: "Per 35mm colour roll · High res · ~4 business days",
-    price: "$29",
-    blurb:
-      "Once your camera is returned, we’ll organise developing and digital scans so you can see the day again.",
-    hook: "We’ll organise developing and digital scans once your film comes home.",
-    benefits: [
-      "Standard colour (C-41) develop & high-res scans for $29 per roll",
-      "Typical turnaround about 4 business days after we receive your film",
-      "Max-res scans, rush, B&W and slide available — ask when you enquire",
-    ],
-    includes: [
-      "Film develop (C-41 colour)",
-      "High-resolution digital scans of your roll",
-    ],
-    features: [
-      "Colour develop & high-res scan $29 / roll",
-      "Max res, rush, B&W & slide on enquiry",
-    ],
-    tone: "cool",
-    image: "images/products/addon-develop-scan/front.jpg",
-    lifestyle: true,
-    alt: "Film developing and scanning service add-on",
-  },
   {
     id: "addon-prints",
     name: "Printed Photo Pack",
@@ -698,23 +423,22 @@ const CATALOGUE = [
     tag: "Add-on",
     detail: "Per 35mm roll · Full set of 6×4 lustre prints",
     price: "$24",
-    blurb: "A full set of 6×4 lustre prints from your developed roll — memories you can gift, pin up, or pass around.",
-    hook: "A full set of 6×4 lustre prints from your roll — memories you can hold and gift.",
-    benefits: [      "Full set of 6×4 lustre prints for one 35mm roll",
-      "One print per frame from your developed roll",
-      "Half-frame (the Ektar H35) needs two print orders",
-      "Allow about 2–3 extra business days after develop & scan",
+    blurb:
+      "A full set of 6×4 lustre prints from your 35mm roll — memories you can gift, pin up, or pass around.",
+    description:
+      "One print per frame. Half-frame (Ektar H35) needs two print orders.",
+    details: [
+      { label: "Type", value: "Add-on · per 35mm roll" },
+      { label: "Prints", value: "Full set of 6×4 lustre prints" },
+      { label: "Note", value: "Ektar H35 = two print orders" },
     ],
-    includes: [
-      "Full set of 6×4 lustre prints for one 35mm roll",
-    ],
-    features: ["$24 per 35mm roll", "Ektar H35 = two print orders"],
     tone: "warm",
     image: "images/photos.jpg?v=2",
     lifestyle: true,
     alt: "Printed photo pack keepsake from unposed",
   },
 ]
+
 
 
 const CAMERA_CATEGORIES = new Set(["digital", "film", "instant"]);
@@ -820,6 +544,27 @@ function cartUnitCount() {
   return cartEntries().reduce((sum, entry) => sum + entry.qty, 0);
 }
 
+function parsePrice(price) {
+  if (typeof price === "number" && Number.isFinite(price)) return price;
+  if (!price) return 0;
+  const match = String(price).replace(/,/g, "").match(/(\d+(?:\.\d+)?)/);
+  return match ? Number(match[1]) : 0;
+}
+
+function formatMoney(amount) {
+  const rounded = Math.round(amount);
+  return `$${rounded.toLocaleString("en-AU")}`;
+}
+
+function cartTotal() {
+  return cartEntries().reduce((sum, { item, qty }) => sum + parsePrice(item.price) * qty, 0);
+}
+
+function cartTotalMarkup() {
+  const total = cartTotal();
+  return `<p class="cart-total"><span>Total</span><strong>${formatMoney(total)}</strong></p>`;
+}
+
 function getDraftQty(id) {
   return state.draftQty.get(id) ?? 1;
 }
@@ -886,10 +631,6 @@ function renderProductModal() {
   const gallery = getProductGallery(item);
   const active = gallery[state.galleryIndex] || gallery[0];
   const inCart = state.cart.get(item.id) || 0;
-  const hasRichCopy = Boolean(item.hook || item.audience || item.benefits || item.includes || item.specs);
-  const features = (item.features || []).map((f) => `<li>${f}</li>`).join("");
-  const featureHeading = item.featureHeading || "What’s included";
-  const description = item.description || item.blurb;
   const isPurchase = /purchase/i.test(item.tag || "") || /purchase/i.test(item.detail || "");
   const isAddon = item.category === "addons" || /add-?on/i.test(item.tag || "");
 
@@ -907,41 +648,22 @@ function renderProductModal() {
     .map((step, i) => `<li><span class="product-step-num">${i + 1}</span><span>${step}</span></li>`)
     .join("");
 
-  const benefits = (item.benefits || []).map((f) => `<li>${f}</li>`).join("");
-  const includes = (item.includes || []).map((f) => `<li>${f}</li>`).join("");
-  const specs = (item.specs || [])
-    .map((s) => {
-      if (typeof s === "string") return `<div class="product-spec"><span>${s}</span></div>`;
-      return `<div class="product-spec"><dt>${s.label}</dt><dd>${s.value}</dd></div>`;
-    })
+  const detailsRows = (item.details || [])
+    .map(
+      (row) => `
+      <div class="product-detail-row">
+        <dt>${row.label}</dt>
+        <dd>${row.value}</dd>
+      </div>`
+    )
     .join("");
 
-  const richCopy = hasRichCopy
-    ? `
-        ${item.hook ? `<p class="product-hook">${item.hook}</p>` : ""}
-        ${item.audience ? `<p class="product-audience">${item.audience}</p>` : ""}
-        ${
-          benefits
-            ? `<h3 class="product-subhead">Why you’ll love it</h3><ul class="product-features">${benefits}</ul>`
-            : ""
-        }
-        ${
-          includes
-            ? `<h3 class="product-subhead">What’s included</h3><ul class="product-features">${includes}</ul>`
-            : ""
-        }
-        ${
-          specs
-            ? `<h3 class="product-subhead">Specifications</h3><dl class="product-specs">${specs}</dl>`
-            : ""
-        }
-      `
-    : `
+  const productCopy = `
         <p class="product-blurb">${item.blurb}</p>
-        ${item.description ? `<p class="product-desc">${description}</p>` : ""}
+        ${item.description ? `<p class="product-desc">${item.description}</p>` : ""}
         ${
-          features
-            ? `<h3 class="product-subhead">${featureHeading}</h3><ul class="product-features">${features}</ul>`
+          detailsRows
+            ? `<h3 class="product-subhead">Details</h3><dl class="product-details">${detailsRows}</dl>`
             : ""
         }
       `;
@@ -983,7 +705,39 @@ function renderProductModal() {
         ${item.subtitle ? `<p class="product-subtitle">${item.subtitle}</p>` : ""}
         <p class="product-price">${item.price}</p>
         <p class="product-price-note">${item.detail}</p>
-        ${richCopy}
+        <div class="product-actions">
+          ${qtyControlsMarkup(item.id, state.productQty, "product")}
+          <button type="button" class="btn btn-add" data-product-add="${item.id}">
+            Add to enquiry
+          </button>
+        </div>
+        ${inCart ? `<p class="in-cart-note">${inCart} already in cart</p>` : ""}
+        ${
+          item.note
+            ? `<p class="product-note">${item.note}</p>`
+            : isPurchase && (item.colours || []).length
+              ? `<p class="product-note">Purchase · yours to keep · mention your preferred colour in the enquiry.</p>`
+              : isPurchase || isAddon
+                ? ""
+                : `<details class="product-hire-details">
+                  <summary>Hire details</summary>
+                  <dl class="product-hire-list">
+                    <div>
+                      <dt>Hire length</dt>
+                      <dd>Standard 3-day hire (day before to day after your event)</dd>
+                    </div>
+                    <div>
+                      <dt>Bond</dt>
+                      <dd>$50 refundable bond per camera for damages &amp; late fees</dd>
+                    </div>
+                    <div>
+                      <dt>Collect or delivery</dt>
+                      <dd>Pickup just outside Brisbane CBD, or delivery (fees confirmed on enquiry)</dd>
+                    </div>
+                  </dl>
+                </details>`
+        }
+        ${productCopy}
         ${
           colours
             ? `<h3 class="product-subhead">Available colours</h3><ul class="product-colours">${colours}</ul>`
@@ -994,24 +748,23 @@ function renderProductModal() {
             ? `<h3 class="product-subhead">How it works</h3><ol class="product-steps">${howItWorks}</ol>`
             : ""
         }
-        ${
-          isPurchase
-            ? `<p class="product-note">Purchase · yours to keep · mention your preferred colour in the enquiry.</p>`
-            : isAddon
-              ? ""
-              : `<p class="product-note">Flexible 4-day hire · $70 refundable bond per camera (guestbook $70) · Brisbane pickup or local delivery from $18 (confirmed on enquiry).</p>`
-        }
-        <div class="product-actions">
-          ${qtyControlsMarkup(item.id, state.productQty, "product")}
-          <button type="button" class="btn btn-add" data-product-add="${item.id}">
-            Add to enquiry
-          </button>
-        </div>
-        ${inCart ? `<p class="in-cart-note">${inCart} already in cart</p>` : ""}
         <button type="button" class="text-link product-back" data-close-product>Back to catalogue</button>
       </div>
     </div>
   `;
+}
+
+function cardDescriptor(item) {
+  const subtitle = (item.subtitle || "").trim();
+  if (subtitle) return subtitle;
+
+  const detail = (item.detail || "").trim();
+  if (CAMERA_CATEGORIES.has(item.category)) {
+    const type = item.tag || item.category;
+    return detail ? `${type} · ${detail}` : type;
+  }
+
+  return detail;
 }
 
 function mediaMarkup(item) {
@@ -1022,19 +775,16 @@ function mediaMarkup(item) {
   const filename = item.image.replace(/^images\//, "");
   const alt = item.alt || `${item.name} for hire`;
   const hoverSrc = item.imageHover || "";
-  const total = 1 + (item.imageHover ? 1 : 0) + (item.gallery?.length || 0);
-  const count = total > 1 ? `<span class="photo-count">${total} photos</span>` : "";
 
   const primary = `<img class="item-photo item-photo-primary" src="${item.image}" alt="${alt}" loading="lazy" data-fallback="${filename}" />`;
 
   if (!hoverSrc) {
-    return `${primary}${count}`;
+    return primary;
   }
 
   return `
     ${primary}
     <img class="item-photo item-photo-hover" src="${hoverSrc}" alt="" loading="lazy" aria-hidden="true" />
-    ${count}
   `;
 }
 
@@ -1083,6 +833,7 @@ function renderCatalogue() {
   visible.forEach((item, index) => {
     const draft = getDraftQty(item.id);
     const inCart = state.cart.get(item.id) || 0;
+    const descriptor = cardDescriptor(item);
 
     const article = document.createElement("article");
     article.className = "item";
@@ -1095,15 +846,9 @@ function renderCatalogue() {
           ${mediaMarkup(item)}
         </div>
         <div class="item-body-preview">
-          <div class="item-meta">
-            <span>${item.tag}</span>
-          </div>
           <h3>${item.name}</h3>
-          ${item.subtitle ? `<p class="item-subtitle">${item.subtitle}</p>` : ""}
+          ${descriptor ? `<p class="item-descriptor">${descriptor}</p>` : ""}
           <p class="item-price">${item.price}</p>
-          <p class="item-price-note">${item.detail}</p>
-          <p>${item.blurb}</p>
-          <span class="item-view-link">View details →</span>
         </div>
       </button>
       <div class="item-actions">
@@ -1139,11 +884,22 @@ function renderCatalogue() {
 
 function cartLineMarkup(entry) {
   const { item, qty } = entry;
+  const unit = parsePrice(item.price);
+  const lineTotal = unit * qty;
+  const priceLabel = item.price
+    ? qty > 1
+      ? `${item.price} ×${qty} · ${formatMoney(lineTotal)}`
+      : item.price
+    : "";
+  const thumb = item.image
+    ? `<img class="cart-thumb" src="${item.image}" alt="" width="64" height="64" loading="lazy" />`
+    : `<span class="cart-thumb cart-thumb--empty" aria-hidden="true"></span>`;
   return `
     <div class="cart-line" data-id="${item.id}">
+      ${thumb}
       <div class="cart-line-info">
         <strong>${item.name}</strong>
-        <span>${item.tag}${item.price ? ` · ${item.price}` : ""}</span>
+        <span>${item.tag}${priceLabel ? ` · ${priceLabel}` : ""}</span>
       </div>
       ${qtyControlsMarkup(item.id, qty, "cart")}
       <button type="button" class="cart-remove" data-remove="${item.id}">Remove</button>
@@ -1156,9 +912,16 @@ function updateCartUI() {
   const units = cartUnitCount();
   const lines = entries.length;
   const browse = browseHref();
+  const total = cartTotal();
+  const totalLabel = formatMoney(total);
 
   if (selectionBar) selectionBar.hidden = units === 0;
-  if (selectionCount) selectionCount.textContent = units === 1 ? "1 item" : `${units} items`;
+  if (selectionCount) {
+    selectionCount.textContent =
+      units === 0
+        ? "0 items"
+        : `${units === 1 ? "1 item" : `${units} items`} · ${totalLabel}`;
+  }
   if (selectionNames) {
     selectionNames.textContent = lines
       ? entries.map(({ item, qty }) => (qty > 1 ? `${item.name} ×${qty}` : item.name)).join(", ")
@@ -1166,12 +929,15 @@ function updateCartUI() {
   }
 
   if (selectedItemsField) {
-    selectedItemsField.value = entries
-      .map(
-        ({ item, qty }) =>
-          `${item.name} ×${qty} (${item.tag}${item.price ? ` · ${item.price}` : ""})`
-      )
+    const lineText = entries
+      .map(({ item, qty }) => {
+        const lineTotal = parsePrice(item.price) * qty;
+        return `${item.name} ×${qty} (${item.tag}${item.price ? ` · ${item.price}` : ""}${
+          qty > 1 && item.price ? ` = ${formatMoney(lineTotal)}` : ""
+        })`;
+      })
       .join("; ");
+    selectedItemsField.value = units ? `${lineText}; Total: ${totalLabel}` : "";
   }
 
   if (cartBody) {
@@ -1181,6 +947,22 @@ function updateCartUI() {
       cartBody.innerHTML = entries.map(cartLineMarkup).join("");
     }
   }
+
+  document.querySelectorAll(".cart-footer").forEach((footer) => {
+    let totalEl = footer.querySelector(".cart-total");
+    if (!totalEl) {
+      totalEl = document.createElement("p");
+      totalEl.className = "cart-total";
+      footer.insertBefore(totalEl, footer.firstChild);
+    }
+    if (!units) {
+      totalEl.hidden = true;
+      totalEl.textContent = "";
+    } else {
+      totalEl.hidden = false;
+      totalEl.innerHTML = `<span>Total</span><strong>${totalLabel}</strong>`;
+    }
+  });
 
   if (enquireSelection) {
     if (!units) {
@@ -1192,6 +974,7 @@ function updateCartUI() {
         <div class="selected-chips">
           ${entries.map(cartLineMarkup).join("")}
         </div>
+        ${cartTotalMarkup()}
       `;
     }
   }
@@ -1627,9 +1410,9 @@ function setupFilmGuide() {
       } else if (shots <= 30) {
         tip += ` The <strong>Party Camera Kit</strong> already includes 3 Mini packs (30 shots) — a strong match for this count.`;
       } else if (shots <= 50) {
-        tip += ` Start with the <strong>Party Camera Kit</strong> and add <strong>extra Mini packs</strong> so guests don’t run out.`;
+        tip += ` Start with the <strong>Party Camera Kit</strong> and ask us for more Mini packs on enquiry so guests don’t run out.`;
       } else {
-        tip += ` Add plenty of <strong>extra Mini film</strong>, or ask us to build a bigger Instant kit for the crowd.`;
+        tip += ` Ask us to build a bigger Instant kit for the crowd when you enquire.`;
       }
     } else {
       const fit4 = shots <= 40;
@@ -1637,9 +1420,9 @@ function setupFilmGuide() {
       if (fit4) {
         tip += ` A <strong>Wedding Table Pack (4 cameras / 40 shots)</strong> covers this guest count at your chosen pace.`;
       } else if (fit6) {
-        tip += ` Ask for the <strong>6-camera table pack</strong> on enquiry, or add extra Mini packs.`;
+        tip += ` Ask for the <strong>6-camera table pack</strong> on enquiry.`;
       } else {
-        tip += ` Pair a table pack with <strong>extra Mini film</strong> add-ons so guests don’t run out.`;
+        tip += ` Ask us for a larger table kit or more Mini packs when you enquire so guests don’t run out.`;
       }
     }
 
@@ -1652,3 +1435,59 @@ function setupFilmGuide() {
 }
 
 setupFilmGuide();
+
+/* ——— From the day modal ——— */
+const dayModal = document.getElementById("day-modal");
+const dayBackdrop = document.getElementById("day-backdrop");
+const dayClose = document.getElementById("day-close");
+const dayShotImg = document.getElementById("day-shot-img");
+const dayCameraLink = document.getElementById("day-camera-link");
+const dayCameraImg = document.getElementById("day-camera-img");
+const dayCameraName = document.getElementById("day-camera-name");
+const dayCameraDetail = document.getElementById("day-camera-detail");
+const dayCameraPrice = document.getElementById("day-camera-price");
+
+function closeDayModal() {
+  if (!dayModal || dayModal.hidden) return;
+  dayModal.hidden = true;
+  document.body.classList.remove("day-open");
+}
+
+function openDayModal({ photo, alt, cameraId }) {
+  if (!dayModal || !dayShotImg || !dayCameraLink) return;
+  const camera = getItem(cameraId);
+  if (!camera) return;
+
+  dayShotImg.src = photo;
+  dayShotImg.alt = alt || "From the day";
+
+  dayCameraImg.src = camera.image;
+  dayCameraImg.alt = camera.alt || camera.name;
+  dayCameraName.textContent = camera.name;
+  dayCameraDetail.textContent = camera.detail || camera.tag || "";
+  dayCameraPrice.textContent = camera.price || "";
+  dayCameraLink.href = `cameras.html?product=${encodeURIComponent(camera.id)}`;
+
+  dayModal.hidden = false;
+  document.body.classList.add("day-open");
+  dayClose?.focus();
+}
+
+document.querySelectorAll("[data-day-photo]").forEach((btn) => {
+  btn.addEventListener("click", () => {
+    openDayModal({
+      photo: btn.dataset.dayPhoto,
+      alt: btn.dataset.dayAlt,
+      cameraId: btn.dataset.dayCamera || "kodak-pixpro-fz55",
+    });
+  });
+});
+
+dayBackdrop?.addEventListener("click", closeDayModal);
+dayClose?.addEventListener("click", closeDayModal);
+
+document.addEventListener("keydown", (event) => {
+  if (event.key === "Escape" && dayModal && !dayModal.hidden) {
+    closeDayModal();
+  }
+});

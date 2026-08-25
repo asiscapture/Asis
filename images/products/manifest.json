@@ -1,69 +1,78 @@
 {
   "kodak-pixpro-fz55": {
-    "front": "images/products/kodak-pixpro-fz55/front.png",
-    "hover": "images/products/kodak-pixpro-fz55/hover.png",
-    "gallery": [],
+    "front": "C:/Users/ceris/OneDrive/Documents/Asis webstie/images/products/kodak-pixpro-fz55/front.png",
+    "hover": "C:/Users/ceris/OneDrive/Documents/Asis webstie/images/products/kodak-pixpro-fz55/hover.png",
+    "gallery": [
+      "C:/Users/ceris/OneDrive/Documents/Asis webstie/images/products/kodak-pixpro-fz55/hover.png"
+    ],
     "lifestyle": false
   },
   "kodak-pixpro-c1": {
-    "front": "images/products/kodak-pixpro-c1/front.png",
-    "hover": "images/products/kodak-pixpro-c1/hover.png",
+    "front": "C:/Users/ceris/OneDrive/Documents/Asis webstie/images/products/kodak-pixpro-c1/front.png",
+    "hover": "C:/Users/ceris/OneDrive/Documents/Asis webstie/images/products/kodak-pixpro-c1/hover.png",
     "gallery": [
-      "images/products/kodak-pixpro-c1/extra-1.png",
-      "images/products/kodak-pixpro-c1/extra-2.png"
+      "C:/Users/ceris/OneDrive/Documents/Asis webstie/images/products/kodak-pixpro-c1/hover.png",
+      "C:/Users/ceris/OneDrive/Documents/Asis webstie/images/products/kodak-pixpro-c1/extra-1.png",
+      "C:/Users/ceris/OneDrive/Documents/Asis webstie/images/products/kodak-pixpro-c1/extra-2.png"
     ],
     "lifestyle": false
   },
   "kodak-ektar-h35": {
-    "front": "images/products/kodak-ektar-h35/front.png",
-    "hover": "images/products/kodak-ektar-h35/hover.png",
+    "front": "C:/Users/ceris/OneDrive/Documents/Asis webstie/images/products/kodak-ektar-h35/front.png",
+    "hover": null,
     "gallery": [],
     "lifestyle": false
   },
   "kodak-m35": {
-    "front": "images/products/kodak-m35/front.png",
-    "hover": null,
+    "front": "C:/Users/ceris/OneDrive/Documents/Asis webstie/images/products/kodak-m35/front.png",
+    "hover": "C:/Users/ceris/OneDrive/Documents/Asis webstie/images/products/kodak-m35/hover.png",
     "gallery": [
-      "images/products/kodak-m35/extra-1.png",
-      "images/products/kodak-m35/extra-2.png"
+      "C:/Users/ceris/OneDrive/Documents/Asis webstie/images/products/kodak-m35/hover.png",
+      "C:/Users/ceris/OneDrive/Documents/Asis webstie/images/products/kodak-m35/extra-1.png",
+      "C:/Users/ceris/OneDrive/Documents/Asis webstie/images/products/kodak-m35/extra-2.png",
+      "C:/Users/ceris/OneDrive/Documents/Asis webstie/images/products/kodak-m35/extra-3.png"
     ],
     "lifestyle": false
   },
   "instax-mini-evo": {
-    "front": "images/products/instax-mini-evo/front.png",
-    "hover": "images/products/instax-mini-evo/hover.png",
+    "front": "C:/Users/ceris/OneDrive/Documents/Asis webstie/images/products/instax-mini-evo/front.png",
+    "hover": "C:/Users/ceris/OneDrive/Documents/Asis webstie/images/products/instax-mini-evo/hover.png",
     "gallery": [
-      "images/products/instax-mini-evo/extra-1.png",
-      "images/products/instax-mini-evo/extra-2.png"
+      "C:/Users/ceris/OneDrive/Documents/Asis webstie/images/products/instax-mini-evo/hover.png",
+      "C:/Users/ceris/OneDrive/Documents/Asis webstie/images/products/instax-mini-evo/extra-1.png",
+      "C:/Users/ceris/OneDrive/Documents/Asis webstie/images/products/instax-mini-evo/extra-2.png"
     ],
     "lifestyle": false
   },
   "instax-square-sq40": {
-    "front": "images/products/instax-square-sq40/front.png",
-    "hover": "images/products/instax-square-sq40/hover.png",
+    "front": "C:/Users/ceris/OneDrive/Documents/Asis webstie/images/products/instax-square-sq40/front.png",
+    "hover": "C:/Users/ceris/OneDrive/Documents/Asis webstie/images/products/instax-square-sq40/hover.png",
     "gallery": [
-      "images/products/instax-square-sq40/extra-1.png"
+      "C:/Users/ceris/OneDrive/Documents/Asis webstie/images/products/instax-square-sq40/hover.png",
+      "C:/Users/ceris/OneDrive/Documents/Asis webstie/images/products/instax-square-sq40/extra-1.png"
     ],
     "lifestyle": false
   },
   "instax-mini-12": {
-    "front": "images/products/instax-mini-12/front.png",
-    "hover": "images/products/instax-mini-12/hover.png",
+    "front": "C:/Users/ceris/OneDrive/Documents/Asis webstie/images/products/instax-mini-12/front.png",
+    "hover": "C:/Users/ceris/OneDrive/Documents/Asis webstie/images/products/instax-mini-12/hover.png",
     "gallery": [
-      "images/products/instax-mini-12/extra-1.png"
+      "C:/Users/ceris/OneDrive/Documents/Asis webstie/images/products/instax-mini-12/hover.png",
+      "C:/Users/ceris/OneDrive/Documents/Asis webstie/images/products/instax-mini-12/extra-1.png"
     ],
     "lifestyle": false
   },
   "video-capsule": {
-    "front": "images/products/video-capsule/front.png",
-    "hover": "images/products/video-capsule/hover.png",
+    "front": "C:/Users/ceris/OneDrive/Documents/Asis webstie/images/products/video-capsule/front.png",
+    "hover": "C:/Users/ceris/OneDrive/Documents/Asis webstie/images/products/video-capsule/hover.png",
     "gallery": [
-      "images/products/video-capsule/extra-1.png"
+      "C:/Users/ceris/OneDrive/Documents/Asis webstie/images/products/video-capsule/hover.png",
+      "C:/Users/ceris/OneDrive/Documents/Asis webstie/images/products/video-capsule/extra-1.png"
     ],
     "lifestyle": false
   },
   "vintage-video-guestbook": {
-    "front": "images/products/vintage-video-guestbook/front.png",
+    "front": "C:/Users/ceris/OneDrive/Documents/Asis webstie/images/products/vintage-video-guestbook/front.png",
     "hover": null,
     "gallery": [],
     "lifestyle": false
@@ -78,20 +87,15 @@
     "lifestyle": false
   },
   "film-book": {
-    "front": "images/products/film-book/front.jpg",
-    "hover": "images/products/film-book/hover.jpg",
-    "gallery": [
-      "images/products/film-book/extra-1.jpg",
-      "images/products/film-book/extra-2.jpg"
-    ],
+    "front": null,
+    "hover": null,
+    "gallery": [],
     "lifestyle": true
   },
   "film-photo-booklet": {
-    "front": "images/products/film-photo-booklet/front.jpg",
-    "hover": "images/products/film-photo-booklet/hover.jpg",
-    "gallery": [
-      "images/products/film-photo-booklet/extra-1.jpg"
-    ],
+    "front": null,
+    "hover": null,
+    "gallery": [],
     "lifestyle": true
   },
   "holy-trinity-bundle": {
@@ -158,19 +162,64 @@
     "lifestyle": false
   },
   "addon-film": {
-    "front": "images/products/addon-film/front.png",
+    "front": "C:/Users/ceris/OneDrive/Documents/Asis webstie/images/products/addon-film/front.png",
     "hover": null,
     "gallery": [
-      "images/products/addon-film/extra-1.png"
+      "C:/Users/ceris/OneDrive/Documents/Asis webstie/images/products/addon-film/extra-1.png"
     ],
     "lifestyle": false
   },
   "addon-develop-scan": {
-    "front": "images/products/addon-develop-scan/front.jpg",
+    "front": null,
+    "hover": null,
+    "gallery": [],
     "lifestyle": true
   },
   "addon-prints": {
-    "front": "images/photos.jpg",
+    "front": null,
+    "hover": null,
+    "gallery": [],
     "lifestyle": true
+  },
+  "polaroid-go-gen2": {
+    "front": "C:/Users/ceris/OneDrive/Documents/Asis webstie/images/products/polaroid-go-gen2/front.png",
+    "hover": "C:/Users/ceris/OneDrive/Documents/Asis webstie/images/products/polaroid-go-gen2/hover.png",
+    "gallery": [
+      "C:/Users/ceris/OneDrive/Documents/Asis webstie/images/products/polaroid-go-gen2/hover.png",
+      "C:/Users/ceris/OneDrive/Documents/Asis webstie/images/products/polaroid-go-gen2/extra-1.png"
+    ],
+    "lifestyle": false
+  },
+  "traditional-guestbook": {
+    "front": null,
+    "hover": null,
+    "gallery": [],
+    "lifestyle": true
+  },
+  "everyday-moments-bundle": {
+    "front": "C:/Users/ceris/OneDrive/Documents/Asis webstie/images/products/everyday-moments-bundle/front.png",
+    "hover": "C:/Users/ceris/OneDrive/Documents/Asis webstie/images/products/everyday-moments-bundle/hover.png",
+    "gallery": [
+      "C:/Users/ceris/OneDrive/Documents/Asis webstie/images/products/everyday-moments-bundle/hover.png",
+      "C:/Users/ceris/OneDrive/Documents/Asis webstie/images/products/everyday-moments-bundle/extra-1.png"
+    ],
+    "lifestyle": false
+  },
+  "celebration-bundle": {
+    "front": "C:/Users/ceris/OneDrive/Documents/Asis webstie/images/products/celebration-bundle/front.png",
+    "hover": "C:/Users/ceris/OneDrive/Documents/Asis webstie/images/products/celebration-bundle/hover.png",
+    "gallery": [
+      "C:/Users/ceris/OneDrive/Documents/Asis webstie/images/products/celebration-bundle/hover.png",
+      "C:/Users/ceris/OneDrive/Documents/Asis webstie/images/products/celebration-bundle/extra-1.png"
+    ],
+    "lifestyle": false
+  },
+  "asis-complete-bundle": {
+    "front": null,
+    "hover": null,
+    "gallery": [
+      "C:/Users/ceris/OneDrive/Documents/Asis webstie/images/products/asis-complete-bundle/extra-1.png"
+    ],
+    "lifestyle": false
   }
 }

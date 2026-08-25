@@ -37,7 +37,7 @@ vintage-video-guestbook.jpg
 ========================================
 HOLD / PHOTO ITEMS
 ========================================
-film-book.jpg
+film-book.jpg  (Accordion Album)
 film-photo-booklet.jpg
 (traditional-guestbook merged into film-book / Keepsake Album)
 
@@ -52,8 +52,6 @@ asis-complete-bundle.jpg
 ========================================
 ADD-ONS
 ========================================
-addon-film.jpg
-addon-develop-scan.jpg
 addon-prints.jpg
 
 ========================================
