@@ -14,6 +14,7 @@ DIGITAL CAMERAS
 ========================================
 kodak-pixpro-fz55.jpg
 kodak-pixpro-c1.jpg
+Exilim-_1.png / Exilim-_2.png / Exilim-_3.png  (Casio Exilim EX-Z110)
 
 ========================================
 FILM CAMERAS

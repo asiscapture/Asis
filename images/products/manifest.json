@@ -221,5 +221,14 @@
       "C:/Users/ceris/OneDrive/Documents/Asis webstie/images/products/asis-complete-bundle/extra-1.png"
     ],
     "lifestyle": false
+  },
+  "casio-exilim-ex-z110": {
+    "front": "c:\\Users\\ceris\\OneDrive\\Documents\\Asis webstie\\images\\products\\casio-exilim-ex-z110\\front.png",
+    "hover": "c:\\Users\\ceris\\OneDrive\\Documents\\Asis webstie\\images\\products\\casio-exilim-ex-z110\\hover.png",
+    "gallery": [
+      "c:\\Users\\ceris\\OneDrive\\Documents\\Asis webstie\\images\\products\\casio-exilim-ex-z110\\hover.png",
+      "c:\\Users\\ceris\\OneDrive\\Documents\\Asis webstie\\images\\products\\casio-exilim-ex-z110\\extra-1.png"
+    ],
+    "lifestyle": false
   }
 }

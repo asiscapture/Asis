@@ -52,6 +52,30 @@ const CATALOGUE = [
     ],
     alt: "Kodak PIXPRO C1 compact digital camera hire",
   },
+  {
+    id: "casio-exilim-ex-z110",
+    name: "Casio Exilim EX-Z110",
+    category: "digital",
+    tag: "Digital",
+    detail: "32GB SD included",
+    price: "$35",
+    blurb:
+      "A silver mid-2000s digicam classic — compact, flashy and made for parties, nights out and that early digital look.",
+    description:
+      "6MP point-and-shoot with 3× optical zoom. Easy for anyone to pick up, pass around and shoot.",
+    details: [
+      { label: "Format", value: "Digital" },
+      { label: "Storage", value: "32GB SD included" },
+      { label: "Includes", value: "Camera, SD card, battery, instruction card" },
+    ],
+    tone: "cool",
+    image: "images/products/casio-exilim-ex-z110/front.png",
+    imageHover: "images/products/casio-exilim-ex-z110/hover.png",
+    gallery: [
+      "images/products/casio-exilim-ex-z110/extra-1.png"
+    ],
+    alt: "Casio Exilim EX-Z110 silver digital camera hire Brisbane",
+  },
 
   /* ——— Film cameras ——— */
   {
@@ -442,15 +466,24 @@ const CATALOGUE = [
 
 
 const CAMERA_CATEGORIES = new Set(["digital", "film", "instant"]);
-const CAMERA_PAGE_CATEGORIES = new Set(["digital", "film", "instant", "bundles", "addons"]);
-const KEEPSAKE_PAGE_CATEGORIES = new Set(["guestbooks", "keepsakes"]);
+const CAMERA_PAGE_CATEGORIES = new Set([
+  "digital",
+  "film",
+  "instant",
+  "bundles",
+  "addons",
+  "guestbooks",
+  "keepsakes",
+]);
+const KEEPSAKE_CATEGORIES = new Set(["guestbooks", "keepsakes"]);
 const CART_STORAGE_KEY = "unposed-enquiry-cart";
 const catalogueScope = document.body.dataset.catalogue || "all";
 
 const BROWSE_BY_SCOPE = {
   cameras: "cameras.html",
-  keepsakes: "keepsakes.html",
-  home: "index.html#discover",
+  keepsakes: "cameras.html?filter=keepsakes",
+  home: "index.html#explore-categories",
+  day: "cameras.html",
 };
 
 const state = {
@@ -517,17 +550,14 @@ function scopedCatalogue() {
   if (catalogueScope === "cameras") {
     return CATALOGUE.filter((item) => CAMERA_PAGE_CATEGORIES.has(item.category));
   }
-  if (catalogueScope === "keepsakes") {
-    return CATALOGUE.filter((item) => KEEPSAKE_PAGE_CATEGORIES.has(item.category));
-  }
-  if (catalogueScope === "home") {
+  if (catalogueScope === "home" || catalogueScope === "day") {
     return [];
   }
   return CATALOGUE;
 }
 
 function browseHref() {
-  return BROWSE_BY_SCOPE[catalogueScope] || "index.html#discover";
+  return BROWSE_BY_SCOPE[catalogueScope] || "index.html#explore-categories";
 }
 
 function getItem(id) {
@@ -801,6 +831,7 @@ function qtyControlsMarkup(id, qty, scope) {
 function matchesFilter(item, filter) {
   if (filter === "all") return true;
   if (filter === "cameras") return CAMERA_CATEGORIES.has(item.category);
+  if (filter === "keepsakes") return KEEPSAKE_CATEGORIES.has(item.category);
   return item.category === filter;
 }
 
@@ -810,9 +841,9 @@ function catalogueSortRank(item) {
     digital: 1,
     film: 2,
     instant: 3,
-    addons: 4,
-    guestbooks: 0,
-    keepsakes: 1,
+    guestbooks: 4,
+    keepsakes: 5,
+    addons: 6,
   };
   return order[item.category] ?? 9;
 }
@@ -823,10 +854,7 @@ function renderCatalogue() {
 
   let visible = scopedCatalogue().filter((item) => matchesFilter(item, state.filter));
 
-  if (
-    (catalogueScope === "cameras" || catalogueScope === "keepsakes") &&
-    state.filter === "all"
-  ) {
+  if (catalogueScope === "cameras" && state.filter === "all") {
     visible = [...visible].sort((a, b) => catalogueSortRank(a) - catalogueSortRank(b));
   }
 
@@ -1154,7 +1182,8 @@ function setCatalogueFilter(filter) {
 
 function applyFilterFromUrl() {
   const params = new URLSearchParams(window.location.search);
-  const filter = params.get("filter");
+  let filter = params.get("filter");
+  if (filter === "guestbooks") filter = "keepsakes";
   if (filter) setCatalogueFilter(filter);
 }
 
@@ -1309,14 +1338,14 @@ function setupReveal() {
     }
   });
 
-  document.querySelectorAll(".trust-list, .discover-grid--four, .discover-grid--bundles, .steps, .catalogue").forEach((group) => {
+  document.querySelectorAll(".trust-list, #explore-categories .discover-grid, .discover-grid--four, .steps, .catalogue").forEach((group) => {
     [...group.children].forEach((child, index) => {
       if (!child.classList.contains("reveal") && !child.classList.contains("item")) return;
       child.style.setProperty("--reveal-delay", `${Math.min(index, 5) * 85}ms`);
     });
   });
 
-  document.querySelectorAll("#discover .discover-item, .proof-item").forEach((child) => {
+  document.querySelectorAll(".proof-item").forEach((child) => {
     child.style.setProperty("--reveal-delay", "0ms");
   });
 
@@ -1384,6 +1413,21 @@ loadCart();
 applyFilterFromUrl();
 setupReveal();
 setupHeroParallax();
+
+(function setupHomeHeader() {
+  const header = document.querySelector(".site-header");
+  const hero = document.querySelector(".hero");
+  if (!header || !hero || document.body.dataset.catalogue !== "home") return;
+
+  const update = () => {
+    const fadeAt = Math.max(hero.offsetHeight - header.offsetHeight * 1.4, 80);
+    header.classList.toggle("is-scrolled", window.scrollY > fadeAt);
+  };
+
+  window.addEventListener("scroll", update, { passive: true });
+  window.addEventListener("resize", update);
+  update();
+})();
 renderCatalogue();
 updateCartUI();
 applyProductFromUrl();
@@ -1466,7 +1510,7 @@ function openDayModal({ photo, alt, cameraId }) {
   dayCameraName.textContent = camera.name;
   dayCameraDetail.textContent = camera.detail || camera.tag || "";
   dayCameraPrice.textContent = camera.price || "";
-  dayCameraLink.href = `cameras.html?product=${encodeURIComponent(camera.id)}`;
+  dayCameraLink.dataset.dayCamera = camera.id;
 
   dayModal.hidden = false;
   document.body.classList.add("day-open");
@@ -1485,6 +1529,17 @@ document.querySelectorAll("[data-day-photo]").forEach((btn) => {
 
 dayBackdrop?.addEventListener("click", closeDayModal);
 dayClose?.addEventListener("click", closeDayModal);
+
+dayCameraLink?.addEventListener("click", () => {
+  const cameraId = dayCameraLink.dataset.dayCamera;
+  if (!cameraId) return;
+  closeDayModal();
+  if (productModal && productPanel) {
+    openProduct(cameraId);
+  } else {
+    window.location.href = `cameras.html?product=${encodeURIComponent(cameraId)}`;
+  }
+});
 
 document.addEventListener("keydown", (event) => {
   if (event.key === "Escape" && dayModal && !dayModal.hidden) {

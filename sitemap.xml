@@ -19,6 +19,12 @@
     <priority>0.95</priority>
   </url>
   <url>
+    <loc>https://asiscapture.com.au/from-the-day.html</loc>
+    <lastmod>2026-08-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
     <loc>https://asiscapture.com.au/wedding-camera-hire.html</loc>
     <lastmod>2026-08-13</lastmod>
     <changefreq>weekly</changefreq>

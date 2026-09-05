@@ -8,155 +8,22 @@
       name="description"
       content="Keepsakes from unposed — Vintage Video Guestbook hire, plus Keepsake Album, Accordion Album and Pop-up Gallery to purchase. Brisbane hire."
     />
-    <meta name="robots" content="index, follow, max-image-preview:large" />
-    <meta name="author" content="unposed" />
-    <link rel="canonical" href="https://asiscapture.com.au/keepsakes.html" />
-
-    <meta property="og:type" content="website" />
-    <meta property="og:locale" content="en_AU" />
-    <meta property="og:site_name" content="unposed" />
-    <meta property="og:title" content="Keepsakes Brisbane | Guest Books &amp; Photo Albums | unposed" />
-    <meta
-      property="og:description"
-      content="Guest books and photo books — memories you can keep after the day."
-    />
-    <meta property="og:url" content="https://asiscapture.com.au/keepsakes.html" />
-    <meta property="og:image" content="https://asiscapture.com.au/images/hero.jpg" />
-
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Nunito+Sans:ital,opsz,wght@0,6..12,400;0,6..12,500;0,6..12,600;0,6..12,700;1,6..12,400&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="styles.css" />
+    <link rel="canonical" href="https://asiscapture.com.au/cameras.html?filter=keepsakes" />
+    <meta http-equiv="refresh" content="0; url=cameras.html?filter=keepsakes" />
+    <script>
+      (function () {
+        var params = new URLSearchParams(window.location.search);
+        var dest = new URL("cameras.html", window.location.href);
+        dest.searchParams.set("filter", "keepsakes");
+        if (params.get("product")) dest.searchParams.set("product", params.get("product"));
+        window.location.replace(dest.pathname + dest.search);
+      })();
+    </script>
   </head>
-  <body data-catalogue="keepsakes">
-    <div class="grain" aria-hidden="true"></div>
-
-    <header class="site-header">
-      <a class="logo" href="index.html" aria-label="unposed home">unposed</a>
-      <nav class="nav" aria-label="Primary">
-        <a href="cameras.html">Cameras</a>
-        <a href="keepsakes.html">Keepsakes</a>
-        <a href="wedding-camera-hire.html">Wedding</a>
-        <a href="index.html#how">How to hire</a>
-        <a href="index.html#enquire" class="nav-cta">Hire now</a>
-      </nav>
-      <button class="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false">
-        <span></span><span></span>
-      </button>
-    </header>
-
-    <main id="top">
-      <section class="hire page-hire" id="hire">
-        <div class="section-head">
-          <p class="aside-label">Keepsakes</p>
-          <h1>Guest books &amp; photo albums</h1>
-          <p>
-            Guest books and photo albums for after the day. Fill them with prints, notes and
-            messages your way. Video guestbook to hire, albums to purchase and keep.
-          </p>
-        </div>
-
-        <div class="filters" role="tablist" aria-label="Keepsake type">
-          <button type="button" class="filter is-active" data-filter="all" role="tab" aria-selected="true">
-            All
-          </button>
-          <button type="button" class="filter" data-filter="guestbooks" role="tab" aria-selected="false">
-            Guest Books
-          </button>
-          <button type="button" class="filter" data-filter="keepsakes" role="tab" aria-selected="false">
-            Photo Albums
-          </button>
-        </div>
-
-        <noscript>
-          <ul class="seo-product-list">
-            <li>Vintage Video Guestbook hire — $199</li>
-            <li>Keepsake Album — $85 (purchase)</li>
-            <li>Accordion Album — $25 (purchase)</li>
-            <li>Pop-up Gallery — $39 (purchase)</li>
-          </ul>
-        </noscript>
-
-        <div class="catalogue" id="catalogue"></div>
-
-        <aside class="selection-bar" id="selection-bar" hidden>
-          <div class="selection-summary">
-            <span id="selection-count">0 items</span>
-            <span class="selection-divider" aria-hidden="true">·</span>
-            <span id="selection-names">Cart is empty</span>
-          </div>
-          <div class="selection-actions">
-            <button type="button" class="btn btn-ghost-dark" id="view-cart-btn">View cart</button>
-            <a class="btn btn-primary" href="index.html#enquire">Continue to enquire</a>
-          </div>
-        </aside>
-      </section>
-
-      <div class="cart-drawer" id="cart-drawer" hidden>
-        <button type="button" class="cart-backdrop" id="cart-backdrop" aria-label="Close cart"></button>
-        <aside class="cart-panel" role="dialog" aria-modal="true" aria-labelledby="cart-title">
-          <header class="cart-header">
-            <h2 id="cart-title">Your enquiry cart</h2>
-            <button type="button" class="cart-close" id="cart-close" aria-label="Close cart">
-              Close
-            </button>
-          </header>
-          <div class="cart-body" id="cart-body"></div>
-          <footer class="cart-footer">
-            <a class="btn btn-primary btn-wide" href="index.html#enquire" id="cart-enquire-btn">
-              Continue to enquire
-            </a>
-          </footer>
-        </aside>
-      </div>
-
-      <div class="product-modal" id="product-modal" hidden>
-        <button
-          type="button"
-          class="product-backdrop"
-          id="product-backdrop"
-          aria-label="Close product"
-        ></button>
-        <div
-          class="product-panel"
-          role="dialog"
-          aria-modal="true"
-          aria-labelledby="product-title"
-          id="product-panel"
-        ></div>
-      </div>
-    </main>
-
-    <footer class="site-footer">
-      <div class="footer-brand">
-        <p class="logo">unposed</p>
-        <p class="footer-aka">Capture life as is</p>
-        <p class="footer-tagline">Film · Instant · Digital camera hire · Keepsakes</p>
-        <address class="nap">
-          <span class="nap-name">unposed</span><br />
-          <span class="nap-address">Brisbane, QLD 4000, Australia</span><br />
-          <a class="nap-email" href="mailto:asis.capture@gmail.com">asis.capture@gmail.com</a>
-        </address>
-      </div>
-      <div class="footer-meta">
-        <nav class="footer-nav" aria-label="Footer">
-          <a href="cameras.html">Cameras</a>
-          <a href="keepsakes.html">Keepsakes</a>
-          <a href="cameras.html?filter=bundles">Bundles</a>
-          <a href="wedding-camera-hire.html">Wedding</a>
-          <a href="index.html#faq">FAQs</a>
-        </nav>
-        <p class="footer-legal">
-          <a href="terms.html">Terms &amp; conditions</a>
-          <a href="privacy.html">Privacy policy</a>
-        </p>
-        <p>© <span id="year"></span> unposed</p>
-      </div>
-    </footer>
-
-    <script src="app.js"></script>
+  <body>
+    <p>
+      Keepsakes now live on the
+      <a href="cameras.html?filter=keepsakes">cameras page</a>.
+    </p>
   </body>
 </html>
