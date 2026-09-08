@@ -571,7 +571,9 @@ function loadCart() {
   state.cart.clear();
   try {
     let raw = localStorage.getItem(CART_STORAGE_KEY);
-    const legacy = localStorage.getItem("vera-enquiry-cart");
+    const legacy =
+      localStorage.getItem("vera-enquiry-cart") ||
+      localStorage.getItem("unposed-enquiry-cart");
     if (!raw && legacy) raw = legacy;
     if (!raw) return;
     const data = JSON.parse(raw);
@@ -581,6 +583,7 @@ function loadCart() {
     });
     saveCart();
     localStorage.removeItem("vera-enquiry-cart");
+    localStorage.removeItem("unposed-enquiry-cart");
   } catch {
     /* ignore bad storage */
   }
@@ -659,7 +662,7 @@ function setCartQty(id, qty) {
 }
 
 function addToCart(id, qty = 1) {
-  const item = ITEMS.find((entry) => entry.id === id);
+  const item = getItem(id);
   if (!item || item.comingSoon) return;
   const current = state.cart.get(id) || 0;
   setCartQty(id, current + qty);

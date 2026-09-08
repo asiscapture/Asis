@@ -1660,6 +1660,14 @@ body.product-open {
   animation: rise 0.45s var(--ease);
 }
 
+/* Match cameras page bar width when the bar sits outside .hire */
+main > .selection-bar {
+  width: min(calc(var(--max) - 2 * var(--space)), calc(100% - 2 * var(--space)));
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: clamp(4.5rem, 10vw, 8rem);
+}
+
 .selection-summary {
   display: flex;
   flex-wrap: wrap;
@@ -1838,6 +1846,30 @@ body.cart-open {
 
 .enquire .cart-remove:hover {
   color: var(--on-accent);
+}
+
+.enquire-selection .qty {
+  border-color: rgba(247, 243, 236, 0.45);
+  background: #f7f3ec;
+}
+
+.enquire-selection .qty-btn {
+  color: var(--ink);
+}
+
+.enquire-selection .qty-btn:hover {
+  background: color-mix(in srgb, var(--ink) 8%, transparent);
+}
+
+.enquire-selection .qty-value {
+  color: var(--ink);
+  font-weight: 700;
+  font-size: 1.15rem;
+  min-width: 1.85rem;
+}
+
+.enquire-selection .selected-chips .cart-line .qty {
+  background: #f7f3ec;
 }
 
 .enquire-intro {
@@ -3523,11 +3555,16 @@ body.day-open {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
-  .selection-bar {
+  .selection-bar,
+  main > .selection-bar {
     position: fixed;
     left: 0.75rem;
     right: 0.75rem;
     bottom: max(0.6rem, env(safe-area-inset-bottom));
+    width: auto;
+    max-width: none;
+    margin-left: 0;
+    margin-right: 0;
     flex-direction: row;
     align-items: center;
     gap: 0.75rem;
