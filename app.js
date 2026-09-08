@@ -93,6 +93,7 @@ const CATALOGUE = [
       { label: "Includes", value: "Camera, SD card, battery, instruction card" },
     ],
     tone: "soft",
+    comingSoon: true,
     image: "images/products/fujifilm-finepix-z33wp/front.png",
     imageHover: "images/products/fujifilm-finepix-z33wp/hover.png",
     gallery: [
@@ -118,6 +119,7 @@ const CATALOGUE = [
       { label: "Includes", value: "Camera, SD card, battery, instruction card" },
     ],
     tone: "cool",
+    comingSoon: true,
     image: "images/products/olympus-vg-170/front.png",
     imageHover: "images/products/olympus-vg-170/hover.png",
     alt: "Olympus VG-170 digital camera hire Brisbane",
@@ -411,13 +413,13 @@ const CATALOGUE = [
     name: "Happily Ever After",
     category: "bundles",
     tag: "Bundle",
-    subtitle: "Wedding cameras, video guestbook & albums",
+    subtitle: "Photo guestbook station — shoot, print, leave a wish",
     detail: "3 cameras · Guestbook · Books · Bundle saving",
     price: "$399",
     blurb:
-      "Our wedding hero kit — Instant cameras for the tables, a video guestbook, and albums to keep forever.",
+      "A photo guestbook station for the day — guests shoot, print, and leave a wish in the album.",
     description:
-      "Guest shots, spoken memories and keepsakes covered in one hire — better value than piecing it together yourself.",
+      "Set up on one table: Instant cameras for guests to take a shot, stick the print in a book, and leave their wishes. Includes a video guestbook and albums to keep.",
     details: [
       { label: "Cameras", value: "3 Instant · Mini Evo, Mini 12 & Square SQ40" },
       { label: "Also includes", value: "Vintage Video Guestbook hire · Keepsake Album · Pop-up Gallery" },
@@ -433,7 +435,7 @@ const CATALOGUE = [
       "images/products/keepsake-album/front.png",
       "images/products/film-photo-booklet/front.jpg"
     ],
-    alt: "Happily Ever After wedding bundle — instant cameras, video guestbook and photo albums",
+    alt: "Happily Ever After photo guestbook station — Instant cameras, video guestbook and albums",
   },
   {
     id: "party-bundle",
@@ -657,6 +659,8 @@ function setCartQty(id, qty) {
 }
 
 function addToCart(id, qty = 1) {
+  const item = ITEMS.find((entry) => entry.id === id);
+  if (!item || item.comingSoon) return;
   const current = state.cart.get(id) || 0;
   setCartQty(id, current + qty);
 }
@@ -748,12 +752,13 @@ function renderProductModal() {
     <button type="button" class="product-close" aria-label="Close product">Close</button>
     <div class="product-layout">
       <div class="product-gallery">
-        <div class="product-stage${active?.lifestyle ? " is-lifestyle" : ""}">
+        <div class="product-stage${active?.lifestyle ? " is-lifestyle" : ""}${item.comingSoon ? " is-coming-soon" : ""}">
           ${
             active
               ? `<img src="${active.src}" alt="${active.alt}" id="product-main-image" />`
               : `<div class="photo-slot">Photo coming soon</div>`
           }
+          ${item.comingSoon ? `<span class="coming-soon-badge">Coming soon</span>` : ""}
         </div>
         ${
           gallery.length > 1
@@ -782,10 +787,14 @@ function renderProductModal() {
         <p class="product-price">${item.price}</p>
         <p class="product-price-note">${item.detail}</p>
         <div class="product-actions">
-          ${qtyControlsMarkup(item.id, state.productQty, "product")}
+          ${
+            item.comingSoon
+              ? `<button type="button" class="btn btn-add" disabled>Coming soon</button>`
+              : `${qtyControlsMarkup(item.id, state.productQty, "product")}
           <button type="button" class="btn btn-add" data-product-add="${item.id}">
             Add to enquiry
-          </button>
+          </button>`
+          }
         </div>
         ${inCart ? `<p class="in-cart-note">${inCart} already in cart</p>` : ""}
         ${
@@ -916,8 +925,9 @@ function renderCatalogue() {
 
     article.innerHTML = `
       <button type="button" class="item-open" data-open-product="${item.id}" aria-label="View ${item.name}">
-        <div class="item-media${item.image ? " has-photo" : ""}${item.lifestyle ? " is-lifestyle" : ""}${item.imageHover ? " has-hover" : ""}" data-tone="${item.tone}">
+        <div class="item-media${item.image ? " has-photo" : ""}${item.lifestyle ? " is-lifestyle" : ""}${item.imageHover ? " has-hover" : ""}${item.comingSoon ? " is-coming-soon" : ""}" data-tone="${item.tone}">
           ${mediaMarkup(item)}
+          ${item.comingSoon ? `<span class="coming-soon-badge">Coming soon</span>` : ""}
         </div>
         <div class="item-body-preview">
           <h3>${item.name}</h3>
@@ -926,10 +936,14 @@ function renderCatalogue() {
         </div>
       </button>
       <div class="item-actions">
-        ${qtyControlsMarkup(item.id, draft, "draft")}
+        ${
+          item.comingSoon
+            ? `<button type="button" class="btn btn-add" disabled>Coming soon</button>`
+            : `${qtyControlsMarkup(item.id, draft, "draft")}
         <button type="button" class="btn btn-add" data-add="${item.id}">
           Add to enquiry
-        </button>
+        </button>`
+        }
       </div>
       ${inCart ? `<p class="in-cart-note">${inCart} in cart</p>` : ""}
     `;

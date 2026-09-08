@@ -1013,6 +1013,32 @@ body[data-catalogue="home"] .site-header:has(.nav.is-open) .nav-toggle span {
   position: relative;
 }
 
+.coming-soon-badge {
+  position: absolute;
+  top: 0.65rem;
+  right: 0.65rem;
+  z-index: 2;
+  margin: 0;
+  padding: 0.28rem 0.45rem;
+  font-family: var(--font-body);
+  font-size: 0.62rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink);
+  background: rgba(247, 243, 236, 0.92);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  line-height: 1;
+  pointer-events: none;
+}
+
+.btn-add:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+  transform: none;
+}
+
 .item-media.has-photo::before {
   display: none;
 }
@@ -1237,6 +1263,7 @@ body.product-open {
 }
 
 .product-stage {
+  position: relative;
   aspect-ratio: 1;
   background: var(--product-plate);
   display: grid;
@@ -1980,6 +2007,12 @@ body[data-catalogue="home"] #from-the-day.proof {
   padding-bottom: clamp(2.75rem, 6vw, 4.5rem);
 }
 
+@media (max-width: 720px) {
+  body[data-catalogue="home"] #from-the-day .proof-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
 .proof.page-hire {
   padding-top: clamp(6rem, 12vh, 8rem);
 }
@@ -2708,6 +2741,29 @@ body.day-open {
   background: var(--bg);
 }
 
+.story-split--compact {
+  grid-template-columns: minmax(0, 0.48fr) minmax(0, 1.52fr);
+  align-items: stretch;
+  max-width: none;
+  margin: 0;
+  padding-inline: 0;
+  gap: 0;
+}
+
+.story-split--compact .story-split-media {
+  min-height: min(34vh, 300px);
+  border-radius: 0;
+}
+
+.story-split--compact .story-split-copy {
+  padding-inline: clamp(1.75rem, 6vw, 5.5rem);
+}
+
+.story-split--compact .story-split-copy h2 {
+  font-size: clamp(1.2rem, 2.15vw, 1.85rem);
+  white-space: nowrap;
+}
+
 .story-split--reverse {
   grid-template-columns: minmax(0, 1.18fr) minmax(0, 0.82fr);
 }
@@ -3025,6 +3081,19 @@ body.day-open {
   .story-split-media {
     min-height: 0;
     aspect-ratio: 3 / 2;
+  }
+
+  .story-split--compact .story-split-media {
+    aspect-ratio: 4 / 3;
+    max-height: 14rem;
+  }
+
+  .story-split--compact .story-split-copy {
+    padding: 1.5rem var(--space) 2rem;
+  }
+
+  .story-split--compact .story-split-copy h2 {
+    font-size: clamp(1.05rem, 4.4vw, 1.4rem);
   }
 
   .story-split-copy {
