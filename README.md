@@ -24,7 +24,7 @@ Also claim / update your **Google Business Profile** for Brisbane.
 
 ## Connect your inbox
 
-Enquiries use [Web3Forms](https://web3forms.com) → `asis.capture@gmail.com`.
+Enquiries use [Web3Forms](https://web3forms.com) → `livis.hires@gmail.com`.
 
 1. Create an access key with that email.
 2. In `index.html`, replace `YOUR_WEB3FORMS_ACCESS_KEY` with your key.

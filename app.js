@@ -20,7 +20,7 @@ const CATALOGUE = [
     details: [
       { label: "Format", value: "Digital" },
       { label: "Storage", value: "32GB SD included" },
-      { label: "Includes", value: "Camera, SD card, rechargeable battery, instruction card" },
+      { label: "Includes", value: "Camera, SD card, rechargeable battery" },
     ],
     tone: "cool",
     image: "images/products/kodak-pixpro-fz55/front.png",
@@ -41,7 +41,7 @@ const CATALOGUE = [
     details: [
       { label: "Format", value: "Digital" },
       { label: "Storage", value: "32GB SD included" },
-      { label: "Includes", value: "Camera, SD card, battery, instruction card" },
+      { label: "Includes", value: "Camera, SD card, battery" },
     ],
     tone: "soft",
     image: "images/products/kodak-pixpro-c1/front.png",
@@ -66,7 +66,7 @@ const CATALOGUE = [
     details: [
       { label: "Format", value: "Digital" },
       { label: "Storage", value: "32GB SD included" },
-      { label: "Includes", value: "Camera, SD card, battery, instruction card" },
+      { label: "Includes", value: "Camera, SD card, battery" },
     ],
     tone: "cool",
     image: "images/products/casio-exilim-ex-z110/front.png",
@@ -90,7 +90,7 @@ const CATALOGUE = [
     details: [
       { label: "Format", value: "Digital · waterproof" },
       { label: "Storage", value: "32GB SD included" },
-      { label: "Includes", value: "Camera, SD card, battery, instruction card" },
+      { label: "Includes", value: "Camera, SD card, battery" },
     ],
     tone: "soft",
     comingSoon: true,
@@ -116,7 +116,7 @@ const CATALOGUE = [
     details: [
       { label: "Format", value: "Digital" },
       { label: "Storage", value: "32GB SD included" },
-      { label: "Includes", value: "Camera, SD card, battery, instruction card" },
+      { label: "Includes", value: "Camera, SD card, battery" },
     ],
     tone: "cool",
     comingSoon: true,
@@ -140,7 +140,7 @@ const CATALOGUE = [
     details: [
       { label: "Format", value: "Film (half frame)" },
       { label: "Film", value: "1 colour roll included (36 exposures · up to 72 shots)" },
-      { label: "Includes", value: "Camera, film, battery, instruction card" },
+      { label: "Includes", value: "Camera, film, battery" },
     ],
     tone: "warm",
     image: "images/products/kodak-ektar-h35/front.png",
@@ -161,7 +161,7 @@ const CATALOGUE = [
     details: [
       { label: "Format", value: "Film (35mm)" },
       { label: "Film", value: "1 colour roll included (36 shots)" },
-      { label: "Includes", value: "Camera, film, battery, instruction card" },
+      { label: "Includes", value: "Camera, film, battery" },
     ],
     tone: "soft",
     image: "images/products/kodak-m35/front.png",
@@ -184,7 +184,7 @@ const CATALOGUE = [
     details: [
       { label: "Format", value: "Instax Mini" },
       { label: "Film", value: "1 Mini pack included (10 shots)" },
-      { label: "Includes", value: "Camera, film, battery, instruction card" },
+      { label: "Includes", value: "Camera, film, battery" },
     ],
     tone: "soft",
     image: "images/products/instax-mini-evo/front.png",
@@ -209,7 +209,7 @@ const CATALOGUE = [
     details: [
       { label: "Format", value: "Instax Mini" },
       { label: "Film", value: "1 Mini pack included (10 shots)" },
-      { label: "Includes", value: "Camera, film, battery, instruction card" },
+      { label: "Includes", value: "Camera, film, battery" },
     ],
     tone: "warm",
     image: "images/products/instax-mini-12/front.png",
@@ -233,7 +233,7 @@ const CATALOGUE = [
     details: [
       { label: "Format", value: "Instax Square" },
       { label: "Film", value: "1 Square pack included (10 shots)" },
-      { label: "Includes", value: "Camera, film, battery, instruction card" },
+      { label: "Includes", value: "Camera, film, battery" },
     ],
     tone: "cool",
     image: "images/products/instax-square-sq40/front.png",
@@ -372,8 +372,21 @@ const CATALOGUE = [
     description:
       "Film and SD included where each camera needs it.",
     details: [
-      { label: "Cameras", value: "3 · digital, film & Instant" },
-      { label: "Includes", value: "Kodak PIXPRO FZ55 (32GB SD) · Kodak Ektar H35 (1 colour roll · up to 72 shots) · Fujifilm Instax Square SQ40 (1 Square pack · 10 shots)" },
+      {
+        label: "Cameras",
+        value: [
+          "Kodak PIXPRO FZ55 (digital)",
+          "Kodak Ektar H35 (film)",
+          "Fujifilm Instax Square SQ40 (Instant)",
+        ],
+      },
+      {
+        label: "Film",
+        value: [
+          "1 colour roll (72 shots for Ektar H35)",
+          "1 Square pack · 10 shots",
+        ],
+      },
     ],
     tone: "cool",
     image: "images/products/holy-trinity-bundle/front-dual-bg-backup.png",
@@ -397,8 +410,17 @@ const CATALOGUE = [
     description:
       "Two beginner-friendly cameras that travel light, with film and SD included.",
     details: [
-      { label: "Cameras", value: "2 · digital & Instant" },
-      { label: "Includes", value: "Kodak PIXPRO C1 (32GB SD) · Fujifilm Instax Mini 12 (1 Mini pack · 10 shots)" },
+      {
+        label: "Cameras",
+        value: [
+          "Kodak PIXPRO C1 (digital)",
+          "Fujifilm Instax Mini 12 (Instant)",
+        ],
+      },
+      {
+        label: "Film",
+        value: ["1 Mini pack · 10 shots"],
+      },
     ],
     tone: "warm",
     image: "images/products/weekender-bundle/front-dual-bg-backup.png",
@@ -421,9 +443,29 @@ const CATALOGUE = [
     description:
       "Set up on one table: Instant cameras for guests to take a shot, stick the print in a book, and leave their wishes. Includes a video guestbook and albums to keep.",
     details: [
-      { label: "Cameras", value: "3 Instant · Mini Evo, Mini 12 & Square SQ40" },
-      { label: "Also includes", value: "Vintage Video Guestbook hire · Keepsake Album · Pop-up Gallery" },
-      { label: "Film", value: "1 pack with each camera (Mini ×2, Square ×1)" },
+      {
+        label: "Cameras",
+        value: [
+          "Fujifilm Instax Mini Evo (Instant)",
+          "Fujifilm Instax Mini 12 (Instant)",
+          "Fujifilm Instax Square SQ40 (Instant)",
+        ],
+      },
+      {
+        label: "Film",
+        value: [
+          "2 Mini packs · 20 shots",
+          "1 Square pack · 10 shots",
+        ],
+      },
+      {
+        label: "Also includes",
+        value: [
+          "Vintage Video Guestbook hire",
+          "Keepsake Album",
+          "Pop-up Gallery",
+        ],
+      },
     ],
     tone: "warm",
     image: "images/products/happily-ever-after-bundle/front-pre-heal-backup.png",
@@ -450,8 +492,22 @@ const CATALOGUE = [
     description:
       "Three easy point-and-shoot formats, plus extra Mini film so the Instant cameras last the night.",
     details: [
-      { label: "Cameras", value: "3 · Instant, digital & film" },
-      { label: "Includes", value: "Instax Mini Evo (1 Mini pack) · Kodak PIXPRO C1 (32GB SD) · Kodak M35 (1 colour roll) · +2 extra Mini packs (20 shots)" },
+      {
+        label: "Cameras",
+        value: [
+          "Fujifilm Instax Mini Evo (Instant)",
+          "Kodak PIXPRO C1 (digital)",
+          "Kodak M35 (film)",
+        ],
+      },
+      {
+        label: "Film",
+        value: [
+          "1 colour roll (36 shots for M35)",
+          "1 Mini pack · 10 shots",
+          "2 extra Mini packs · 20 shots",
+        ],
+      },
     ],
     tone: "warm",
     image: "images/products/party-bundle/front.png",
@@ -475,9 +531,14 @@ const CATALOGUE = [
     description:
       "Made for cameras circulating across tables. Need more for a bigger day? Ask for six when you enquire.",
     details: [
-      { label: "Cameras", value: "4× Fujifilm Instax Mini Evo" },
-      { label: "Film", value: "4 Mini packs included (40 shots)" },
-      { label: "Also includes", value: "Instruction cards for each camera" },
+      {
+        label: "Cameras",
+        value: ["4× Fujifilm Instax Mini Evo (Instant)"],
+      },
+      {
+        label: "Film",
+        value: ["4 Mini packs · 40 shots"],
+      },
     ],
     tone: "warm",
     image: "images/products/wedding-table-pack/front-dual-bg-backup.png",
@@ -737,12 +798,21 @@ function renderProductModal() {
     .map((step, i) => `<li><span class="product-step-num">${i + 1}</span><span>${step}</span></li>`)
     .join("");
 
+  const detailValueMarkup = (value) => {
+    if (Array.isArray(value)) {
+      return `<ul class="product-detail-list">${value
+        .map((line) => `<li>${line}</li>`)
+        .join("")}</ul>`;
+    }
+    return value;
+  };
+
   const detailsRows = (item.details || [])
     .map(
       (row) => `
-      <div class="product-detail-row">
+      <div class="product-detail-row${Array.isArray(row.value) ? " has-list" : ""}">
         <dt>${row.label}</dt>
-        <dd>${row.value}</dd>
+        <dd>${detailValueMarkup(row.value)}</dd>
       </div>`
     )
     .join("");
@@ -1279,7 +1349,7 @@ form?.addEventListener("submit", async (event) => {
   const accessKey = form.querySelector('[name="access_key"]').value.trim();
   if (!accessKey || accessKey === "YOUR_WEB3FORMS_ACCESS_KEY") {
     formStatus.textContent =
-      "Almost there — add your Web3Forms access key in index.html so enquiries reach asis.capture@gmail.com.";
+      "Almost there — add your Web3Forms access key in index.html so enquiries reach livis.hires@gmail.com.";
     formStatus.classList.add("is-error");
     return;
   }
@@ -1334,7 +1404,7 @@ form?.addEventListener("submit", async (event) => {
     formStatus.textContent = "Enquiry sent — we’ll aim to reply within one business day.";
   } catch (error) {
     formStatus.textContent =
-      "Couldn’t send just now. Please try again, or email asis.capture@gmail.com.";
+      "Couldn’t send just now. Please try again, or email livis.hires@gmail.com.";
     formStatus.classList.add("is-error");
     console.error(error);
   } finally {
