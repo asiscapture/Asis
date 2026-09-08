@@ -576,7 +576,7 @@ body[data-catalogue="home"] .site-header:has(.nav.is-open) .nav-toggle span {
 .discover {
   max-width: var(--max);
   margin: 0 auto;
-  padding: 0 var(--space) clamp(2.5rem, 5vw, 4rem);
+  padding: 0 var(--space) clamp(1.5rem, 3vw, 2.5rem);
 }
 
 .discover-head {
@@ -826,7 +826,7 @@ body[data-catalogue="home"] .site-header:has(.nav.is-open) .nav-toggle span {
   position: relative;
   max-width: none;
   margin: 0;
-  padding: clamp(2.5rem, 5vw, 4rem) var(--space) clamp(2.25rem, 4.5vw, 3.5rem);
+  padding: clamp(1.75rem, 3.5vw, 2.75rem) var(--space);
   overflow: hidden;
   isolation: isolate;
 }
@@ -855,7 +855,8 @@ body[data-catalogue="home"] .site-header:has(.nav.is-open) .nav-toggle span {
 }
 
 #how .section-head,
-#how .steps {
+#how .steps,
+#how .hire-links {
   max-width: var(--max);
   margin-inline: auto;
 }
@@ -1974,6 +1975,11 @@ body.cart-open {
   padding: clamp(2.75rem, 6vw, 5rem) var(--space) clamp(4.5rem, 10vw, 8rem);
 }
 
+body[data-catalogue="home"] #from-the-day.proof {
+  padding-top: clamp(1.75rem, 3.5vw, 2.75rem);
+  padding-bottom: clamp(2.75rem, 6vw, 4.5rem);
+}
+
 .proof.page-hire {
   padding-top: clamp(6rem, 12vh, 8rem);
 }
@@ -2309,7 +2315,7 @@ body.day-open {
   }
 
   .proof-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 }
 
@@ -2423,6 +2429,7 @@ body.day-open {
 }
 
 .hire-links {
+  display: block;
   margin: 1rem auto 0;
   font-size: 1rem;
   color: var(--ink-soft);
@@ -2435,8 +2442,11 @@ body.day-open {
 }
 
 #how .hire-links {
+  max-width: 42rem;
   margin-top: 1.25rem;
   margin-bottom: 0;
+  margin-inline: auto;
+  text-align: center;
 }
 
 #how .hire-links + .hire-links {
@@ -2840,13 +2850,13 @@ body.day-open {
 }
 
 .landing--story .how {
-  padding-top: clamp(3rem, 7vw, 5rem);
-  padding-bottom: 1.5rem;
+  padding-top: clamp(1.75rem, 3.5vw, 2.75rem);
+  padding-bottom: clamp(1.25rem, 3vw, 2rem);
 }
 
 #how.landing-how--wedding {
-  margin-top: clamp(1.5rem, 4vw, 2.75rem);
-  padding-top: clamp(1.75rem, 4vw, 2.75rem);
+  margin-top: clamp(1.25rem, 3vw, 2rem);
+  padding-top: clamp(1.75rem, 3.5vw, 2.75rem);
   padding-bottom: clamp(1.25rem, 3vw, 2rem);
 }
 
@@ -2859,12 +2869,17 @@ body.day-open {
   background: rgba(255, 252, 247, 0.55);
 }
 
-#how.landing-how--wedding .hire-links {
-  margin-top: 1.35rem;
+#how.landing-how--wedding .hire-links,
+.landing--story #how .hire-links {
+  margin-top: 1.25rem;
   margin-bottom: 0;
+  margin-inline: auto;
+  max-width: 42rem;
+  text-align: center;
 }
 
-#how.landing-how--wedding .hire-links + .hire-links {
+#how.landing-how--wedding .hire-links + .hire-links,
+.landing--story #how .hire-links + .hire-links {
   margin-top: 0.15rem;
 }
 
@@ -2875,7 +2890,7 @@ body.day-open {
 }
 
 .landing--story .landing-picks {
-  padding-top: clamp(1.75rem, 4vw, 2.75rem);
+  padding-top: clamp(1.5rem, 3vw, 2.25rem);
 }
 
 .landing-picks .section-head {
@@ -2952,8 +2967,9 @@ body.day-open {
 }
 
 .landing--story .hire-links {
-  margin-top: 2.75rem;
-  max-width: 40rem;
+  margin-top: 1.25rem;
+  margin-inline: auto;
+  max-width: 42rem;
   text-align: center;
 }
 
@@ -3426,18 +3442,16 @@ body.day-open {
   .steps,
   .steps-four,
   .discover-grid,
-  .trust-list,
   .field-row {
     grid-template-columns: 1fr;
   }
 
-  #explore-categories .discover-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+  .trust-list {
+    grid-template-columns: 1fr 1fr;
   }
 
-  .proof-grid {
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-    gap: 0.35rem;
+  #explore-categories .discover-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .selection-bar {
