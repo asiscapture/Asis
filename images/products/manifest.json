@@ -230,5 +230,23 @@
       "c:\\Users\\ceris\\OneDrive\\Documents\\Asis webstie\\images\\products\\casio-exilim-ex-z110\\extra-1.png"
     ],
     "lifestyle": false
+  },
+  "fujifilm-finepix-z33wp": {
+    "front": "C:/Users/ceris/OneDrive/Documents/Asis webstie/images/products/fujifilm-finepix-z33wp/front.png",
+    "hover": "C:/Users/ceris/OneDrive/Documents/Asis webstie/images/products/fujifilm-finepix-z33wp/hover.png",
+    "gallery": [
+      "C:/Users/ceris/OneDrive/Documents/Asis webstie/images/products/fujifilm-finepix-z33wp/hover.png",
+      "C:/Users/ceris/OneDrive/Documents/Asis webstie/images/products/fujifilm-finepix-z33wp/extra-1.png",
+      "C:/Users/ceris/OneDrive/Documents/Asis webstie/images/products/fujifilm-finepix-z33wp/extra-2.png"
+    ],
+    "lifestyle": false
+  },
+  "olympus-vg-170": {
+    "front": "C:/Users/ceris/OneDrive/Documents/Asis webstie/images/products/olympus-vg-170/front.png",
+    "hover": "C:/Users/ceris/OneDrive/Documents/Asis webstie/images/products/olympus-vg-170/hover.png",
+    "gallery": [
+      "C:/Users/ceris/OneDrive/Documents/Asis webstie/images/products/olympus-vg-170/hover.png"
+    ],
+    "lifestyle": false
   }
 }

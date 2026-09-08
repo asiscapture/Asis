@@ -1,4 +1,4 @@
-/* unposed — camera hire catalogue */
+/* Livis — camera hire catalogue */
 
 /*
   Photos: put files in /images then refresh.
@@ -75,6 +75,52 @@ const CATALOGUE = [
       "images/products/casio-exilim-ex-z110/extra-1.png"
     ],
     alt: "Casio Exilim EX-Z110 silver digital camera hire Brisbane",
+  },
+  {
+    id: "fujifilm-finepix-z33wp",
+    name: "Fujifilm FinePix Z33WP",
+    category: "digital",
+    tag: "Digital",
+    detail: "Waterproof · 32GB SD included",
+    price: "$39",
+    blurb:
+      "A waterproof compact digicam — take it to the beach, the pool or out in the rain. 3× zoom and simple point-and-shoot, with that early digital look.",
+    description:
+      "Sealed for the water, with a 3× Fujinon zoom. Easy enough for anyone to pick up, pass around and shoot.",
+    details: [
+      { label: "Format", value: "Digital · waterproof" },
+      { label: "Storage", value: "32GB SD included" },
+      { label: "Includes", value: "Camera, SD card, battery, instruction card" },
+    ],
+    tone: "soft",
+    image: "images/products/fujifilm-finepix-z33wp/front.png",
+    imageHover: "images/products/fujifilm-finepix-z33wp/hover.png",
+    gallery: [
+      "images/products/fujifilm-finepix-z33wp/extra-1.png",
+      "images/products/fujifilm-finepix-z33wp/extra-2.png"
+    ],
+    alt: "Fujifilm FinePix Z33WP waterproof digital camera hire Brisbane",
+  },
+  {
+    id: "olympus-vg-170",
+    name: "Olympus VG-170",
+    category: "digital",
+    tag: "Digital",
+    detail: "32GB SD included",
+    price: "$35",
+    blurb:
+      "A black compact digicam with 5× wide zoom — simple point-and-shoot for parties, weekends and nights out.",
+    description:
+      "Wide enough for groups, with a built-in flash and easy controls anyone can pick up.",
+    details: [
+      { label: "Format", value: "Digital" },
+      { label: "Storage", value: "32GB SD included" },
+      { label: "Includes", value: "Camera, SD card, battery, instruction card" },
+    ],
+    tone: "cool",
+    image: "images/products/olympus-vg-170/front.png",
+    imageHover: "images/products/olympus-vg-170/hover.png",
+    alt: "Olympus VG-170 digital camera hire Brisbane",
   },
 
   /* ——— Film cameras ——— */
@@ -459,7 +505,7 @@ const CATALOGUE = [
     tone: "warm",
     image: "images/photos.jpg?v=2",
     lifestyle: true,
-    alt: "Printed photo pack keepsake from unposed",
+    alt: "Printed photo pack keepsake from Livis",
   },
 ]
 
@@ -476,7 +522,7 @@ const CAMERA_PAGE_CATEGORIES = new Set([
   "keepsakes",
 ]);
 const KEEPSAKE_CATEGORIES = new Set(["guestbooks", "keepsakes"]);
-const CART_STORAGE_KEY = "unposed-enquiry-cart";
+const CART_STORAGE_KEY = "Livis-enquiry-cart";
 const catalogueScope = document.body.dataset.catalogue || "all";
 
 const BROWSE_BY_SCOPE = {
@@ -1371,11 +1417,11 @@ function setupReveal() {
     observer.observe(node);
   });
 
-  window.__unposedRevealObserver = observer;
+  window.__LivisRevealObserver = observer;
 }
 
 function refreshItemReveal() {
-  const observer = window.__unposedRevealObserver;
+  const observer = window.__LivisRevealObserver;
   const items = document.querySelectorAll(".item:not(.is-visible)");
   if (!observer) {
     items.forEach((item) => item.classList.add("is-visible"));

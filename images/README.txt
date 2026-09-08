@@ -15,6 +15,8 @@ DIGITAL CAMERAS
 kodak-pixpro-fz55.jpg
 kodak-pixpro-c1.jpg
 Exilim-_1.png / Exilim-_2.png / Exilim-_3.png  (Casio Exilim EX-Z110)
+fujifilm z33 front.jpg / fujifilm z33 back.jpg / fujifilm z33 slide.jpg / fujifilm z33 straight.jpg  (Fujifilm FinePix Z33WP)
+olympus VG170 front2.webp / olympus VG170 back.webp  (Olympus VG-170)
 
 ========================================
 FILM CAMERAS

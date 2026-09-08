@@ -1,6 +1,6 @@
-# unposed website
+# Livis website
 
-Lifestyle camera hire site for **unposed** — *capture life as is*. Brisbane hire.
+Lifestyle camera hire site for **Livis** — *capture life as is*. Brisbane hire.
 
 ## Open locally
 
@@ -14,7 +14,7 @@ npx --yes serve .
 
 Canonical URLs, Open Graph and `sitemap.xml` currently use **`https://asiscapture.com.au`**.
 
-When your real unposed domain is ready, find-and-replace that URL in:
+When your real Livis domain is ready, find-and-replace that URL in:
 
 - `index.html`, landing pages, `robots.txt`, `sitemap.xml`
 

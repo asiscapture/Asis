@@ -1,4 +1,4 @@
-/* unposed — considered luxury */
+/* Livis — considered luxury */
 :root {
   --bg: #f7f3ec;
   --bg-deep: #e5dfd7;
@@ -473,7 +473,7 @@ body[data-catalogue="home"] .site-header:has(.nav.is-open) .nav-toggle span {
   gap: clamp(2rem, 6vw, 5rem);
   max-width: var(--max);
   margin: 0 auto;
-  padding: clamp(4.5rem, 10vw, 8rem) var(--space);
+  padding: clamp(2.75rem, 6vw, 5rem) var(--space) clamp(4.5rem, 10vw, 8rem);
 }
 
 .story h2,
@@ -576,7 +576,7 @@ body[data-catalogue="home"] .site-header:has(.nav.is-open) .nav-toggle span {
 .discover {
   max-width: var(--max);
   margin: 0 auto;
-  padding: 0 var(--space) clamp(4.5rem, 10vw, 8rem);
+  padding: 0 var(--space) clamp(2.5rem, 5vw, 4rem);
 }
 
 .discover-head {
@@ -826,7 +826,7 @@ body[data-catalogue="home"] .site-header:has(.nav.is-open) .nav-toggle span {
   position: relative;
   max-width: none;
   margin: 0;
-  padding: clamp(4.5rem, 10vw, 7rem) var(--space);
+  padding: clamp(2.5rem, 5vw, 4rem) var(--space) clamp(2.25rem, 4.5vw, 3.5rem);
   overflow: hidden;
   isolation: isolate;
 }
@@ -1971,7 +1971,7 @@ body.cart-open {
 .proof {
   max-width: var(--max);
   margin: 0 auto;
-  padding: 0 var(--space) clamp(4.5rem, 10vw, 8rem);
+  padding: clamp(2.75rem, 6vw, 5rem) var(--space) clamp(4.5rem, 10vw, 8rem);
 }
 
 .proof.page-hire {
@@ -1997,10 +1997,49 @@ body.cart-open {
   color: var(--ink-soft);
 }
 
+.proof-more {
+  margin: 1.75rem auto 0;
+  max-width: 52rem;
+  text-align: center;
+}
+
+.proof-more .text-link {
+  font-size: 1.05rem;
+  letter-spacing: 0.04em;
+  text-decoration: underline;
+  text-underline-offset: 0.28em;
+  text-decoration-thickness: 1.5px;
+}
+
+.proof-more .text-link:hover {
+  color: var(--ink);
+  text-decoration-thickness: 2px;
+}
+
+.story--page {
+  padding-top: clamp(6rem, 12vh, 8rem);
+}
+
+.story--page .story-copy h1 {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: clamp(1.75rem, 3.8vw, 2.6rem);
+  letter-spacing: -0.02em;
+  line-height: 1.12;
+  margin: 0 0 1.25rem;
+}
+
+.story-cta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem 1rem;
+  margin-top: 1.5rem !important;
+}
+
 .proof-grid {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: clamp(0.4rem, 1vw, 0.65rem);
+  gap: clamp(0.15rem, 0.4vw, 0.3rem);
   width: 100%;
   max-width: 52rem;
   margin: 0 auto;
@@ -2295,9 +2334,17 @@ body.day-open {
 .trust-list li {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  gap: 0.35rem;
-  text-align: center;
+  align-items: flex-start;
+  gap: 0.2rem;
+  text-align: left;
+}
+
+.trust-copy {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  min-width: 0;
+  text-align: left;
 }
 
 .trust-list strong {
@@ -2308,10 +2355,10 @@ body.day-open {
   text-transform: none;
 }
 
-.trust-list span {
+.trust-list .trust-copy span {
   color: var(--ink-soft);
-  font-size: 0.98rem;
-  line-height: 1.45;
+  font-size: 0.88rem;
+  line-height: 1.4;
 }
 
 /* How */
@@ -2379,7 +2426,21 @@ body.day-open {
   margin: 1rem auto 0;
   font-size: 1rem;
   color: var(--ink-soft);
-  max-width: 48ch;
+  max-width: 42rem;
+  text-align: center;
+}
+
+.hire-links + .hire-links {
+  margin-top: 0.15rem;
+}
+
+#how .hire-links {
+  margin-top: 1.25rem;
+  margin-bottom: 0;
+}
+
+#how .hire-links + .hire-links {
+  margin-top: 0.15rem;
 }
 
 .hire-links a {
@@ -2615,19 +2676,19 @@ body.day-open {
 /* ARETAE-style alternating story splits */
 .landing--story {
   max-width: none;
-  padding: clamp(5.5rem, 11vh, 7.5rem) 0 0;
+  padding: clamp(6rem, 12vh, 8rem) 0 0;
 }
 
 .landing-hero--story {
-  max-width: 36rem;
+  max-width: var(--max);
   margin: 0 auto clamp(1.75rem, 4vw, 2.75rem);
-  padding: 0.85rem var(--space) 0;
-  text-align: center;
+  padding: 0 var(--space);
+  text-align: left;
 }
 
 .landing-hero--story h1 {
-  margin: 0.35rem 0 0;
-  font-size: clamp(1.85rem, 3.6vw, 2.7rem);
+  margin: 0.5rem 0 0;
+  font-size: clamp(1.9rem, 4.1vw, 2.95rem);
 }
 
 .story-split {
@@ -2698,6 +2759,28 @@ body.day-open {
   margin-top: 0.75rem;
 }
 
+.story-split--copy-only {
+  grid-template-columns: 1fr;
+  max-width: var(--max);
+  margin: 0 auto;
+  padding-inline: var(--space);
+}
+
+.story-split--copy-only .story-split-copy {
+  align-items: flex-start;
+  text-align: left;
+  padding-block: clamp(1.25rem, 3vw, 2.25rem) clamp(0.75rem, 2vw, 1.25rem);
+  padding-inline: 0;
+}
+
+.story-split--copy-only .story-split-copy > * {
+  margin-inline: 0;
+}
+
+.story-split--copy-only .story-split-copy .hero-actions {
+  justify-content: flex-start;
+}
+
 .story-split-copy .landing-list {
   display: block;
   margin: 0.25rem 0 0;
@@ -2761,10 +2844,38 @@ body.day-open {
   padding-bottom: 1.5rem;
 }
 
+#how.landing-how--wedding {
+  margin-top: clamp(1.5rem, 4vw, 2.75rem);
+  padding-top: clamp(1.75rem, 4vw, 2.75rem);
+  padding-bottom: clamp(1.25rem, 3vw, 2rem);
+}
+
+#how.landing-how--wedding::before {
+  background: url("images/22834b92cffb4f9c0d86af55c2f0230b.jpg") center / cover no-repeat;
+  filter: none;
+}
+
+#how.landing-how--wedding::after {
+  background: rgba(255, 252, 247, 0.55);
+}
+
+#how.landing-how--wedding .hire-links {
+  margin-top: 1.35rem;
+  margin-bottom: 0;
+}
+
+#how.landing-how--wedding .hire-links + .hire-links {
+  margin-top: 0.15rem;
+}
+
 .landing-picks {
   max-width: var(--max);
   margin: 0 auto;
   padding: clamp(2.5rem, 6vw, 4.5rem) var(--space) clamp(3rem, 7vw, 5rem);
+}
+
+.landing--story .landing-picks {
+  padding-top: clamp(1.75rem, 4vw, 2.75rem);
 }
 
 .landing-picks .section-head {
