@@ -662,10 +662,16 @@ function setCartQty(id, qty) {
 }
 
 function addToCart(id, qty = 1) {
-  const item = getItem(id);
-  if (!item || item.comingSoon) return;
+  const item = CATALOGUE.find((entry) => entry.id === id);
+  if (!item) {
+    console.warn("[Livis] Unknown product id:", id);
+    return false;
+  }
+  if (item.comingSoon) return false;
+  const amount = Math.max(1, Math.min(99, Number(qty) || 1));
   const current = state.cart.get(id) || 0;
-  setCartQty(id, current + qty);
+  setCartQty(id, current + amount);
+  return true;
 }
 
 function getProductGallery(item) {
@@ -1104,33 +1110,73 @@ function closeCart() {
   document.body.classList.remove("cart-open");
 }
 
-catalogueEl?.addEventListener("click", (event) => {
+function flashAddButton(btn) {
+  if (!btn || !btn.isConnected) return;
+  btn.classList.add("just-added");
+  btn.textContent = "Added";
+  window.setTimeout(() => {
+    if (!btn.isConnected) return;
+    btn.classList.remove("just-added");
+    btn.textContent = "Add to enquiry";
+  }, 900);
+}
+
+document.addEventListener("click", (event) => {
   const qtyBtn = event.target.closest("[data-qty-action]");
   if (qtyBtn) {
     const wrap = qtyBtn.closest(".qty");
-    if (!wrap || wrap.dataset.qtyScope !== "draft") return;
-    const id = wrap.dataset.id;
-    const current = getDraftQty(id);
-    const next = qtyBtn.dataset.qtyAction === "inc" ? current + 1 : current - 1;
-    setDraftQty(id, next);
-    wrap.querySelector(".qty-value").textContent = String(getDraftQty(id));
+    if (!wrap) return;
+    const scope = wrap.dataset.qtyScope;
+    if (scope === "draft") {
+      const id = wrap.dataset.id;
+      const current = getDraftQty(id);
+      const next = qtyBtn.dataset.qtyAction === "inc" ? current + 1 : current - 1;
+      setDraftQty(id, next);
+      wrap.querySelector(".qty-value").textContent = String(getDraftQty(id));
+      return;
+    }
+    if (scope === "product") {
+      const next =
+        qtyBtn.dataset.qtyAction === "inc" ? state.productQty + 1 : state.productQty - 1;
+      state.productQty = Math.max(1, Math.min(99, next));
+      wrap.querySelector(".qty-value").textContent = String(state.productQty);
+      return;
+    }
     return;
   }
 
-  const addBtn = event.target.closest("[data-add]");
-  if (addBtn) {
-    const id = addBtn.dataset.add;
-    addToCart(id, getDraftQty(id));
+  const cardAddBtn = event.target.closest("[data-add]");
+  if (cardAddBtn && !cardAddBtn.disabled) {
+    const id = cardAddBtn.dataset.add;
+    if (!addToCart(id, getDraftQty(id))) return;
     setDraftQty(id, 1);
-    const wrap = addBtn.closest(".item")?.querySelector('.qty[data-qty-scope="draft"]');
+    const wrap = cardAddBtn.closest(".item")?.querySelector('.qty[data-qty-scope="draft"]');
     if (wrap) wrap.querySelector(".qty-value").textContent = "1";
     updateCartUI();
-    addBtn.classList.add("just-added");
-    addBtn.textContent = "Added";
-    window.setTimeout(() => {
-      addBtn.classList.remove("just-added");
-      addBtn.textContent = "Add to enquiry";
-    }, 900);
+    flashAddButton(cardAddBtn);
+    return;
+  }
+
+  const productAddBtn = event.target.closest("[data-product-add]");
+  if (productAddBtn && !productAddBtn.disabled) {
+    const id = productAddBtn.dataset.productAdd;
+    if (!addToCart(id, state.productQty)) return;
+    state.productQty = 1;
+    updateCartUI();
+    renderProductModal();
+    flashAddButton(productPanel?.querySelector("[data-product-add]"));
+    return;
+  }
+
+  if (event.target.closest("[data-close-product]") || event.target.closest(".product-close")) {
+    closeProduct();
+    return;
+  }
+
+  const thumb = event.target.closest("[data-gallery-index]");
+  if (thumb && productPanel?.contains(thumb)) {
+    state.galleryIndex = Number(thumb.dataset.galleryIndex);
+    renderProductModal();
     return;
   }
 
@@ -1140,54 +1186,6 @@ catalogueEl?.addEventListener("click", (event) => {
     openProduct(openBtn.dataset.openProduct);
   }
 });
-
-document.addEventListener("click", (event) => {
-  if (event.target.closest(".catalogue")) return;
-  const openBtn = event.target.closest("[data-open-product]");
-  if (!openBtn) return;
-  event.preventDefault();
-  openProduct(openBtn.dataset.openProduct);
-});
-
-if (productPanel) {
-  productPanel.addEventListener("click", (event) => {
-    if (event.target.closest("[data-close-product]") || event.target.closest(".product-close")) {
-      closeProduct();
-      return;
-    }
-
-    const thumb = event.target.closest("[data-gallery-index]");
-    if (thumb) {
-      state.galleryIndex = Number(thumb.dataset.galleryIndex);
-      renderProductModal();
-      return;
-    }
-
-    const qtyBtn = event.target.closest("[data-qty-action]");
-    if (qtyBtn) {
-      const wrap = qtyBtn.closest(".qty");
-      if (!wrap || wrap.dataset.qtyScope !== "product") return;
-      const next =
-        qtyBtn.dataset.qtyAction === "inc" ? state.productQty + 1 : state.productQty - 1;
-      state.productQty = Math.max(1, Math.min(99, next));
-      wrap.querySelector(".qty-value").textContent = String(state.productQty);
-      return;
-    }
-
-    const addBtn = event.target.closest("[data-product-add]");
-    if (addBtn) {
-      const id = addBtn.dataset.productAdd;
-      addToCart(id, state.productQty);
-      state.productQty = 1;
-      updateCartUI();
-      renderProductModal();
-      addBtn.textContent = "Added";
-      window.setTimeout(() => {
-        if (addBtn.isConnected) addBtn.textContent = "Add to enquiry";
-      }, 900);
-    }
-  });
-}
 
 productBackdrop?.addEventListener("click", closeProduct);
 
