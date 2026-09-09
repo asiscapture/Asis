@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Keepsakes Brisbane | Guest Books &amp; Photo Albums | Livis</title>
+    <meta
+      name="description"
+      content="Keepsakes from Livis — Vintage Video Guestbook hire, plus Keepsake Album, Accordion Album and Pop-up Gallery to purchase. Brisbane hire."
+    />
+    <link rel="canonical" href="https://livis.com.au/cameras/?filter=keepsakes" />
+    <meta http-equiv="refresh" content="0; url=/cameras/?filter=keepsakes" />
+    <script>
+      (function () {
+        var params = new URLSearchParams(window.location.search);
+        var dest = new URL("/cameras/", window.location.origin);
+        dest.searchParams.set("filter", "keepsakes");
+        if (params.get("product")) dest.searchParams.set("product", params.get("product"));
+        window.location.replace(dest.pathname + dest.search);
+      })();
+    </script>
+  </head>
+  <body>
+    <p>
+      Keepsakes now live on the
+      <a href="/cameras/?filter=keepsakes">cameras page</a>.
+    </p>
+  </body>
+</html>

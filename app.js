@@ -23,8 +23,8 @@ const CATALOGUE = [
       { label: "Includes", value: "Camera, SD card, rechargeable battery" },
     ],
     tone: "cool",
-    image: "images/products/kodak-pixpro-fz55/front.png",
-    imageHover: "images/products/kodak-pixpro-fz55/hover.png",
+    image: "/images/products/kodak-pixpro-fz55/front.png",
+    imageHover: "/images/products/kodak-pixpro-fz55/hover.png",
     alt: "Kodak PIXPRO FZ55 digital camera for hire in Brisbane",
   },
   {
@@ -44,11 +44,11 @@ const CATALOGUE = [
       { label: "Includes", value: "Camera, SD card, battery" },
     ],
     tone: "soft",
-    image: "images/products/kodak-pixpro-c1/front.png",
-    imageHover: "images/products/kodak-pixpro-c1/hover.png",
+    image: "/images/products/kodak-pixpro-c1/front.png",
+    imageHover: "/images/products/kodak-pixpro-c1/hover.png",
     gallery: [
-      "images/products/kodak-pixpro-c1/extra-1.png",
-      "images/products/kodak-pixpro-c1/extra-2.png"
+      "/images/products/kodak-pixpro-c1/extra-1.png",
+      "/images/products/kodak-pixpro-c1/extra-2.png"
     ],
     alt: "Kodak PIXPRO C1 compact digital camera hire",
   },
@@ -69,10 +69,10 @@ const CATALOGUE = [
       { label: "Includes", value: "Camera, SD card, battery" },
     ],
     tone: "cool",
-    image: "images/products/casio-exilim-ex-z110/front.png",
-    imageHover: "images/products/casio-exilim-ex-z110/hover.png",
+    image: "/images/products/casio-exilim-ex-z110/front.png",
+    imageHover: "/images/products/casio-exilim-ex-z110/hover.png",
     gallery: [
-      "images/products/casio-exilim-ex-z110/extra-1.png"
+      "/images/products/casio-exilim-ex-z110/extra-1.png"
     ],
     alt: "Casio Exilim EX-Z110 silver digital camera hire Brisbane",
   },
@@ -94,11 +94,11 @@ const CATALOGUE = [
     ],
     tone: "soft",
     comingSoon: true,
-    image: "images/products/fujifilm-finepix-z33wp/front.png",
-    imageHover: "images/products/fujifilm-finepix-z33wp/hover.png",
+    image: "/images/products/fujifilm-finepix-z33wp/front.png",
+    imageHover: "/images/products/fujifilm-finepix-z33wp/hover.png",
     gallery: [
-      "images/products/fujifilm-finepix-z33wp/extra-1.png",
-      "images/products/fujifilm-finepix-z33wp/extra-2.png"
+      "/images/products/fujifilm-finepix-z33wp/extra-1.png",
+      "/images/products/fujifilm-finepix-z33wp/extra-2.png"
     ],
     alt: "Fujifilm FinePix Z33WP waterproof digital camera hire Brisbane",
   },
@@ -120,8 +120,8 @@ const CATALOGUE = [
     ],
     tone: "cool",
     comingSoon: true,
-    image: "images/products/olympus-vg-170/front.png",
-    imageHover: "images/products/olympus-vg-170/hover.png",
+    image: "/images/products/olympus-vg-170/front.png",
+    imageHover: "/images/products/olympus-vg-170/hover.png",
     alt: "Olympus VG-170 digital camera hire Brisbane",
   },
 
@@ -143,8 +143,8 @@ const CATALOGUE = [
       { label: "Includes", value: "Camera, film, battery" },
     ],
     tone: "warm",
-    image: "images/products/kodak-ektar-h35/front.png",
-    imageHover: "images/products/kodak-ektar-h35/hover.png",
+    image: "/images/products/kodak-ektar-h35/front.png",
+    imageHover: "/images/products/kodak-ektar-h35/hover.png",
     alt: "Kodak Ektar H35 half-frame film camera hire Brisbane",
   },
   {
@@ -164,8 +164,8 @@ const CATALOGUE = [
       { label: "Includes", value: "Camera, film, battery" },
     ],
     tone: "soft",
-    image: "images/products/kodak-m35/front.png",
-    imageHover: "images/products/kodak-m35/hover.png",
+    image: "/images/products/kodak-m35/front.png",
+    imageHover: "/images/products/kodak-m35/hover.png",
     alt: "Kodak M35 yellow reusable 35mm film camera for hire",
   },
 
@@ -187,11 +187,11 @@ const CATALOGUE = [
       { label: "Includes", value: "Camera, film, battery" },
     ],
     tone: "soft",
-    image: "images/products/instax-mini-evo/front.png",
-    imageHover: "images/products/instax-mini-evo/hover.png",
+    image: "/images/products/instax-mini-evo/front.png",
+    imageHover: "/images/products/instax-mini-evo/hover.png",
     gallery: [
-      "images/products/instax-mini-evo/extra-1.png",
-      "images/products/instax-mini-evo/extra-2.png"
+      "/images/products/instax-mini-evo/extra-1.png",
+      "/images/products/instax-mini-evo/extra-2.png"
     ],
     alt: "Fujifilm Instax Mini Evo instant camera hire",
   },
@@ -212,10 +212,10 @@ const CATALOGUE = [
       { label: "Includes", value: "Camera, film, battery" },
     ],
     tone: "warm",
-    image: "images/products/instax-mini-12/front.png",
-    imageHover: "images/products/instax-mini-12/hover.png",
+    image: "/images/products/instax-mini-12/front.png",
+    imageHover: "/images/products/instax-mini-12/hover.png",
     gallery: [
-      "images/products/instax-mini-12/extra-1.png"
+      "/images/products/instax-mini-12/extra-1.png"
     ],
     alt: "Fujifilm Instax Mini 12 instant camera hire",
   },
@@ -236,10 +236,10 @@ const CATALOGUE = [
       { label: "Includes", value: "Camera, film, battery" },
     ],
     tone: "cool",
-    image: "images/products/instax-square-sq40/front.png",
-    imageHover: "images/products/instax-square-sq40/hover.png",
+    image: "/images/products/instax-square-sq40/front.png",
+    imageHover: "/images/products/instax-square-sq40/hover.png",
     gallery: [
-      "images/products/instax-square-sq40/extra-1.png"
+      "/images/products/instax-square-sq40/extra-1.png"
     ],
     alt: "Fujifilm Instax Square SQ40 instant camera for weddings and parties",
   },
@@ -262,7 +262,7 @@ const CATALOGUE = [
       { label: "Includes", value: "Guestbook, setup guidance, footage to take home" },
     ],
     tone: "warm",
-    image: "images/products/vintage-video-guestbook/front.png",
+    image: "/images/products/vintage-video-guestbook/front.png",
     alt: "Vintage Video Guestbook telephone for wedding hire Brisbane",
   },
 
@@ -295,11 +295,11 @@ const CATALOGUE = [
       "Press the film down to seal and protect everything in place",
     ],
     tone: "soft",
-    image: "images/products/keepsake-album/front.png",
-    imageHover: "images/products/keepsake-album/extra-1.jpg",
+    image: "/images/products/keepsake-album/front.png",
+    imageHover: "/images/products/keepsake-album/extra-1.jpg",
     gallery: [
-      "images/products/keepsake-album/extra-2.jpg",
-      "images/products/keepsake-album/hover.jpg"
+      "/images/products/keepsake-album/extra-2.jpg",
+      "/images/products/keepsake-album/hover.jpg"
     ],
     alt: "Keepsake Album linen DIY self-adhesive photo album in black and white",
   },
@@ -322,11 +322,11 @@ const CATALOGUE = [
       { label: "Includes", value: "Personalised Accordion Album" },
     ],
     tone: "warm",
-    image: "images/products/film-book/front.jpg",
-    imageHover: "images/products/film-book/extra-1.jpg",
+    image: "/images/products/film-book/front.jpg",
+    imageHover: "/images/products/film-book/extra-1.jpg",
     gallery: [
-      "images/products/film-book/extra-2.jpg",
-      "images/products/film-book/hover.jpg"
+      "/images/products/film-book/extra-2.jpg",
+      "/images/products/film-book/hover.jpg"
     ],
     lifestyle: true,
     alt: "Palm-sized personalised Accordion Album with see-through film-paper photos",
@@ -349,10 +349,10 @@ const CATALOGUE = [
       { label: "Includes", value: "Personalised Pop-up Gallery" },
     ],
     tone: "cool",
-    image: "images/products/film-photo-booklet/front.jpg",
-    imageHover: "images/products/film-photo-booklet/hover.jpg",
+    image: "/images/products/film-photo-booklet/front.jpg",
+    imageHover: "/images/products/film-photo-booklet/hover.jpg",
     gallery: [
-      "images/products/film-photo-booklet/extra-1.jpg"
+      "/images/products/film-photo-booklet/extra-1.jpg"
     ],
     lifestyle: true,
     alt: "Personalised Pop-up Gallery with see-through film-paper photos",
@@ -389,11 +389,11 @@ const CATALOGUE = [
       },
     ],
     tone: "cool",
-    image: "images/products/holy-trinity-bundle/front-dual-bg-backup.png",
+    image: "/images/products/holy-trinity-bundle/front-dual-bg-backup.png",
     gallery: [
-      "images/products/kodak-pixpro-fz55/front.png",
-      "images/products/kodak-ektar-h35/front.png",
-      "images/products/instax-square-sq40/front.png"
+      "/images/products/kodak-pixpro-fz55/front.png",
+      "/images/products/kodak-ektar-h35/front.png",
+      "/images/products/instax-square-sq40/front.png"
     ],
     alt: "The Full Mix camera hire bundle — FZ55, Ektar H35 and Instax Square SQ40",
   },
@@ -423,10 +423,10 @@ const CATALOGUE = [
       },
     ],
     tone: "warm",
-    image: "images/products/weekender-bundle/front-dual-bg-backup.png",
+    image: "/images/products/weekender-bundle/front-dual-bg-backup.png",
     gallery: [
-      "images/products/kodak-pixpro-c1/front.png",
-      "images/products/instax-mini-12/front.png"
+      "/images/products/kodak-pixpro-c1/front.png",
+      "/images/products/instax-mini-12/front.png"
     ],
     alt: "The Weekender camera hire bundle — PIXPRO C1 and Instax Mini 12",
   },
@@ -472,14 +472,14 @@ const CATALOGUE = [
       },
     ],
     tone: "warm",
-    image: "images/products/happily-ever-after-bundle/front-pre-heal-backup.png",
+    image: "/images/products/happily-ever-after-bundle/front-pre-heal-backup.png",
     gallery: [
-      "images/products/instax-mini-evo/front.png",
-      "images/products/instax-mini-12/front.png",
-      "images/products/instax-square-sq40/front.png",
-      "images/products/vintage-video-guestbook/front.png",
-      "images/products/keepsake-album/front.png",
-      "images/products/film-photo-booklet/front.jpg"
+      "/images/products/instax-mini-evo/front.png",
+      "/images/products/instax-mini-12/front.png",
+      "/images/products/instax-square-sq40/front.png",
+      "/images/products/vintage-video-guestbook/front.png",
+      "/images/products/keepsake-album/front.png",
+      "/images/products/film-photo-booklet/front.jpg"
     ],
     alt: "Happily Ever After photo guestbook station — Instant cameras, video guestbook and albums",
   },
@@ -513,11 +513,11 @@ const CATALOGUE = [
       },
     ],
     tone: "warm",
-    image: "images/products/party-bundle/front.png",
+    image: "/images/products/party-bundle/front.png",
     gallery: [
-      "images/products/instax-mini-evo/front.png",
-      "images/products/kodak-pixpro-c1/front.png",
-      "images/products/kodak-m35/front.png"
+      "/images/products/instax-mini-evo/front.png",
+      "/images/products/kodak-pixpro-c1/front.png",
+      "/images/products/kodak-m35/front.png"
     ],
     alt: "Party Camera Kit — Instax Mini Evo, PIXPRO C1 and Kodak M35",
   },
@@ -547,10 +547,10 @@ const CATALOGUE = [
       },
     ],
     tone: "warm",
-    image: "images/products/wedding-table-pack/front.png",
+    image: "/images/products/wedding-table-pack/front.png",
     gallery: [
-      "images/products/instax-mini-evo/front.png",
-      "images/products/instax-mini-12/front.png",
+      "/images/products/instax-mini-evo/front.png",
+      "/images/products/instax-mini-12/front.png",
     ],
     alt: "Wedding Table Pack — Mini Evo and Mini 12 Instant cameras for guest tables",
   },
@@ -584,8 +584,8 @@ const CATALOGUE = [
       },
     ],
     tone: "soft",
-    image: "images/products/film-table-kit/front.png",
-    gallery: ["images/products/film-table-kit/front.png"],
+    image: "/images/products/film-table-kit/front.png",
+    gallery: ["/images/products/film-table-kit/front.png"],
     alt: "Film Table Kit — four marble grey Kodak M35 film cameras for guest tables",
   },
 
@@ -607,7 +607,7 @@ const CATALOGUE = [
       { label: "Note", value: "Ektar H35 = two print orders" },
     ],
     tone: "warm",
-    image: "images/photos.jpg?v=2",
+    image: "/images/photos.jpg?v=2",
     lifestyle: true,
     alt: "Printed photo pack keepsake from Livis",
   },
@@ -630,10 +630,10 @@ const CART_STORAGE_KEY = "Livis-enquiry-cart";
 const catalogueScope = document.body.dataset.catalogue || "all";
 
 const BROWSE_BY_SCOPE = {
-  cameras: "cameras.html",
-  keepsakes: "cameras.html?filter=keepsakes",
-  home: "index.html#explore-categories",
-  day: "cameras.html",
+  cameras: "/cameras/",
+  keepsakes: "/cameras/?filter=keepsakes",
+  home: "/#explore-categories",
+  day: "/cameras/",
 };
 
 const state = {
@@ -710,7 +710,7 @@ function scopedCatalogue() {
 }
 
 function browseHref() {
-  return BROWSE_BY_SCOPE[catalogueScope] || "index.html#explore-categories";
+  return BROWSE_BY_SCOPE[catalogueScope] || "/#explore-categories";
 }
 
 function getItem(id) {
@@ -1398,7 +1398,7 @@ form?.addEventListener("submit", async (event) => {
   const accessKey = form.querySelector('[name="access_key"]').value.trim();
   if (!accessKey || accessKey === "YOUR_WEB3FORMS_ACCESS_KEY") {
     formStatus.textContent =
-      "Almost there — add your Web3Forms access key in index.html so enquiries reach livis.hires@gmail.com.";
+      "Almost there — add your Web3Forms access key in / so enquiries reach livis.hires@gmail.com.";
     formStatus.classList.add("is-error");
     return;
   }
@@ -1717,7 +1717,7 @@ dayCameraLink?.addEventListener("click", () => {
   if (productModal && productPanel) {
     openProduct(cameraId);
   } else {
-    window.location.href = `cameras.html?product=${encodeURIComponent(cameraId)}`;
+    window.location.href = `/cameras/?product=${encodeURIComponent(cameraId)}`;
   }
 });
 
