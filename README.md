@@ -12,7 +12,7 @@ npx --yes serve .
 
 ## SEO / domain
 
-Canonical URLs, Open Graph and `sitemap.xml` currently use **`https://asiscapture.com.au`**.
+Canonical URLs, Open Graph and `sitemap.xml` currently use **`https://livis.com.au`**.
 
 When your real Livis domain is ready, find-and-replace that URL in:
 
