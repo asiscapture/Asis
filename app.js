@@ -131,7 +131,7 @@ const CATALOGUE = [
     name: "Kodak Ektar H35",
     category: "film",
     tag: "Film (half frame)",
-    detail: "Includes 1 colour roll (72 shots)",
+    detail: "Includes 1 colour roll · 72 shots",
     price: "$45",
     blurb:
       "A half-frame film camera for nostalgic colour without the fuss. One standard roll gives you up to 72 shots.",
@@ -139,7 +139,7 @@ const CATALOGUE = [
       "Simple point-and-shoot with a built-in flash — light enough to carry all day.",
     details: [
       { label: "Format", value: "Film (half frame)" },
-      { label: "Film", value: "1 colour roll included (36 exposures · up to 72 shots)" },
+      { label: "Film", value: "1 colour roll · 36 exposures · up to 72 shots" },
       { label: "Includes", value: "Camera, film, battery" },
     ],
     tone: "warm",
@@ -152,7 +152,7 @@ const CATALOGUE = [
     name: "Kodak M35",
     category: "film",
     tag: "Film",
-    detail: "Includes 1 colour roll (36 shots)",
+    detail: "Includes 1 colour roll · 36 shots",
     price: "$39",
     blurb:
       "The nostalgic film look of a disposable — in a reusable, more sustainable design. Up to 36 photos per roll.",
@@ -160,7 +160,7 @@ const CATALOGUE = [
       "Simple point-and-shoot with a built-in flash. Easy enough for anyone to use.",
     details: [
       { label: "Format", value: "Film (35mm)" },
-      { label: "Film", value: "1 colour roll included (36 shots)" },
+      { label: "Film", value: "1 colour roll · 36 shots" },
       { label: "Includes", value: "Camera, film, battery" },
     ],
     tone: "soft",
@@ -175,7 +175,7 @@ const CATALOGUE = [
     name: "Fujifilm Instax Mini Evo",
     category: "instant",
     tag: "Instant",
-    detail: "Includes 1 Mini film pack (10 shots)",
+    detail: "Includes 1 Mini film pack · 10 shots",
     price: "$65",
     blurb:
       "A hybrid Instant camera — preview and select before you print, so there’s no wasted film. Creative modes for a playful, personal look.",
@@ -183,7 +183,7 @@ const CATALOGUE = [
       "Mini prints in the moment, easy enough for anyone to pick up and use.",
     details: [
       { label: "Format", value: "Instax Mini" },
-      { label: "Film", value: "1 Mini pack included (10 shots)" },
+      { label: "Film", value: "1 Mini pack · 10 shots" },
       { label: "Includes", value: "Camera, film, battery" },
     ],
     tone: "soft",
@@ -200,7 +200,7 @@ const CATALOGUE = [
     name: "Fujifilm Instax Mini 12",
     category: "instant",
     tag: "Instant",
-    detail: "Includes 1 Mini film pack (10 shots)",
+    detail: "Includes 1 Mini film pack · 10 shots",
     price: "$49",
     blurb:
       "The simplest Instax Mini — twist to turn on, shoot, and print in the moment. Classic Mini prints with no creative modes or settings to learn.",
@@ -208,7 +208,7 @@ const CATALOGUE = [
       "Light enough to pass around, with automatic exposure for indoor and outdoor shots.",
     details: [
       { label: "Format", value: "Instax Mini" },
-      { label: "Film", value: "1 Mini pack included (10 shots)" },
+      { label: "Film", value: "1 Mini pack · 10 shots" },
       { label: "Includes", value: "Camera, film, battery" },
     ],
     tone: "warm",
@@ -224,15 +224,15 @@ const CATALOGUE = [
     name: "Fujifilm Instax Square SQ40",
     category: "instant",
     tag: "Instant",
-    detail: "Includes 1 Square film pack (10 shots)",
+    detail: "Includes 1 Square film pack · 10 shots",
     price: "$59",
     blurb:
-      "Square Instant prints with a classic retro look — made for tables, books and keepsake walls. A larger print than Mini, with simple controls.",
+      "Square Instant prints with a classic retro look. A larger print than Mini, with simple controls.",
     description:
-      "Prints in the moment, with no waiting for a lab.",
+      "Perfect for people who want square Instant photos.",
     details: [
       { label: "Format", value: "Instax Square" },
-      { label: "Film", value: "1 Square pack included (10 shots)" },
+      { label: "Film", value: "1 Square pack · 10 shots" },
       { label: "Includes", value: "Camera, film, battery" },
     ],
     tone: "cool",
@@ -370,7 +370,7 @@ const CATALOGUE = [
     blurb:
       "One kit, three formats — digicam shareables, nostalgic film and square Instant prints. Curated so you don’t have to choose.",
     description:
-      "Film and SD included where each camera needs it.",
+      "Film and SD included.",
     details: [
       {
         label: "Cameras",
@@ -383,7 +383,7 @@ const CATALOGUE = [
       {
         label: "Film",
         value: [
-          "1 colour roll (72 shots for Ektar H35)",
+          "1 colour roll · 72 shots for Ektar H35",
           "1 Square pack · 10 shots",
         ],
       },
@@ -408,7 +408,7 @@ const CATALOGUE = [
     blurb:
       "Light and easy for a short escape — digicam shareables plus Instant Mini prints.",
     description:
-      "Two beginner-friendly cameras that travel light, with film and SD included.",
+      "Two beginner-friendly cameras that travel light. Film and SD included.",
     details: [
       {
         label: "Cameras",
@@ -436,12 +436,16 @@ const CATALOGUE = [
     category: "bundles",
     tag: "Bundle",
     subtitle: "Photo guestbook station — shoot, print, leave a wish",
-    detail: "3 cameras · Guestbook · Books · Bundle saving",
+    detail: "3 cameras · 100 Instant shots · Guestbook · Books",
     price: "$399",
     blurb:
-      "A photo guestbook station for the day — guests shoot, print, and leave a wish in the album.",
-    description:
-      "Set up on one table: Instant cameras for guests to take a shot, stick the print in a book, and leave their wishes. Includes a video guestbook and albums to keep.",
+      "A curated guestbook station for the day — Instant prints in the book, plus video and voice notes to keep.",
+    description: [
+      "Three Instant cameras for guests to take a shot and stick the print in the guestbook — Mini or Square",
+      "Extra spare film included so guests don’t run out",
+      "Video guestbook captures video and voice messages — keep both the look and sound of the day",
+      "Afterward, choose your favourite photos and we’ll make your Keepsake Album and Pop-up Gallery (about one week turnaround once you’ve sent the images)",
+    ],
     details: [
       {
         label: "Cameras",
@@ -454,16 +458,16 @@ const CATALOGUE = [
       {
         label: "Film",
         value: [
-          "2 Mini packs · 20 shots",
-          "1 Square pack · 10 shots",
+          "8 Mini packs · 80 shots",
+          "2 Square packs · 20 shots",
         ],
       },
       {
         label: "Also includes",
         value: [
           "Vintage Video Guestbook hire",
-          "Keepsake Album",
-          "Pop-up Gallery",
+          "Keepsake Album · made after the day",
+          "Pop-up Gallery · made after the day",
         ],
       },
     ],
@@ -503,9 +507,8 @@ const CATALOGUE = [
       {
         label: "Film",
         value: [
-          "1 colour roll (36 shots for M35)",
-          "1 Mini pack · 10 shots",
-          "2 extra Mini packs · 20 shots",
+          "1 colour roll · 36 shots for M35",
+          "3 Mini packs · 30 shots",
         ],
       },
     ],
@@ -523,29 +526,67 @@ const CATALOGUE = [
     name: "Wedding Table Pack",
     category: "bundles",
     tag: "Bundle",
-    subtitle: "4 Instax Mini cameras for guest tables",
-    detail: "4 cameras · Film included · Ask for 6",
-    price: "$229",
+    subtitle: "Instant cameras for guest tables",
+    detail: "4 cameras · 80 shots included",
+    price: "$199",
     blurb:
-      "Four Instant cameras for the tables — enough Mini film to shoot, share and stick prints in a book.",
+      "Pass Instant cameras around the tables — one Mini Evo plus three Mini 12s, with enough Mini film for the night.",
     description:
-      "Made for cameras circulating across tables. Need more for a bigger day? Ask for six when you enquire.",
+      "Made for cameras circulating across tables. Guests shoot, print and share through the reception. Extra spare film included so guests don’t run out.",
     details: [
       {
         label: "Cameras",
-        value: ["4× Fujifilm Instax Mini Evo (Instant)"],
+        value: [
+          "Fujifilm Instax Mini Evo (Instant)",
+          "3× Fujifilm Instax Mini 12 (Instant)",
+        ],
       },
       {
         label: "Film",
-        value: ["4 Mini packs · 40 shots"],
+        value: ["8 Mini packs · 80 shots · includes spare"],
       },
     ],
     tone: "warm",
-    image: "images/products/wedding-table-pack/front-dual-bg-backup.png",
+    image: "images/products/wedding-table-pack/front.png",
     gallery: [
-      "images/products/instax-mini-evo/front.png"
+      "images/products/instax-mini-evo/front.png",
+      "images/products/instax-mini-12/front.png",
     ],
-    alt: "Wedding Table Pack — four Instax Mini Evo cameras for guest tables",
+    alt: "Wedding Table Pack — Mini Evo and Mini 12 Instant cameras for guest tables",
+  },
+  {
+    id: "film-table-kit",
+    name: "Film Table Kit",
+    category: "bundles",
+    tag: "Bundle",
+    subtitle: "Disposable-style film cameras for guest tables",
+    detail: "4 cameras · Film · Develop & scan included",
+    price: "$269",
+    blurb:
+      "The disposable camera energy for your tables — four reusable Kodak M35s, loaded and ready, with develop & scan included.",
+    description:
+      "Guests shoot through the night. We develop & scan your four rolls (high resolution, about one week). Prefer max resolution? Ask when you enquire.",
+    details: [
+      {
+        label: "Cameras",
+        value: ["4× Kodak M35 marble grey (film)"],
+      },
+      {
+        label: "Film",
+        value: ["4 colour rolls · 144 shots"],
+      },
+      {
+        label: "Also includes",
+        value: [
+          "Develop & scan · high resolution",
+          "About one week turnaround",
+        ],
+      },
+    ],
+    tone: "soft",
+    image: "images/products/film-table-kit/front.png",
+    gallery: ["images/products/film-table-kit/front.png"],
+    alt: "Film Table Kit — four marble grey Kodak M35 film cameras for guest tables",
   },
 
   /* ——— Add-ons ——— */
@@ -817,9 +858,17 @@ function renderProductModal() {
     )
     .join("");
 
+  const descriptionMarkup = Array.isArray(item.description)
+    ? `<ul class="product-detail-list product-desc-list">${item.description
+        .map((line) => `<li>${line}</li>`)
+        .join("")}</ul>`
+    : item.description
+      ? `<p class="product-desc">${item.description}</p>`
+      : "";
+
   const productCopy = `
         <p class="product-blurb">${item.blurb}</p>
-        ${item.description ? `<p class="product-desc">${item.description}</p>` : ""}
+        ${descriptionMarkup}
         ${
           detailsRows
             ? `<h3 class="product-subhead">Details</h3><dl class="product-details">${detailsRows}</dl>`
@@ -1577,27 +1626,27 @@ function setupFilmGuide() {
     const per = Number(shotsEl.value) || 2.5;
     const shots = Math.ceil(guests * per);
     const packs = Math.ceil(shots / 10);
-    let tip = `About <strong>${shots} shots</strong> → <strong>${packs} Instax Mini packs</strong> (10 shots each).`;
+    let tip = `About <strong>${shots} shots</strong> → <strong>${packs} Instax Mini packs</strong> · 10 shots each.`;
 
     if (isParty) {
       if (shots <= 20) {
         tip += ` The <strong>Weekender</strong> (1 Mini pack included) plus an extra pack usually covers a smaller night.`;
       } else if (shots <= 30) {
-        tip += ` The <strong>Party Camera Kit</strong> already includes 3 Mini packs (30 shots) — a strong match for this count.`;
+        tip += ` The <strong>Party Camera Kit</strong> already includes 3 Mini packs · 30 shots — a strong match for this count.`;
       } else if (shots <= 50) {
         tip += ` Start with the <strong>Party Camera Kit</strong> and ask us for more Mini packs on enquiry so guests don’t run out.`;
       } else {
         tip += ` Ask us to build a bigger Instant kit for the crowd when you enquire.`;
       }
     } else {
-      const fit4 = shots <= 40;
-      const fit6 = shots <= 60;
-      if (fit4) {
-        tip += ` A <strong>Wedding Table Pack (4 cameras / 40 shots)</strong> covers this guest count at your chosen pace.`;
-      } else if (fit6) {
-        tip += ` Ask for the <strong>6-camera table pack</strong> on enquiry.`;
+      if (packs <= 3) {
+        tip += ` <strong>Happily Ever After</strong> includes 10 Instant packs · 100 shots — a strong match for a guestbook station.`;
+      } else if (packs <= 8) {
+        tip += ` The <strong>Wedding Table Pack</strong> includes 8 Mini packs · 80 shots — a strong match for cameras on the tables.`;
+      } else if (packs <= 10) {
+        tip += ` <strong>Happily Ever After</strong> includes 10 Instant packs · 100 shots — ask for extra Mini packs if cameras also circulate.`;
       } else {
-        tip += ` Ask us for a larger table kit or more Mini packs when you enquire so guests don’t run out.`;
+        tip += ` Start with <strong>Happily Ever After</strong> or the <strong>Wedding Table Pack</strong> and ask for extra Mini packs on enquiry so guests don’t run out.`;
       }
     }
 

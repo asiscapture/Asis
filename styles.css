@@ -1383,6 +1383,13 @@ body.product-open {
   line-height: 1.55;
 }
 
+.product-desc-list {
+  margin: 0 0 1.85rem;
+  color: var(--ink-soft);
+  font-size: 0.98rem;
+  line-height: 1.5;
+}
+
 .product-details {
   margin: 0 0 1.35rem;
   padding: 0;
@@ -1490,7 +1497,7 @@ body.product-open {
   font-weight: 700;
   letter-spacing: 0.06em;
   text-transform: uppercase;
-  margin: 0 0 0.55rem;
+  margin: 0.35rem 0 0.55rem;
 }
 
 .product-features {
