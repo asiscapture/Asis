@@ -1,3 +1,19 @@
+
+const SITE_ROOT = (() => {
+  if (document.currentScript && document.currentScript.src) {
+    return document.currentScript.src.replace(/app\.js(\?.*)?$/, "");
+  }
+  const scripts = document.getElementsByTagName("script");
+  for (let i = scripts.length - 1; i >= 0; i--) {
+    const src = scripts[i].src || "";
+    if (src.includes("app.js")) return src.replace(/app\.js(\?.*)?$/, "");
+  }
+  return "";
+})();
+function siteUrl(path) {
+  return SITE_ROOT + String(path || "").replace(/^\//, "");
+}
+
 /* Livis — camera hire catalogue */
 
 /*
@@ -12,7 +28,7 @@ const CATALOGUE = [
     category: "digital",
     tag: "Digital",
     detail: "32GB SD included",
-    price: "$39",
+    price: "$29",
     blurb:
       "A compact digicam with that early-2000s feel — crisp, shareable photos and Full HD video. Simple point-and-shoot so anyone can pick it up and shoot.",
     description:
@@ -23,8 +39,8 @@ const CATALOGUE = [
       { label: "Includes", value: "Camera, SD card, rechargeable battery" },
     ],
     tone: "cool",
-    image: "/images/products/kodak-pixpro-fz55/front.png",
-    imageHover: "/images/products/kodak-pixpro-fz55/hover.png",
+    image: siteUrl("images/products/kodak-pixpro-fz55/front.png"),
+    imageHover: siteUrl("images/products/kodak-pixpro-fz55/hover.png"),
     alt: "Kodak PIXPRO FZ55 digital camera for hire in Brisbane",
   },
   {
@@ -33,7 +49,7 @@ const CATALOGUE = [
     category: "digital",
     tag: "Digital",
     detail: "32GB SD included",
-    price: "$35",
+    price: "$29",
     blurb:
       "An easy compact digicam with a flip screen — made for selfies, group shots and nights when you just want to shoot.",
     description:
@@ -44,11 +60,11 @@ const CATALOGUE = [
       { label: "Includes", value: "Camera, SD card, battery" },
     ],
     tone: "soft",
-    image: "/images/products/kodak-pixpro-c1/front.png",
-    imageHover: "/images/products/kodak-pixpro-c1/hover.png",
+    image: siteUrl("images/products/kodak-pixpro-c1/front.png"),
+    imageHover: siteUrl("images/products/kodak-pixpro-c1/hover.png"),
     gallery: [
-      "/images/products/kodak-pixpro-c1/extra-1.png",
-      "/images/products/kodak-pixpro-c1/extra-2.png"
+      siteUrl("images/products/kodak-pixpro-c1/extra-1.png"),
+      siteUrl("images/products/kodak-pixpro-c1/extra-2.png")
     ],
     alt: "Kodak PIXPRO C1 compact digital camera hire",
   },
@@ -58,7 +74,7 @@ const CATALOGUE = [
     category: "digital",
     tag: "Digital",
     detail: "32GB SD included",
-    price: "$35",
+    price: "$29",
     blurb:
       "A silver mid-2000s digicam classic — compact, flashy and made for parties, nights out and that early digital look.",
     description:
@@ -69,10 +85,10 @@ const CATALOGUE = [
       { label: "Includes", value: "Camera, SD card, battery" },
     ],
     tone: "cool",
-    image: "/images/products/casio-exilim-ex-z110/front.png",
-    imageHover: "/images/products/casio-exilim-ex-z110/hover.png",
+    image: siteUrl("images/products/casio-exilim-ex-z110/front.png"),
+    imageHover: siteUrl("images/products/casio-exilim-ex-z110/hover.png"),
     gallery: [
-      "/images/products/casio-exilim-ex-z110/extra-1.png"
+      siteUrl("images/products/casio-exilim-ex-z110/extra-1.png")
     ],
     alt: "Casio Exilim EX-Z110 silver digital camera hire Brisbane",
   },
@@ -82,7 +98,7 @@ const CATALOGUE = [
     category: "digital",
     tag: "Digital",
     detail: "Waterproof · 32GB SD included",
-    price: "$39",
+    price: "$29",
     blurb:
       "A waterproof compact digicam — take it to the beach, the pool or out in the rain. 3× zoom and simple point-and-shoot, with that early digital look.",
     description:
@@ -94,11 +110,11 @@ const CATALOGUE = [
     ],
     tone: "soft",
     comingSoon: true,
-    image: "/images/products/fujifilm-finepix-z33wp/front.png",
-    imageHover: "/images/products/fujifilm-finepix-z33wp/hover.png",
+    image: siteUrl("images/products/fujifilm-finepix-z33wp/front.png"),
+    imageHover: siteUrl("images/products/fujifilm-finepix-z33wp/hover.png"),
     gallery: [
-      "/images/products/fujifilm-finepix-z33wp/extra-1.png",
-      "/images/products/fujifilm-finepix-z33wp/extra-2.png"
+      siteUrl("images/products/fujifilm-finepix-z33wp/extra-1.png"),
+      siteUrl("images/products/fujifilm-finepix-z33wp/extra-2.png")
     ],
     alt: "Fujifilm FinePix Z33WP waterproof digital camera hire Brisbane",
   },
@@ -108,7 +124,7 @@ const CATALOGUE = [
     category: "digital",
     tag: "Digital",
     detail: "32GB SD included",
-    price: "$35",
+    price: "$29",
     blurb:
       "A black compact digicam with 5× wide zoom — simple point-and-shoot for parties, weekends and nights out.",
     description:
@@ -120,8 +136,8 @@ const CATALOGUE = [
     ],
     tone: "cool",
     comingSoon: true,
-    image: "/images/products/olympus-vg-170/front.png",
-    imageHover: "/images/products/olympus-vg-170/hover.png",
+    image: siteUrl("images/products/olympus-vg-170/front.png"),
+    imageHover: siteUrl("images/products/olympus-vg-170/hover.png"),
     alt: "Olympus VG-170 digital camera hire Brisbane",
   },
 
@@ -132,7 +148,7 @@ const CATALOGUE = [
     category: "film",
     tag: "Film (half frame)",
     detail: "Includes 1 colour roll · 72 shots",
-    price: "$45",
+    price: "$50",
     blurb:
       "A half-frame film camera for nostalgic colour without the fuss. One standard roll gives you up to 72 shots.",
     description:
@@ -143,8 +159,8 @@ const CATALOGUE = [
       { label: "Includes", value: "Camera, film, battery" },
     ],
     tone: "warm",
-    image: "/images/products/kodak-ektar-h35/front.png",
-    imageHover: "/images/products/kodak-ektar-h35/hover.png",
+    image: siteUrl("images/products/kodak-ektar-h35/front.png"),
+    imageHover: siteUrl("images/products/kodak-ektar-h35/hover.png"),
     alt: "Kodak Ektar H35 half-frame film camera hire Brisbane",
   },
   {
@@ -153,7 +169,7 @@ const CATALOGUE = [
     category: "film",
     tag: "Film",
     detail: "Includes 1 colour roll · 36 shots",
-    price: "$39",
+    price: "$50",
     blurb:
       "The nostalgic film look of a disposable — in a reusable, more sustainable design. Up to 36 photos per roll.",
     description:
@@ -164,84 +180,84 @@ const CATALOGUE = [
       { label: "Includes", value: "Camera, film, battery" },
     ],
     tone: "soft",
-    image: "/images/products/kodak-m35/front.png",
-    imageHover: "/images/products/kodak-m35/hover.png",
+    image: siteUrl("images/products/kodak-m35/front.png"),
+    imageHover: siteUrl("images/products/kodak-m35/hover.png"),
     alt: "Kodak M35 yellow reusable 35mm film camera for hire",
   },
 
-  /* ——— Instant cameras ——— */
+  /* ——— Polaroid cameras ——— */
   {
     id: "instax-mini-evo",
     name: "Fujifilm Instax Mini Evo",
-    category: "instant",
-    tag: "Instant",
-    detail: "Includes 1 Mini film pack · 10 shots",
-    price: "$65",
+    category: "polaroid",
+    tag: "Polaroid",
+    detail: "Includes 2 Mini film packs · 20 shots",
+    price: "$50",
     blurb:
-      "A hybrid Instant camera — preview and select before you print, so there’s no wasted film. Creative modes for a playful, personal look.",
+      "A hybrid Polaroid camera — preview and select before you print, so there’s no wasted film. Creative modes for a playful, personal look.",
     description:
       "Mini prints in the moment, easy enough for anyone to pick up and use.",
     details: [
       { label: "Format", value: "Instax Mini" },
-      { label: "Film", value: "1 Mini pack · 10 shots" },
+      { label: "Film", value: "2 Mini packs · 20 shots" },
       { label: "Includes", value: "Camera, film, battery" },
     ],
     tone: "soft",
-    image: "/images/products/instax-mini-evo/front.png",
-    imageHover: "/images/products/instax-mini-evo/hover.png",
+    image: siteUrl("images/products/instax-mini-evo/front.png"),
+    imageHover: siteUrl("images/products/instax-mini-evo/hover.png"),
     gallery: [
-      "/images/products/instax-mini-evo/extra-1.png",
-      "/images/products/instax-mini-evo/extra-2.png"
+      siteUrl("images/products/instax-mini-evo/extra-1.png"),
+      siteUrl("images/products/instax-mini-evo/extra-2.png")
     ],
-    alt: "Fujifilm Instax Mini Evo instant camera hire",
+    alt: "Fujifilm Instax Mini Evo polaroid camera hire",
   },
   {
     id: "instax-mini-12",
     name: "Fujifilm Instax Mini 12",
-    category: "instant",
-    tag: "Instant",
-    detail: "Includes 1 Mini film pack · 10 shots",
-    price: "$49",
+    category: "polaroid",
+    tag: "Polaroid",
+    detail: "Includes 2 Mini film packs · 20 shots",
+    price: "$50",
     blurb:
       "The simplest Instax Mini — twist to turn on, shoot, and print in the moment. Classic Mini prints with no creative modes or settings to learn.",
     description:
       "Light enough to pass around, with automatic exposure for indoor and outdoor shots.",
     details: [
       { label: "Format", value: "Instax Mini" },
-      { label: "Film", value: "1 Mini pack · 10 shots" },
+      { label: "Film", value: "2 Mini packs · 20 shots" },
       { label: "Includes", value: "Camera, film, battery" },
     ],
     tone: "warm",
-    image: "/images/products/instax-mini-12/front.png",
-    imageHover: "/images/products/instax-mini-12/hover.png",
+    image: siteUrl("images/products/instax-mini-12/front.png"),
+    imageHover: siteUrl("images/products/instax-mini-12/hover.png"),
     gallery: [
-      "/images/products/instax-mini-12/extra-1.png"
+      siteUrl("images/products/instax-mini-12/extra-1.png")
     ],
-    alt: "Fujifilm Instax Mini 12 instant camera hire",
+    alt: "Fujifilm Instax Mini 12 polaroid camera hire",
   },
   {
     id: "instax-square-sq40",
     name: "Fujifilm Instax Square SQ40",
-    category: "instant",
-    tag: "Instant",
-    detail: "Includes 1 Square film pack · 10 shots",
-    price: "$59",
+    category: "polaroid",
+    tag: "Polaroid",
+    detail: "Includes 2 Square film packs · 20 shots",
+    price: "$50",
     blurb:
-      "Square Instant prints with a classic retro look. A larger print than Mini, with simple controls.",
+      "Square Polaroid prints with a classic retro look. A larger print than Mini, with simple controls.",
     description:
-      "Perfect for people who want square Instant photos.",
+      "Perfect for people who want square Polaroid photos.",
     details: [
       { label: "Format", value: "Instax Square" },
-      { label: "Film", value: "1 Square pack · 10 shots" },
+      { label: "Film", value: "2 Square packs · 20 shots" },
       { label: "Includes", value: "Camera, film, battery" },
     ],
     tone: "cool",
-    image: "/images/products/instax-square-sq40/front.png",
-    imageHover: "/images/products/instax-square-sq40/hover.png",
+    image: siteUrl("images/products/instax-square-sq40/front.png"),
+    imageHover: siteUrl("images/products/instax-square-sq40/hover.png"),
     gallery: [
-      "/images/products/instax-square-sq40/extra-1.png"
+      siteUrl("images/products/instax-square-sq40/extra-1.png")
     ],
-    alt: "Fujifilm Instax Square SQ40 instant camera for weddings and parties",
+    alt: "Fujifilm Instax Square SQ40 polaroid camera for weddings and parties",
   },
 
   /* ——— Guestbooks ——— */
@@ -262,7 +278,7 @@ const CATALOGUE = [
       { label: "Includes", value: "Guestbook, setup guidance, footage to take home" },
     ],
     tone: "warm",
-    image: "/images/products/vintage-video-guestbook/front.png",
+    image: siteUrl("images/products/vintage-video-guestbook/front.png"),
     alt: "Vintage Video Guestbook telephone for wedding hire Brisbane",
   },
 
@@ -275,7 +291,7 @@ const CATALOGUE = [
     detail: "Purchase · Yours to keep · 2 colours",
     price: "$85",
     blurb:
-      "A linen DIY album with self-adhesive pages — arrange Instant prints, notes and mementos your way, then seal them under clear film.",
+      "A linen DIY album with self-adhesive pages — arrange Polaroid prints, notes and mementos your way, then seal them under clear film.",
     description:
       "Works with any photo size. Reposition as many times as you like without damaging prints.",
     details: [
@@ -295,11 +311,11 @@ const CATALOGUE = [
       "Press the film down to seal and protect everything in place",
     ],
     tone: "soft",
-    image: "/images/products/keepsake-album/front.png",
-    imageHover: "/images/products/keepsake-album/extra-1.jpg",
+    image: siteUrl("images/products/keepsake-album/front.png"),
+    imageHover: siteUrl("images/products/keepsake-album/extra-1.jpg"),
     gallery: [
-      "/images/products/keepsake-album/extra-2.jpg",
-      "/images/products/keepsake-album/hover.jpg"
+      siteUrl("images/products/keepsake-album/extra-2.jpg"),
+      siteUrl("images/products/keepsake-album/hover.jpg")
     ],
     alt: "Keepsake Album linen DIY self-adhesive photo album in black and white",
   },
@@ -322,11 +338,11 @@ const CATALOGUE = [
       { label: "Includes", value: "Personalised Accordion Album" },
     ],
     tone: "warm",
-    image: "/images/products/film-book/front.jpg",
-    imageHover: "/images/products/film-book/extra-1.jpg",
+    image: siteUrl("images/products/film-book/front.jpg"),
+    imageHover: siteUrl("images/products/film-book/extra-1.jpg"),
     gallery: [
-      "/images/products/film-book/extra-2.jpg",
-      "/images/products/film-book/hover.jpg"
+      siteUrl("images/products/film-book/extra-2.jpg"),
+      siteUrl("images/products/film-book/hover.jpg")
     ],
     lifestyle: true,
     alt: "Palm-sized personalised Accordion Album with see-through film-paper photos",
@@ -349,10 +365,10 @@ const CATALOGUE = [
       { label: "Includes", value: "Personalised Pop-up Gallery" },
     ],
     tone: "cool",
-    image: "/images/products/film-photo-booklet/front.jpg",
-    imageHover: "/images/products/film-photo-booklet/hover.jpg",
+    image: siteUrl("images/products/film-photo-booklet/front.jpg"),
+    imageHover: siteUrl("images/products/film-photo-booklet/hover.jpg"),
     gallery: [
-      "/images/products/film-photo-booklet/extra-1.jpg"
+      siteUrl("images/products/film-photo-booklet/extra-1.jpg")
     ],
     lifestyle: true,
     alt: "Personalised Pop-up Gallery with see-through film-paper photos",
@@ -364,11 +380,11 @@ const CATALOGUE = [
     name: "The Full Mix",
     category: "bundles",
     tag: "Bundle",
-    subtitle: "Digital + film + Instant",
+    subtitle: "Digital + film + Polaroid",
     detail: "3 cameras · Film & SD included",
     price: "$129",
     blurb:
-      "One kit, three formats — digicam shareables, nostalgic film and square Instant prints. Curated so you don’t have to choose.",
+      "One kit, three formats — digicam shareables, nostalgic film and square Polaroid prints. Curated so you don’t have to choose.",
     description:
       "Film and SD included.",
     details: [
@@ -377,7 +393,7 @@ const CATALOGUE = [
         value: [
           "Kodak PIXPRO FZ55 (digital)",
           "Kodak Ektar H35 (film)",
-          "Fujifilm Instax Square SQ40 (Instant)",
+          "Fujifilm Instax Square SQ40 (Polaroid)",
         ],
       },
       {
@@ -389,11 +405,11 @@ const CATALOGUE = [
       },
     ],
     tone: "cool",
-    image: "/images/products/holy-trinity-bundle/front-dual-bg-backup.png",
+    image: siteUrl("images/products/holy-trinity-bundle/front-dual-bg-backup.png"),
     gallery: [
-      "/images/products/kodak-pixpro-fz55/front.png",
-      "/images/products/kodak-ektar-h35/front.png",
-      "/images/products/instax-square-sq40/front.png"
+      siteUrl("images/products/kodak-pixpro-fz55/front.png"),
+      siteUrl("images/products/kodak-ektar-h35/front.png"),
+      siteUrl("images/products/instax-square-sq40/front.png")
     ],
     alt: "The Full Mix camera hire bundle — FZ55, Ektar H35 and Instax Square SQ40",
   },
@@ -406,7 +422,7 @@ const CATALOGUE = [
     detail: "2 cameras · Film & SD included",
     price: "$75",
     blurb:
-      "Light and easy for a short escape — digicam shareables plus Instant Mini prints.",
+      "Light and easy for a short escape — digicam shareables plus Polaroid Mini prints.",
     description:
       "Two beginner-friendly cameras that travel light. Film and SD included.",
     details: [
@@ -414,7 +430,7 @@ const CATALOGUE = [
         label: "Cameras",
         value: [
           "Kodak PIXPRO C1 (digital)",
-          "Fujifilm Instax Mini 12 (Instant)",
+          "Fujifilm Instax Mini 12 (Polaroid)",
         ],
       },
       {
@@ -423,10 +439,10 @@ const CATALOGUE = [
       },
     ],
     tone: "warm",
-    image: "/images/products/weekender-bundle/front-dual-bg-backup.png",
+    image: siteUrl("images/products/weekender-bundle/front-dual-bg-backup.png"),
     gallery: [
-      "/images/products/kodak-pixpro-c1/front.png",
-      "/images/products/instax-mini-12/front.png"
+      siteUrl("images/products/kodak-pixpro-c1/front.png"),
+      siteUrl("images/products/instax-mini-12/front.png")
     ],
     alt: "The Weekender camera hire bundle — PIXPRO C1 and Instax Mini 12",
   },
@@ -436,12 +452,12 @@ const CATALOGUE = [
     category: "bundles",
     tag: "Bundle",
     subtitle: "Photo guestbook station — shoot, print, leave a wish",
-    detail: "3 cameras · 100 Instant shots · Guestbook · Books",
+    detail: "3 cameras · 100 Polaroid shots · Guestbook · Books",
     price: "$399",
     blurb:
-      "A curated guestbook station for the day — Instant prints in the book, plus video and voice notes to keep.",
+      "A curated guestbook station for the day — Polaroid prints in the book, plus video and voice notes to keep.",
     description: [
-      "Three Instant cameras for guests to take a shot and stick the print in the guestbook — Mini or Square",
+      "Three Polaroid cameras for guests to take a shot and stick the print in the guestbook — Mini or Square",
       "Extra spare film included so guests don’t run out",
       "Video guestbook captures video and voice messages — keep both the look and sound of the day",
       "Afterward, choose your favourite photos and we’ll make your Keepsake Album and Pop-up Gallery (about one week turnaround once you’ve sent the images)",
@@ -450,9 +466,9 @@ const CATALOGUE = [
       {
         label: "Cameras",
         value: [
-          "Fujifilm Instax Mini Evo (Instant)",
-          "Fujifilm Instax Mini 12 (Instant)",
-          "Fujifilm Instax Square SQ40 (Instant)",
+          "Fujifilm Instax Mini Evo (Polaroid)",
+          "Fujifilm Instax Mini 12 (Polaroid)",
+          "Fujifilm Instax Square SQ40 (Polaroid)",
         ],
       },
       {
@@ -472,16 +488,16 @@ const CATALOGUE = [
       },
     ],
     tone: "warm",
-    image: "/images/products/happily-ever-after-bundle/front-pre-heal-backup.png",
+    image: siteUrl("images/products/happily-ever-after-bundle/front-pre-heal-backup.png"),
     gallery: [
-      "/images/products/instax-mini-evo/front.png",
-      "/images/products/instax-mini-12/front.png",
-      "/images/products/instax-square-sq40/front.png",
-      "/images/products/vintage-video-guestbook/front.png",
-      "/images/products/keepsake-album/front.png",
-      "/images/products/film-photo-booklet/front.jpg"
+      siteUrl("images/products/instax-mini-evo/front.png"),
+      siteUrl("images/products/instax-mini-12/front.png"),
+      siteUrl("images/products/instax-square-sq40/front.png"),
+      siteUrl("images/products/vintage-video-guestbook/front.png"),
+      siteUrl("images/products/keepsake-album/front.png"),
+      siteUrl("images/products/film-photo-booklet/front.jpg")
     ],
-    alt: "Happily Ever After photo guestbook station — Instant cameras, video guestbook and albums",
+    alt: "Happily Ever After photo guestbook station — Polaroid cameras, video guestbook and albums",
   },
   {
     id: "party-bundle",
@@ -494,12 +510,12 @@ const CATALOGUE = [
     blurb:
       "Built for birthdays, hens and nights out — digicam, film and Instax Mini with extra packs for the crowd.",
     description:
-      "Three easy point-and-shoot formats, plus extra Mini film so the Instant cameras last the night.",
+      "Three easy point-and-shoot formats, plus extra Mini film so the Polaroid cameras last the night.",
     details: [
       {
         label: "Cameras",
         value: [
-          "Fujifilm Instax Mini Evo (Instant)",
+          "Fujifilm Instax Mini Evo (Polaroid)",
           "Kodak PIXPRO C1 (digital)",
           "Kodak M35 (film)",
         ],
@@ -513,11 +529,11 @@ const CATALOGUE = [
       },
     ],
     tone: "warm",
-    image: "/images/products/party-bundle/front.png",
+    image: siteUrl("images/products/party-bundle/front.png"),
     gallery: [
-      "/images/products/instax-mini-evo/front.png",
-      "/images/products/kodak-pixpro-c1/front.png",
-      "/images/products/kodak-m35/front.png"
+      siteUrl("images/products/instax-mini-evo/front.png"),
+      siteUrl("images/products/kodak-pixpro-c1/front.png"),
+      siteUrl("images/products/kodak-m35/front.png")
     ],
     alt: "Party Camera Kit — Instax Mini Evo, PIXPRO C1 and Kodak M35",
   },
@@ -526,19 +542,19 @@ const CATALOGUE = [
     name: "Wedding Table Pack",
     category: "bundles",
     tag: "Bundle",
-    subtitle: "Instant cameras for guest tables",
+    subtitle: "Polaroid cameras for guest tables",
     detail: "4 cameras · 80 shots included",
     price: "$199",
     blurb:
-      "Pass Instant cameras around the tables — one Mini Evo plus three Mini 12s, with enough Mini film for the night.",
+      "Pass Polaroid cameras around the tables — one Mini Evo plus three Mini 12s, with enough Mini film for the night.",
     description:
       "Made for cameras circulating across tables. Guests shoot, print and share through the reception. Extra spare film included so guests don’t run out.",
     details: [
       {
         label: "Cameras",
         value: [
-          "Fujifilm Instax Mini Evo (Instant)",
-          "3× Fujifilm Instax Mini 12 (Instant)",
+          "Fujifilm Instax Mini Evo (Polaroid)",
+          "3× Fujifilm Instax Mini 12 (Polaroid)",
         ],
       },
       {
@@ -547,12 +563,12 @@ const CATALOGUE = [
       },
     ],
     tone: "warm",
-    image: "/images/products/wedding-table-pack/front.png",
+    image: siteUrl("images/products/wedding-table-pack/front.png"),
     gallery: [
-      "/images/products/instax-mini-evo/front.png",
-      "/images/products/instax-mini-12/front.png",
+      siteUrl("images/products/instax-mini-evo/front.png"),
+      siteUrl("images/products/instax-mini-12/front.png"),
     ],
-    alt: "Wedding Table Pack — Mini Evo and Mini 12 Instant cameras for guest tables",
+    alt: "Wedding Table Pack — Mini Evo and Mini 12 Polaroid cameras for guest tables",
   },
   {
     id: "film-table-kit",
@@ -584,8 +600,8 @@ const CATALOGUE = [
       },
     ],
     tone: "soft",
-    image: "/images/products/film-table-kit/front.png",
-    gallery: ["/images/products/film-table-kit/front.png"],
+    image: siteUrl("images/products/film-table-kit/front.png"),
+    gallery: [siteUrl("images/products/film-table-kit/front.png")],
     alt: "Film Table Kit — four marble grey Kodak M35 film cameras for guest tables",
   },
 
@@ -607,7 +623,7 @@ const CATALOGUE = [
       { label: "Note", value: "Ektar H35 = two print orders" },
     ],
     tone: "warm",
-    image: "/images/photos.jpg?v=2",
+    image: siteUrl("images/photos.jpg?v=2"),
     lifestyle: true,
     alt: "Printed photo pack keepsake from Livis",
   },
@@ -615,11 +631,11 @@ const CATALOGUE = [
 
 
 
-const CAMERA_CATEGORIES = new Set(["digital", "film", "instant"]);
+const CAMERA_CATEGORIES = new Set(["digital", "film", "polaroid"]);
 const CAMERA_PAGE_CATEGORIES = new Set([
   "digital",
   "film",
-  "instant",
+  "polaroid",
   "bundles",
   "addons",
   "guestbooks",
@@ -630,10 +646,10 @@ const CART_STORAGE_KEY = "Livis-enquiry-cart";
 const catalogueScope = document.body.dataset.catalogue || "all";
 
 const BROWSE_BY_SCOPE = {
-  cameras: "/cameras/",
-  keepsakes: "/cameras/?filter=keepsakes",
-  home: "/#explore-categories",
-  day: "/cameras/",
+  cameras: siteUrl("cameras/index.html"),
+  keepsakes: siteUrl("cameras/index.html?filter=keepsakes"),
+  home: siteUrl("index.html#explore-categories"),
+  day: siteUrl("cameras/index.html"),
 };
 
 const state = {
@@ -710,7 +726,7 @@ function scopedCatalogue() {
 }
 
 function browseHref() {
-  return BROWSE_BY_SCOPE[catalogueScope] || "/#explore-categories";
+  return BROWSE_BY_SCOPE[catalogueScope] || siteUrl("index.html#explore-categories");
 }
 
 function getItem(id) {
@@ -1023,7 +1039,7 @@ function catalogueSortRank(item) {
     bundles: 0,
     digital: 1,
     film: 2,
-    instant: 3,
+    polaroid: 3,
     guestbooks: 4,
     keepsakes: 5,
     addons: 6,
@@ -1363,6 +1379,7 @@ function setCatalogueFilter(filter) {
 function applyFilterFromUrl() {
   const params = new URLSearchParams(window.location.search);
   let filter = params.get("filter");
+  if (filter === "instant") filter = "polaroid";
   if (filter === "guestbooks") filter = "keepsakes";
   if (filter) setCatalogueFilter(filter);
 }
@@ -1636,15 +1653,15 @@ function setupFilmGuide() {
       } else if (shots <= 50) {
         tip += ` Start with the <strong>Party Camera Kit</strong> and ask us for more Mini packs on enquiry so guests don’t run out.`;
       } else {
-        tip += ` Ask us to build a bigger Instant kit for the crowd when you enquire.`;
+        tip += ` Ask us to build a bigger Polaroid kit for the crowd when you enquire.`;
       }
     } else {
       if (packs <= 3) {
-        tip += ` <strong>Happily Ever After</strong> includes 10 Instant packs · 100 shots — a strong match for a guestbook station.`;
+        tip += ` <strong>Happily Ever After</strong> includes 10 Polaroid packs · 100 shots — a strong match for a guestbook station.`;
       } else if (packs <= 8) {
         tip += ` The <strong>Wedding Table Pack</strong> includes 8 Mini packs · 80 shots — a strong match for cameras on the tables.`;
       } else if (packs <= 10) {
-        tip += ` <strong>Happily Ever After</strong> includes 10 Instant packs · 100 shots — ask for extra Mini packs if cameras also circulate.`;
+        tip += ` <strong>Happily Ever After</strong> includes 10 Polaroid packs · 100 shots — ask for extra Mini packs if cameras also circulate.`;
       } else {
         tip += ` Start with <strong>Happily Ever After</strong> or the <strong>Wedding Table Pack</strong> and ask for extra Mini packs on enquiry so guests don’t run out.`;
       }
@@ -1717,7 +1734,7 @@ dayCameraLink?.addEventListener("click", () => {
   if (productModal && productPanel) {
     openProduct(cameraId);
   } else {
-    window.location.href = `/cameras/?product=${encodeURIComponent(cameraId)}`;
+    window.location.href = siteUrl(`cameras/index.html?product=${encodeURIComponent(cameraId)}`);
   }
 });
 

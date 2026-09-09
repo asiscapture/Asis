@@ -1,3 +1,2 @@
-Not required for the current YŌLI-inspired theme.
-
-Headings use Cormorant Garamond and body uses Nunito Sans (Google Fonts).
+Headings use Outfit and body uses Plus Jakarta Sans (Google Fonts).
+Both are modern sans faces with clean lining figures for prices and steps.
