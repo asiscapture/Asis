@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Build Your Camera Bundle | Livis Brisbane</title>
+    <meta
+      name="description"
+      content="Build your own camera hire bundle in Brisbane — pick 3+ cameras, size film for your guests, add extras, and save 15%."
+    />
+    <meta name="robots" content="index, follow" />
+    <meta name="author" content="Livis" />
+    <link rel="canonical" href="https://livis.com.au/bundle-builder/" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="en_AU" />
+    <meta property="og:site_name" content="Livis" />
+    <meta property="og:title" content="Build Your Camera Bundle | Livis" />
+    <meta
+      property="og:description"
+      content="Choose digicam, film and Polaroid cameras for your event. Bundles of 3+ cameras get 15% off."
+    />
+    <meta property="og:url" content="https://livis.com.au/bundle-builder/" />
+    <meta property="og:image" content="https://livis.com.au/images/discover/bundle-party.jpg" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Build Your Camera Bundle | Livis" />
+    <meta
+      name="twitter:description"
+      content="Pick 3+ cameras for your event, get a film guide, and save 15% on a custom hire bundle."
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../styles.css" />
+  </head>
+  <body>
+    <div class="grain" aria-hidden="true"></div>
+    <header class="site-header">
+      <a class="logo" href="../index.html" aria-label="Livis home">Livis</a>
+      <nav class="nav" aria-label="Primary">
+        <a href="../cameras/index.html">Cameras</a>
+        <a href="../bundle-builder/index.html" aria-current="page">Build a bundle</a>
+        <a href="../from-the-day/index.html">From the day</a>
+        <a href="../wedding-camera-hire/index.html">Wedding</a>
+        <a href="../index.html#how">How to hire</a>
+        <a href="../index.html#enquire" class="nav-cta">Hire now</a>
+      </nav>
+      <button class="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span>
+      </button>
+    </header>
+
+    <main class="landing landing--story bundle-builder" id="bundle-builder">
+      <header class="landing-hero landing-hero--story">
+        <p class="aside-label">Custom hire · 15% off when you pick 3+</p>
+        <h1>Build your camera bundle</h1>
+        <p class="lede">
+          Tap cameras to add them, plan film for your guests, then send an enquiry — we’ll confirm everything.
+        </p>
+        <ol class="builder-steps" aria-label="How it works">
+          <li class="is-active" data-builder-step="1"><span>1</span> Cameras</li>
+          <li data-builder-step="2"><span>2</span> Film</li>
+          <li data-builder-step="3"><span>3</span> Enquire</li>
+        </ol>
+      </header>
+
+      <div class="builder-layout">
+        <div class="builder-main">
+          <section class="builder-section" id="builder-cameras" aria-labelledby="builder-cameras-title">
+            <div class="section-head">
+              <h2 id="builder-cameras-title">1. Choose cameras</h2>
+              <p>
+                Pick at least <strong>3</strong> — mix digital, Polaroid and film.
+                <span class="builder-count-pill" id="builder-camera-count" aria-live="polite">0 / 3</span>
+              </p>
+            </div>
+            <div class="builder-filters" role="group" aria-label="Filter cameras">
+              <button type="button" class="builder-filter is-active" data-builder-filter="all">All</button>
+              <button type="button" class="builder-filter" data-builder-filter="digital">Digital</button>
+              <button type="button" class="builder-filter" data-builder-filter="polaroid">Polaroid</button>
+              <button type="button" class="builder-filter" data-builder-filter="film">Film</button>
+            </div>
+            <div class="builder-camera-grid" id="builder-camera-grid"></div>
+          </section>
+
+          <section
+            class="builder-section is-locked"
+            id="builder-event"
+            aria-labelledby="builder-event-title"
+          >
+            <div class="builder-lock-note" id="builder-lock-note">
+              Choose a camera above to unlock film planning.
+            </div>
+            <div class="builder-section-body">
+              <div class="section-head">
+                <h2 id="builder-event-title">2. Plan your film</h2>
+                <p>Guest count helps us suggest Polaroid packs. Add extras only for the cameras you picked.</p>
+              </div>
+              <div class="builder-event-grid">
+                <label class="field">
+                  <span>Event type</span>
+                  <select id="builder-event-type">
+                    <option value="Wedding">Wedding</option>
+                    <option value="Engagement">Engagement</option>
+                    <option value="Birthday / party" selected>Birthday / party</option>
+                    <option value="Hens / bucks">Hens / bucks</option>
+                    <option value="Baby / family">Baby / family</option>
+                    <option value="Corporate event">Corporate event</option>
+                    <option value="Holiday / travel">Holiday / travel</option>
+                    <option value="Other">Other</option>
+                  </select>
+                </label>
+                <label class="field">
+                  <span>Guest count</span>
+                  <input type="number" id="builder-guests" min="5" max="400" value="40" />
+                </label>
+                <label class="field">
+                  <span>Polaroid shots per guest</span>
+                  <select id="builder-shots">
+                    <option value="2">2 (light)</option>
+                    <option value="2.5" selected>2.5 (typical)</option>
+                    <option value="3">3 (generous)</option>
+                  </select>
+                </label>
+              </div>
+
+              <div class="builder-film-panel" id="builder-film-panel">
+                <div class="builder-film-estimate" id="builder-film-tip" aria-live="polite">
+                  <div class="builder-film-stats">
+                    <div class="builder-film-stat">
+                      <span class="builder-film-stat-label">Guests</span>
+                      <strong id="builder-stat-guests">40</strong>
+                    </div>
+                    <div class="builder-film-stat">
+                      <span class="builder-film-stat-label">Polaroid shots</span>
+                      <strong id="builder-stat-shots">~100</strong>
+                    </div>
+                    <div class="builder-film-stat">
+                      <span class="builder-film-stat-label">Mini packs to plan</span>
+                      <strong id="builder-stat-packs">10</strong>
+                    </div>
+                  </div>
+                  <p class="builder-film-coverage" id="builder-film-coverage"></p>
+                  <p class="builder-film-roll-note" id="builder-film-roll-note" hidden></p>
+                </div>
+                <p class="builder-extra-actions" id="builder-match-wrap" hidden>
+                  <button type="button" class="btn btn-primary builder-match-film-btn" id="builder-match-film-tip">
+                    Use suggested Mini packs
+                  </button>
+                </p>
+              </div>
+
+              <div class="builder-extra-film" id="builder-extra-film">
+                <div class="builder-extra-film-head">
+                  <h3>Extra film</h3>
+                  <p>Only shows film that matches your cameras. Included packs/rolls aren’t listed here.</p>
+                </div>
+                <div class="builder-extra-film-grid">
+                  <div class="builder-extra-row" data-film-kind="mini" id="builder-extra-mini-row" hidden>
+                    <div class="builder-extra-copy">
+                      <strong>Instax Mini packs</strong>
+                      <span>10 shots each</span>
+                      <span class="builder-extra-applies" id="builder-extra-mini-applies"></span>
+                    </div>
+                    <div class="builder-cam-qty">
+                      <button type="button" id="builder-extra-mini-dec" aria-label="Fewer Mini packs">−</button>
+                      <span id="builder-extra-mini-qty">0</span>
+                      <button type="button" id="builder-extra-mini-inc" aria-label="More Mini packs">+</button>
+                    </div>
+                  </div>
+                  <div class="builder-extra-row" data-film-kind="square" id="builder-extra-square-row" hidden>
+                    <div class="builder-extra-copy">
+                      <strong>Instax Square packs</strong>
+                      <span>10 shots each</span>
+                      <span class="builder-extra-applies" id="builder-extra-square-applies"></span>
+                    </div>
+                    <div class="builder-cam-qty">
+                      <button type="button" id="builder-extra-square-dec" aria-label="Fewer Square packs">−</button>
+                      <span id="builder-extra-square-qty">0</span>
+                      <button type="button" id="builder-extra-square-inc" aria-label="More Square packs">+</button>
+                    </div>
+                  </div>
+                  <div class="builder-extra-row" data-film-kind="rolls" id="builder-extra-roll-row" hidden>
+                    <div class="builder-extra-copy">
+                      <strong>Colour film rolls</strong>
+                      <span>35mm · 36 shots (72 on Ektar H35)</span>
+                      <span class="builder-extra-applies" id="builder-extra-roll-applies"></span>
+                    </div>
+                    <div class="builder-cam-qty">
+                      <button type="button" id="builder-extra-roll-dec" aria-label="Fewer colour rolls">−</button>
+                      <span id="builder-extra-roll-qty">0</span>
+                      <button type="button" id="builder-extra-roll-inc" aria-label="More colour rolls">+</button>
+                    </div>
+                  </div>
+                </div>
+                <p class="builder-extra-empty" id="builder-extra-empty" hidden>
+                  No film cameras in your kit yet — Polaroid or film cameras unlock extras here.
+                </p>
+              </div>
+            </div>
+          </section>
+        </div>
+
+        <aside class="builder-summary" aria-labelledby="builder-summary-title">
+          <div class="builder-summary-card">
+            <h2 id="builder-summary-title">Your bundle</h2>
+            <div class="builder-progress" id="builder-progress" aria-hidden="true">
+              <span></span><span></span><span></span>
+            </div>
+            <p class="builder-summary-status" id="builder-summary-status">
+              Choose at least 3 cameras to continue.
+            </p>
+            <ul class="builder-summary-list" id="builder-summary-list"></ul>
+            <p class="builder-summary-empty" id="builder-summary-empty">Nothing selected yet — tap a camera to start.</p>
+            <div class="builder-pricing" id="builder-pricing" hidden>
+              <p class="builder-price-row">
+                <span>List price</span>
+                <span id="builder-list-price">$0</span>
+              </p>
+              <p class="builder-price-row builder-price-row--save">
+                <span>Bundle (15% off)</span>
+                <strong id="builder-bundle-price">$0</strong>
+              </p>
+              <p class="builder-price-note">$50 refundable bond per camera. Extra film priced on confirmation.</p>
+            </div>
+            <button type="button" class="btn btn-primary btn-wide" id="builder-enquire-btn" disabled>
+              Add bundle to enquiry
+            </button>
+            <p class="builder-summary-hint" id="builder-summary-hint">
+              Prefer a ready-made kit?
+              <a href="../cameras/index.html?filter=bundles">Browse bundles</a>
+            </p>
+          </div>
+        </aside>
+      </div>
+
+      <aside class="builder-mobile-cta" id="builder-mobile-cta" hidden>
+        <div class="builder-mobile-cta-copy">
+          <strong id="builder-mobile-price">$0</strong>
+          <span id="builder-mobile-status">0 / 3 cameras</span>
+        </div>
+        <button type="button" class="btn btn-primary" id="builder-mobile-enquire" disabled>
+          Enquire
+        </button>
+      </aside>
+
+      <aside class="selection-bar" id="selection-bar" hidden>
+        <div class="selection-summary">
+          <span id="selection-count">0 items</span>
+          <span class="selection-divider" aria-hidden="true">·</span>
+          <span id="selection-names">Cart is empty</span>
+        </div>
+        <div class="selection-actions">
+          <button type="button" class="btn btn-ghost-dark" id="view-cart-btn">View cart</button>
+          <a class="btn btn-primary" href="../index.html#enquire">Continue to enquire</a>
+        </div>
+      </aside>
+
+      <div class="cart-drawer" id="cart-drawer" hidden>
+        <button type="button" class="cart-backdrop" id="cart-backdrop" aria-label="Close cart"></button>
+        <aside class="cart-panel" role="dialog" aria-modal="true" aria-labelledby="cart-title">
+          <header class="cart-header">
+            <h2 id="cart-title">Your enquiry cart</h2>
+            <button type="button" class="cart-close" id="cart-close" aria-label="Close cart">
+              Close
+            </button>
+          </header>
+          <div class="cart-body" id="cart-body"></div>
+          <footer class="cart-footer">
+            <a class="btn btn-primary btn-wide" href="../index.html#enquire" id="cart-enquire-btn">
+              Continue to enquire
+            </a>
+          </footer>
+        </aside>
+      </div>
+
+      <div class="product-modal" id="product-modal" hidden>
+        <button
+          type="button"
+          class="product-backdrop"
+          id="product-backdrop"
+          aria-label="Close product"
+        ></button>
+        <div
+          class="product-panel"
+          role="dialog"
+          aria-modal="true"
+          aria-labelledby="product-title"
+          id="product-panel"
+        ></div>
+      </div>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-brand">
+        <p class="logo">Livis</p>
+        <p class="footer-aka">Capture life as is</p>
+        <p class="footer-tagline">Film · Polaroid · Digital camera hire</p>
+        <address class="nap">
+          <span class="nap-address">Brisbane, QLD 4000, Australia</span><br />
+          <a class="nap-email" href="mailto:livis.hires@gmail.com">livis.hires@gmail.com</a>
+        </address>
+      </div>
+      <div class="footer-meta">
+        <nav class="footer-nav" aria-label="Footer">
+          <a href="../cameras/index.html">Cameras</a>
+          <a href="../bundle-builder/index.html">Build a bundle</a>
+          <a href="../from-the-day/index.html">From the day</a>
+          <a href="../our-story/index.html">Our story</a>
+          <a href="../cameras/index.html?filter=bundles">Bundles</a>
+          <a href="../wedding-camera-hire/index.html">Wedding</a>
+          <a href="../index.html#faq">FAQs</a>
+        </nav>
+        <p class="footer-legal">
+          <a href="../terms/index.html">Terms &amp; conditions</a>
+          <a href="../privacy/index.html">Privacy policy</a>
+        </p>
+        <p>© <span id="year"></span> Livis</p>
+      </div>
+    </footer>
+    <script src="../app.js?v=20260313b"></script>
+  </body>
+</html>

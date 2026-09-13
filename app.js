@@ -29,6 +29,7 @@ const CATALOGUE = [
     tag: "Digital",
     detail: "32GB SD included",
     price: "$29",
+    mostPopular: true,
     blurb:
       "A compact digicam with that early-2000s feel — crisp, shareable photos and Full HD video. Simple point-and-shoot so anyone can pick it up and shoot.",
     description:
@@ -187,29 +188,28 @@ const CATALOGUE = [
 
   /* ——— Polaroid cameras ——— */
   {
-    id: "instax-mini-evo",
-    name: "Fujifilm Instax Mini Evo",
+    id: "instax-mini-liplay",
+    name: "Fujifilm Instax Mini LiPlay",
     category: "polaroid",
     tag: "Polaroid",
     detail: "Includes 2 Mini film packs · 20 shots",
     price: "$50",
     blurb:
-      "A hybrid Polaroid camera — preview and select before you print, so there’s no wasted film. Creative modes for a playful, personal look.",
+      "A hybrid Polaroid camera — shoot and print Mini photos in the moment, or print from your phone. Easy enough for anyone to pick up and use.",
     description:
-      "Mini prints in the moment, easy enough for anyone to pick up and use.",
+      "Classic Mini prints with a simple hybrid design — perfect for parties, tables and guest shots.",
     details: [
       { label: "Format", value: "Instax Mini" },
       { label: "Film", value: "2 Mini packs · 20 shots" },
       { label: "Includes", value: "Camera, film, battery" },
     ],
     tone: "soft",
-    image: siteUrl("images/products/instax-mini-evo/front.png"),
-    imageHover: siteUrl("images/products/instax-mini-evo/hover.png"),
+    image: siteUrl("images/products/instax-mini-liplay/front.png"),
+    imageHover: siteUrl("images/products/instax-mini-liplay/hover.png"),
     gallery: [
-      siteUrl("images/products/instax-mini-evo/extra-1.png"),
-      siteUrl("images/products/instax-mini-evo/extra-2.png")
+      siteUrl("images/products/instax-mini-liplay/extra-1.png")
     ],
-    alt: "Fujifilm Instax Mini Evo polaroid camera hire",
+    alt: "Fujifilm Instax Mini LiPlay polaroid camera hire",
   },
   {
     id: "instax-mini-12",
@@ -218,6 +218,7 @@ const CATALOGUE = [
     tag: "Polaroid",
     detail: "Includes 2 Mini film packs · 20 shots",
     price: "$50",
+    mostPopular: true,
     blurb:
       "The simplest Instax Mini — twist to turn on, shoot, and print in the moment. Classic Mini prints with no creative modes or settings to learn.",
     description:
@@ -260,120 +261,6 @@ const CATALOGUE = [
     alt: "Fujifilm Instax Square SQ40 polaroid camera for weddings and parties",
   },
 
-  /* ——— Guestbooks ——— */
-  {
-    id: "vintage-video-guestbook",
-    name: "Vintage Video Guestbook",
-    category: "guestbooks",
-    tag: "Guestbook",
-    detail: "Video guestbook · Footage to take home",
-    price: "$199",
-    blurb:
-      "A vintage-feel guestbook — pick up the handset and leave spoken memories you’ll actually rewatch. Warmer than a paper book, without asking anyone for a speech.",
-    description:
-      "Easy to use on the day, with footage to take home after the hire.",
-    details: [
-      { label: "Type", value: "Video guestbook hire" },
-      { label: "Bond", value: "$50 refundable" },
-      { label: "Includes", value: "Guestbook, setup guidance, footage to take home" },
-    ],
-    tone: "warm",
-    image: siteUrl("images/products/vintage-video-guestbook/front.png"),
-    alt: "Vintage Video Guestbook telephone for wedding hire Brisbane",
-  },
-
-  /* ——— Keepsakes / photo items ——— */
-  {
-    id: "keepsake-album",
-    name: "Keepsake Album",
-    category: "keepsakes",
-    tag: "Purchase",
-    detail: "Purchase · Yours to keep · 2 colours",
-    price: "$85",
-    blurb:
-      "A linen DIY album with self-adhesive pages — arrange Polaroid prints, notes and mementos your way, then seal them under clear film.",
-    description:
-      "Works with any photo size. Reposition as many times as you like without damaging prints.",
-    details: [
-      { label: "Type", value: "Purchase · yours to keep" },
-      { label: "Cover", value: "Linen · black or white" },
-      { label: "Pages", value: "Self-adhesive with clear protective film" },
-      { label: "Includes", value: "Album ready to fill · choose black or white when you enquire" },
-    ],
-    colours: [
-      { name: "Black Linen", swatch: "#1C1A18" },
-      { name: "White Linen", swatch: "#F2F0EB" },
-    ],
-    howItWorks: [
-      "Peel back the clear protective film",
-      "Arrange your photos, notes and stickers",
-      "Reposition until the layout feels right",
-      "Press the film down to seal and protect everything in place",
-    ],
-    tone: "soft",
-    image: siteUrl("images/products/keepsake-album/front.png"),
-    imageHover: siteUrl("images/products/keepsake-album/extra-1.jpg"),
-    gallery: [
-      siteUrl("images/products/keepsake-album/extra-2.jpg"),
-      siteUrl("images/products/keepsake-album/hover.jpg")
-    ],
-    alt: "Keepsake Album linen DIY self-adhesive photo album in black and white",
-  },
-  {
-    id: "film-book",
-    name: "Accordion Album",
-    category: "keepsakes",
-    tag: "Purchase",
-    detail: "Palm-sized · Personalised · Yours to keep",
-    price: "$25",
-    blurb:
-      "A palm-sized accordion album that folds out into a strip of see-through film-paper photos — choose the photos, and we’ll make it for you.",
-    description:
-      "Compact, giftable, and made to open and share. Allow about a week for personalisation.",
-    details: [
-      { label: "Type", value: "Purchase · yours to keep · personalised" },
-      { label: "Size", value: "Palm-sized" },
-      { label: "Photos", value: "See-through film-paper prints · you choose the photos" },
-      { label: "Turnaround", value: "About 1 week" },
-      { label: "Includes", value: "Personalised Accordion Album" },
-    ],
-    tone: "warm",
-    image: siteUrl("images/products/film-book/front.jpg"),
-    imageHover: siteUrl("images/products/film-book/extra-1.jpg"),
-    gallery: [
-      siteUrl("images/products/film-book/extra-2.jpg"),
-      siteUrl("images/products/film-book/hover.jpg")
-    ],
-    lifestyle: true,
-    alt: "Palm-sized personalised Accordion Album with see-through film-paper photos",
-  },
-  {
-    id: "film-photo-booklet",
-    name: "Pop-up Gallery",
-    category: "keepsakes",
-    tag: "Purchase",
-    detail: "Personalised · Yours to keep",
-    price: "$39",
-    blurb:
-      "A personalised pop-up gallery filled with see-through film-paper photos — choose the photos, and we’ll make it for you.",
-    description:
-      "A tiered tabletop display that folds out into a small 3D gallery. Allow about a week for personalisation.",
-    details: [
-      { label: "Type", value: "Purchase · yours to keep · personalised" },
-      { label: "Photos", value: "See-through film-paper prints · you choose the photos" },
-      { label: "Turnaround", value: "About 1 week" },
-      { label: "Includes", value: "Personalised Pop-up Gallery" },
-    ],
-    tone: "cool",
-    image: siteUrl("images/products/film-photo-booklet/front.jpg"),
-    imageHover: siteUrl("images/products/film-photo-booklet/hover.jpg"),
-    gallery: [
-      siteUrl("images/products/film-photo-booklet/extra-1.jpg")
-    ],
-    lifestyle: true,
-    alt: "Personalised Pop-up Gallery with see-through film-paper photos",
-  },
-
   /* ——— Bundles ——— */
   {
     id: "holy-trinity-bundle",
@@ -382,7 +269,7 @@ const CATALOGUE = [
     tag: "Bundle",
     subtitle: "Digital + film + Polaroid",
     detail: "3 cameras · Film & SD included",
-    price: "$129",
+    price: "$105",
     blurb:
       "One kit, three formats — digicam shareables, nostalgic film and square Polaroid prints. Curated so you don’t have to choose.",
     description:
@@ -420,7 +307,8 @@ const CATALOGUE = [
     tag: "Bundle",
     subtitle: "Digicam + Instax Mini for a short escape",
     detail: "2 cameras · Film & SD included",
-    price: "$75",
+    price: "$65",
+    mostPopular: true,
     blurb:
       "Light and easy for a short escape — digicam shareables plus Polaroid Mini prints.",
     description:
@@ -447,66 +335,13 @@ const CATALOGUE = [
     alt: "The Weekender camera hire bundle — PIXPRO C1 and Instax Mini 12",
   },
   {
-    id: "happily-ever-after-bundle",
-    name: "Happily Ever After",
-    category: "bundles",
-    tag: "Bundle",
-    subtitle: "Photo guestbook station — shoot, print, leave a wish",
-    detail: "3 cameras · 100 Polaroid shots · Guestbook · Books",
-    price: "$399",
-    blurb:
-      "A curated guestbook station for the day — Polaroid prints in the book, plus video and voice notes to keep.",
-    description: [
-      "Three Polaroid cameras for guests to take a shot and stick the print in the guestbook — Mini or Square",
-      "Extra spare film included so guests don’t run out",
-      "Video guestbook captures video and voice messages — keep both the look and sound of the day",
-      "Afterward, choose your favourite photos and we’ll make your Keepsake Album and Pop-up Gallery (about one week turnaround once you’ve sent the images)",
-    ],
-    details: [
-      {
-        label: "Cameras",
-        value: [
-          "Fujifilm Instax Mini Evo (Polaroid)",
-          "Fujifilm Instax Mini 12 (Polaroid)",
-          "Fujifilm Instax Square SQ40 (Polaroid)",
-        ],
-      },
-      {
-        label: "Film",
-        value: [
-          "8 Mini packs · 80 shots",
-          "2 Square packs · 20 shots",
-        ],
-      },
-      {
-        label: "Also includes",
-        value: [
-          "Vintage Video Guestbook hire",
-          "Keepsake Album · made after the day",
-          "Pop-up Gallery · made after the day",
-        ],
-      },
-    ],
-    tone: "warm",
-    image: siteUrl("images/products/happily-ever-after-bundle/front-pre-heal-backup.png"),
-    gallery: [
-      siteUrl("images/products/instax-mini-evo/front.png"),
-      siteUrl("images/products/instax-mini-12/front.png"),
-      siteUrl("images/products/instax-square-sq40/front.png"),
-      siteUrl("images/products/vintage-video-guestbook/front.png"),
-      siteUrl("images/products/keepsake-album/front.png"),
-      siteUrl("images/products/film-photo-booklet/front.jpg")
-    ],
-    alt: "Happily Ever After photo guestbook station — Polaroid cameras, video guestbook and albums",
-  },
-  {
     id: "party-bundle",
     name: "Party Camera Kit",
     category: "bundles",
     tag: "Bundle",
     subtitle: "Digicam, film & Instax Mini",
     detail: "3 cameras · Extra Mini film",
-    price: "$159",
+    price: "$105",
     blurb:
       "Built for birthdays, hens and nights out — digicam, film and Instax Mini with extra packs for the crowd.",
     description:
@@ -515,7 +350,7 @@ const CATALOGUE = [
       {
         label: "Cameras",
         value: [
-          "Fujifilm Instax Mini Evo (Polaroid)",
+          "Fujifilm Instax Mini LiPlay (Polaroid)",
           "Kodak PIXPRO C1 (digital)",
           "Kodak M35 (film)",
         ],
@@ -531,11 +366,11 @@ const CATALOGUE = [
     tone: "warm",
     image: siteUrl("images/products/party-bundle/front.png"),
     gallery: [
-      siteUrl("images/products/instax-mini-evo/front.png"),
+      siteUrl("images/products/instax-mini-liplay/front.png"),
       siteUrl("images/products/kodak-pixpro-c1/front.png"),
       siteUrl("images/products/kodak-m35/front.png")
     ],
-    alt: "Party Camera Kit — Instax Mini Evo, PIXPRO C1 and Kodak M35",
+    alt: "Party Camera Kit — Instax Mini LiPlay, PIXPRO C1 and Kodak M35",
   },
   {
     id: "wedding-table-pack",
@@ -543,41 +378,37 @@ const CATALOGUE = [
     category: "bundles",
     tag: "Bundle",
     subtitle: "Polaroid cameras for guest tables",
-    detail: "4 cameras · 80 shots included",
-    price: "$199",
+    detail: "2 cameras · 40 shots included",
+    price: "$75",
     blurb:
-      "Pass Polaroid cameras around the tables — one Mini Evo plus three Mini 12s, with enough Mini film for the night.",
+      "Pass Polaroid cameras around the tables — two Mini 12s, with enough Mini film for the night.",
     description:
-      "Made for cameras circulating across tables. Guests shoot, print and share through the reception. Extra spare film included so guests don’t run out.",
+      "Made for cameras circulating across tables. Guests shoot, print and share through the reception.",
     details: [
       {
         label: "Cameras",
-        value: [
-          "Fujifilm Instax Mini Evo (Polaroid)",
-          "3× Fujifilm Instax Mini 12 (Polaroid)",
-        ],
+        value: ["2× Fujifilm Instax Mini 12 (Polaroid)"],
       },
       {
         label: "Film",
-        value: ["8 Mini packs · 80 shots · includes spare"],
+        value: ["4 Mini packs · 40 shots"],
       },
     ],
     tone: "warm",
     image: siteUrl("images/products/wedding-table-pack/front.png"),
     gallery: [
-      siteUrl("images/products/instax-mini-evo/front.png"),
       siteUrl("images/products/instax-mini-12/front.png"),
     ],
-    alt: "Wedding Table Pack — Mini Evo and Mini 12 Polaroid cameras for guest tables",
+    alt: "Wedding Table Pack — two Instax Mini 12 Polaroid cameras for guest tables",
   },
   {
     id: "film-table-kit",
     name: "Film Table Kit",
     category: "bundles",
     tag: "Bundle",
-    subtitle: "Disposable-style film cameras for guest tables",
+    subtitle: "Film cameras for guest tables · develop included",
     detail: "4 cameras · Film · Develop & scan included",
-    price: "$269",
+    price: "$299",
     blurb:
       "The disposable camera energy for your tables — four reusable Kodak M35s, loaded and ready, with develop & scan included.",
     description:
@@ -625,7 +456,7 @@ const CATALOGUE = [
     tone: "warm",
     image: siteUrl("images/photos.jpg?v=2"),
     lifestyle: true,
-    alt: "Printed photo pack keepsake from Livis",
+    alt: "Printed photo pack from Livis",
   },
 ]
 
@@ -638,16 +469,15 @@ const CAMERA_PAGE_CATEGORIES = new Set([
   "polaroid",
   "bundles",
   "addons",
-  "guestbooks",
-  "keepsakes",
 ]);
-const KEEPSAKE_CATEGORIES = new Set(["guestbooks", "keepsakes"]);
 const CART_STORAGE_KEY = "Livis-enquiry-cart";
+const CUSTOM_BUNDLE_KEY = "Livis-custom-bundle";
+const BUNDLE_DISCOUNT = 0.15;
+const BUNDLE_MIN_CAMERAS = 3;
 const catalogueScope = document.body.dataset.catalogue || "all";
 
 const BROWSE_BY_SCOPE = {
   cameras: siteUrl("cameras/index.html"),
-  keepsakes: siteUrl("cameras/index.html?filter=keepsakes"),
   home: siteUrl("index.html#explore-categories"),
   day: siteUrl("cameras/index.html"),
 };
@@ -713,6 +543,58 @@ function saveCart() {
   } catch {
     /* ignore quota errors */
   }
+}
+
+function loadCustomBundle() {
+  try {
+    const raw = sessionStorage.getItem(CUSTOM_BUNDLE_KEY);
+    if (!raw) return null;
+    const data = JSON.parse(raw);
+    if (!data || !Array.isArray(data.cameras) || !data.cameras.length) return null;
+    return data;
+  } catch {
+    return null;
+  }
+}
+
+function saveCustomBundle(data) {
+  try {
+    if (!data) sessionStorage.removeItem(CUSTOM_BUNDLE_KEY);
+    else sessionStorage.setItem(CUSTOM_BUNDLE_KEY, JSON.stringify(data));
+  } catch {
+    /* ignore */
+  }
+}
+
+function clearCustomBundle() {
+  saveCustomBundle(null);
+}
+
+function cartMatchesCustomBundle(bundle) {
+  if (!bundle?.cameras?.length) return false;
+  const expected = new Map(bundle.cameras.map((row) => [row.id, Number(row.qty) || 0]));
+  if (expected.size !== state.cart.size) return false;
+  for (const [id, qty] of expected) {
+    if ((state.cart.get(id) || 0) !== qty) return false;
+  }
+  return true;
+}
+
+function syncCustomBundleWithCart() {
+  const bundle = loadCustomBundle();
+  if (bundle && !cartMatchesCustomBundle(bundle)) clearCustomBundle();
+}
+
+function activeCustomBundle() {
+  const bundle = loadCustomBundle();
+  if (!bundle || !cartMatchesCustomBundle(bundle)) return null;
+  return bundle;
+}
+
+function cartDisplayTotal() {
+  const bundle = activeCustomBundle();
+  if (bundle && Number.isFinite(bundle.bundleTotal)) return Number(bundle.bundleTotal);
+  return cartTotal();
 }
 
 function scopedCatalogue() {
@@ -887,7 +769,10 @@ function renderProductModal() {
         ${descriptionMarkup}
         ${
           detailsRows
-            ? `<h3 class="product-subhead">Details</h3><dl class="product-details">${detailsRows}</dl>`
+            ? `<details class="product-hire-details">
+                <summary>Details</summary>
+                <dl class="product-details">${detailsRows}</dl>
+              </details>`
             : ""
         }
       `;
@@ -903,6 +788,7 @@ function renderProductModal() {
               : `<div class="photo-slot">Photo coming soon</div>`
           }
           ${item.comingSoon ? `<span class="coming-soon-badge">Coming soon</span>` : ""}
+          ${item.mostPopular && !item.comingSoon ? `<span class="most-popular-badge">Most popular</span>` : ""}
         </div>
         ${
           gallery.length > 1
@@ -946,25 +832,7 @@ function renderProductModal() {
             ? `<p class="product-note">${item.note}</p>`
             : isPurchase && (item.colours || []).length
               ? `<p class="product-note">Purchase · yours to keep · mention your preferred colour in the enquiry.</p>`
-              : isPurchase || isAddon
-                ? ""
-                : `<details class="product-hire-details">
-                  <summary>Hire details</summary>
-                  <dl class="product-hire-list">
-                    <div>
-                      <dt>Hire length</dt>
-                      <dd>Standard 3-day hire (day before to day after your event)</dd>
-                    </div>
-                    <div>
-                      <dt>Bond</dt>
-                      <dd>$50 refundable bond per camera for damages &amp; late fees</dd>
-                    </div>
-                    <div>
-                      <dt>Collect or delivery</dt>
-                      <dd>Pickup just outside Brisbane CBD, or delivery (fees confirmed on enquiry)</dd>
-                    </div>
-                  </dl>
-                </details>`
+              : ""
         }
         ${productCopy}
         ${
@@ -1030,19 +898,16 @@ function qtyControlsMarkup(id, qty, scope) {
 function matchesFilter(item, filter) {
   if (filter === "all") return true;
   if (filter === "cameras") return CAMERA_CATEGORIES.has(item.category);
-  if (filter === "keepsakes") return KEEPSAKE_CATEGORIES.has(item.category);
   return item.category === filter;
 }
 
 function catalogueSortRank(item) {
   const order = {
-    bundles: 0,
     digital: 1,
     film: 2,
     polaroid: 3,
-    guestbooks: 4,
-    keepsakes: 5,
-    addons: 6,
+    bundles: 4,
+    addons: 5,
   };
   return order[item.category] ?? 9;
 }
@@ -1072,6 +937,7 @@ function renderCatalogue() {
         <div class="item-media${item.image ? " has-photo" : ""}${item.lifestyle ? " is-lifestyle" : ""}${item.imageHover ? " has-hover" : ""}${item.comingSoon ? " is-coming-soon" : ""}" data-tone="${item.tone}">
           ${mediaMarkup(item)}
           ${item.comingSoon ? `<span class="coming-soon-badge">Coming soon</span>` : ""}
+          ${item.mostPopular && !item.comingSoon ? `<span class="most-popular-badge">Most popular</span>` : ""}
         </div>
         <div class="item-body-preview">
           <h3>${item.name}</h3>
@@ -1140,12 +1006,16 @@ function cartLineMarkup(entry) {
 }
 
 function updateCartUI() {
+  syncCustomBundleWithCart();
   const entries = cartEntries();
   const units = cartUnitCount();
   const lines = entries.length;
   const browse = browseHref();
-  const total = cartTotal();
+  const listTotal = cartTotal();
+  const bundle = activeCustomBundle();
+  const total = bundle ? Number(bundle.bundleTotal) : listTotal;
   const totalLabel = formatMoney(total);
+  const listLabel = formatMoney(listTotal);
 
   if (selectionBar) selectionBar.hidden = units === 0;
   if (selectionCount) {
@@ -1169,7 +1039,13 @@ function updateCartUI() {
         })`;
       })
       .join("; ");
-    selectedItemsField.value = units ? `${lineText}; Total: ${totalLabel}` : "";
+    if (!units) {
+      selectedItemsField.value = "";
+    } else if (bundle) {
+      selectedItemsField.value = formatCustomBundleEmailText(bundle, entries, listLabel, totalLabel);
+    } else {
+      selectedItemsField.value = `${lineText}; Total: ${totalLabel}`;
+    }
   }
 
   if (cartBody) {
@@ -1190,6 +1066,9 @@ function updateCartUI() {
     if (!units) {
       totalEl.hidden = true;
       totalEl.textContent = "";
+    } else if (bundle) {
+      totalEl.hidden = false;
+      totalEl.innerHTML = `<span>Bundle (15% off)</span><strong>${totalLabel}</strong>`;
     } else {
       totalEl.hidden = false;
       totalEl.innerHTML = `<span>Total</span><strong>${totalLabel}</strong>`;
@@ -1201,6 +1080,13 @@ function updateCartUI() {
       enquireSelection.innerHTML = `
         <p class="enquire-empty">Cart is empty — <a href="${browse}">browse products</a>.</p>
       `;
+    } else if (bundle) {
+      enquireSelection.innerHTML = renderCustomBundleEnquireCard(
+        bundle,
+        entries,
+        listLabel,
+        totalLabel
+      );
     } else {
       enquireSelection.innerHTML = `
         <div class="selected-chips">
@@ -1380,13 +1266,14 @@ function applyFilterFromUrl() {
   const params = new URLSearchParams(window.location.search);
   let filter = params.get("filter");
   if (filter === "instant") filter = "polaroid";
-  if (filter === "guestbooks") filter = "keepsakes";
+  if (filter === "keepsakes" || filter === "guestbooks") filter = "all";
   if (filter) setCatalogueFilter(filter);
 }
 
 function applyProductFromUrl() {
   const params = new URLSearchParams(window.location.search);
-  const productId = params.get("product");
+  let productId = params.get("product");
+  if (productId === "instax-mini-evo") productId = "instax-mini-liplay";
   if (!productId || !getItem(productId)) return;
   // Open after catalogue is ready so focus/modal markup is available
   requestAnimationFrame(() => openProduct(productId));
@@ -1423,8 +1310,6 @@ form?.addEventListener("submit", async (event) => {
   const data = new FormData(form);
   const name = (data.get("name") || "").toString().trim();
   const eventType = (data.get("event_type") || "").toString().trim();
-  const hireStart = (data.get("hire_start") || "").toString().trim();
-  const hireEnd = (data.get("hire_end") || "").toString().trim();
 
   if (!name) {
     formStatus.textContent = "Please enter your name.";
@@ -1433,16 +1318,10 @@ form?.addEventListener("submit", async (event) => {
     return;
   }
 
-  if (hireStart && hireEnd && hireEnd < hireStart) {
-    formStatus.textContent = "Hire end date needs to be on or after the start date.";
-    formStatus.classList.add("is-error");
-    return;
-  }
-
   data.set("name", name);
   data.set(
     "message",
-    `${data.get("message") || ""}\n\nEnquiry cart: ${selectedItemsField.value || "None"}\nHire start: ${hireStart || "—"}\nHire end: ${hireEnd || "—"}\nEvent type: ${eventType || "—"}`
+    `${data.get("message") || ""}\n\nEnquiry cart: ${selectedItemsField.value || "None"}\nEvent type: ${eventType || "—"}`
   );
 
   submitBtn.disabled = true;
@@ -1462,11 +1341,9 @@ form?.addEventListener("submit", async (event) => {
     form.reset();
     state.cart.clear();
     saveCart();
+    clearCustomBundle();
     updateCartUI();
     renderCatalogue();
-    const hireStartEl = document.getElementById("hire-start");
-    const hireEndEl = document.getElementById("hire-end");
-    if (hireStartEl && hireEndEl) hireEndEl.min = hireStartEl.min;
     formStatus.textContent = "Enquiry sent — we’ll aim to reply within one business day.";
   } catch (error) {
     formStatus.textContent =
@@ -1478,28 +1355,6 @@ form?.addEventListener("submit", async (event) => {
     submitBtn.textContent = "Send enquiry";
   }
 });
-
-function setupHireDates() {
-  const startEl = document.getElementById("hire-start");
-  const endEl = document.getElementById("hire-end");
-  if (!startEl || !endEl) return;
-
-  const today = new Date();
-  const y = today.getFullYear();
-  const m = String(today.getMonth() + 1).padStart(2, "0");
-  const day = String(today.getDate()).padStart(2, "0");
-  const min = `${y}-${m}-${day}`;
-  startEl.min = min;
-  endEl.min = min;
-
-  startEl.addEventListener("change", () => {
-    if (!startEl.value) return;
-    endEl.min = startEl.value;
-    if (endEl.value && endEl.value < startEl.value) endEl.value = startEl.value;
-  });
-}
-
-setupHireDates();
 
 function setupReveal() {
   const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
@@ -1656,14 +1511,10 @@ function setupFilmGuide() {
         tip += ` Ask us to build a bigger Polaroid kit for the crowd when you enquire.`;
       }
     } else {
-      if (packs <= 3) {
-        tip += ` <strong>Happily Ever After</strong> includes 10 Polaroid packs · 100 shots — a strong match for a guestbook station.`;
-      } else if (packs <= 8) {
-        tip += ` The <strong>Wedding Table Pack</strong> includes 8 Mini packs · 80 shots — a strong match for cameras on the tables.`;
-      } else if (packs <= 10) {
-        tip += ` <strong>Happily Ever After</strong> includes 10 Polaroid packs · 100 shots — ask for extra Mini packs if cameras also circulate.`;
+      if (packs <= 4) {
+        tip += ` The <strong>Wedding Table Pack</strong> includes 4 Mini packs · 40 shots — a strong match for cameras on the tables.`;
       } else {
-        tip += ` Start with <strong>Happily Ever After</strong> or the <strong>Wedding Table Pack</strong> and ask for extra Mini packs on enquiry so guests don’t run out.`;
+        tip += ` Start with the <strong>Wedding Table Pack</strong> and ask for extra Mini packs on enquiry so guests don’t run out.`;
       }
     }
 
@@ -1676,6 +1527,622 @@ function setupFilmGuide() {
 }
 
 setupFilmGuide();
+setupBundleBuilder();
+applyCustomBundleEnquirePrefill();
+
+/* ——— Bundle builder ——— */
+function hireableCameras() {
+  return CATALOGUE.filter(
+    (item) =>
+      !item.comingSoon &&
+      (item.category === "digital" || item.category === "film" || item.category === "polaroid")
+  );
+}
+
+function polaroidIncludedShots(item) {
+  if (item.category !== "polaroid") return { mini: 0, square: 0 };
+  if (/square/i.test(item.name) || /square/i.test(item.detail || "")) {
+    return { mini: 0, square: 20 };
+  }
+  return { mini: 20, square: 0 };
+}
+
+function filmIncludedShots(item) {
+  if (item.category !== "film") return 0;
+  if (/half/i.test(item.tag || "") || /h35/i.test(item.id)) return 72;
+  return 36;
+}
+
+/** Film format each hire camera uses — for builder labels & extra-film matching. */
+function cameraFilmInfo(item) {
+  if (!item) return { kind: "none", label: "", short: "", included: "" };
+  if (item.category === "digital") {
+    return {
+      kind: "digital",
+      label: "SD included",
+      short: "Digital",
+      included: "32GB SD",
+    };
+  }
+  if (item.category === "film") {
+    const half = /half/i.test(item.tag || "") || /h35/i.test(item.id);
+    return {
+      kind: "rolls",
+      label: half ? "Colour 35mm film · half-frame" : "Colour 35mm film",
+      short: "Colour roll",
+      included: half ? "1 colour roll · up to 72 shots" : "1 colour roll · 36 shots",
+    };
+  }
+  if (item.category === "polaroid") {
+    if (/square/i.test(item.name) || /square/i.test(item.detail || "") || /sq40/i.test(item.id)) {
+      return {
+        kind: "square",
+        label: "Instax Square film",
+        short: "Square packs",
+        included: "2 Square packs · 20 shots",
+      };
+    }
+    return {
+      kind: "mini",
+      label: "Instax Mini film",
+      short: "Mini packs",
+      included: "2 Mini packs · 20 shots",
+    };
+  }
+  return { kind: "none", label: "", short: "", included: "" };
+}
+
+function setupBundleBuilder() {
+  const root = document.getElementById("bundle-builder");
+  const grid = document.getElementById("builder-camera-grid");
+  if (!root || !grid) return;
+
+  const eventSection = document.getElementById("builder-event");
+  const eventTypeEl = document.getElementById("builder-event-type");
+  const guestsEl = document.getElementById("builder-guests");
+  const shotsEl = document.getElementById("builder-shots");
+  const filmTipEl = document.getElementById("builder-film-tip");
+  const statGuestsEl = document.getElementById("builder-stat-guests");
+  const statShotsEl = document.getElementById("builder-stat-shots");
+  const statPacksEl = document.getElementById("builder-stat-packs");
+  const coverageEl = document.getElementById("builder-film-coverage");
+  const rollNoteEl = document.getElementById("builder-film-roll-note");
+  const matchWrap = document.getElementById("builder-match-wrap");
+  const summaryStatus = document.getElementById("builder-summary-status");
+  const summaryList = document.getElementById("builder-summary-list");
+  const summaryEmpty = document.getElementById("builder-summary-empty");
+  const pricingEl = document.getElementById("builder-pricing");
+  const listPriceEl = document.getElementById("builder-list-price");
+  const bundlePriceEl = document.getElementById("builder-bundle-price");
+  const enquireBtn = document.getElementById("builder-enquire-btn");
+  const cameraCountEl = document.getElementById("builder-camera-count");
+  const progressEl = document.getElementById("builder-progress");
+  const mobileCta = document.getElementById("builder-mobile-cta");
+  const mobilePrice = document.getElementById("builder-mobile-price");
+  const mobileStatus = document.getElementById("builder-mobile-status");
+  const mobileEnquire = document.getElementById("builder-mobile-enquire");
+  const extraMiniQtyEl = document.getElementById("builder-extra-mini-qty");
+  const extraSquareQtyEl = document.getElementById("builder-extra-square-qty");
+  const extraRollQtyEl = document.getElementById("builder-extra-roll-qty");
+  const extraMiniAppliesEl = document.getElementById("builder-extra-mini-applies");
+  const extraSquareAppliesEl = document.getElementById("builder-extra-square-applies");
+  const extraRollAppliesEl = document.getElementById("builder-extra-roll-applies");
+  const extraMiniRow = document.getElementById("builder-extra-mini-row");
+  const extraSquareRow = document.getElementById("builder-extra-square-row");
+  const extraRollRow = document.getElementById("builder-extra-roll-row");
+  const extraEmpty = document.getElementById("builder-extra-empty");
+  const matchFilmTipBtn = document.getElementById("builder-match-film-tip");
+  const stepEls = [...document.querySelectorAll("[data-builder-step]")];
+
+  const qtyById = new Map();
+  const extraFilm = { mini: 0, square: 0, rolls: 0 };
+  let activeFilter = "all";
+
+  const cameras = hireableCameras();
+  const categoryOrder = ["digital", "polaroid", "film"];
+  const categoryLabels = {
+    digital: "Digital",
+    polaroid: "Polaroid",
+    film: "Film",
+  };
+
+  const selectedEntries = () =>
+    cameras
+      .map((item) => ({ item, qty: qtyById.get(item.id) || 0 }))
+      .filter((row) => row.qty > 0);
+
+  const cameraCount = () => selectedEntries().reduce((sum, row) => sum + row.qty, 0);
+
+  const listTotal = () =>
+    selectedEntries().reduce((sum, { item, qty }) => sum + parsePrice(item.price) * qty, 0);
+
+  function setExtraFilm(kind, qty) {
+    const next = Math.max(0, Math.min(99, Number(qty) || 0));
+    if (kind === "mini") extraFilm.mini = next;
+    if (kind === "square") extraFilm.square = next;
+    if (kind === "rolls") extraFilm.rolls = next;
+    renderSummary();
+  }
+
+  function camerasForFilmKind(kind) {
+    return selectedEntries().filter(({ item }) => cameraFilmInfo(item).kind === kind);
+  }
+
+  function formatAppliesLabel(kind) {
+    const rows = camerasForFilmKind(kind);
+    if (!rows.length) return "";
+    return `For: ${rows
+      .map(({ item, qty }) => (qty > 1 ? `${item.name} ×${qty}` : item.name))
+      .join(" · ")}`;
+  }
+
+  function updateExtraFilmApplies() {
+    const miniCams = camerasForFilmKind("mini");
+    const squareCams = camerasForFilmKind("square");
+    const rollCams = camerasForFilmKind("rolls");
+    const anyFilm = miniCams.length || squareCams.length || rollCams.length;
+
+    if (extraMiniAppliesEl) extraMiniAppliesEl.textContent = formatAppliesLabel("mini");
+    if (extraSquareAppliesEl) extraSquareAppliesEl.textContent = formatAppliesLabel("square");
+    if (extraRollAppliesEl) extraRollAppliesEl.textContent = formatAppliesLabel("rolls");
+
+    if (extraMiniRow) extraMiniRow.hidden = miniCams.length === 0;
+    if (extraSquareRow) extraSquareRow.hidden = squareCams.length === 0;
+    if (extraRollRow) extraRollRow.hidden = rollCams.length === 0;
+    if (extraEmpty) extraEmpty.hidden = !!anyFilm;
+
+    if (!miniCams.length && extraFilm.mini) extraFilm.mini = 0;
+    if (!squareCams.length && extraFilm.square) extraFilm.square = 0;
+    if (!rollCams.length && extraFilm.rolls) extraFilm.rolls = 0;
+  }
+
+  function filmAdvice() {
+    const guests = Math.max(1, Number(guestsEl?.value) || 0);
+    const per = Number(shotsEl?.value) || 2.5;
+    const shots = Math.ceil(guests * per);
+    const packsNeeded = Math.ceil(shots / 10);
+
+    let includedMini = 0;
+    let includedSquare = 0;
+    let includedFilmShots = 0;
+    let polaroidUnits = 0;
+    let filmUnits = 0;
+
+    selectedEntries().forEach(({ item, qty }) => {
+      const pol = polaroidIncludedShots(item);
+      includedMini += pol.mini * qty;
+      includedSquare += pol.square * qty;
+      includedFilmShots += filmIncludedShots(item) * qty;
+      if (item.category === "polaroid") polaroidUnits += qty;
+      if (item.category === "film") filmUnits += qty;
+    });
+
+    const includedMiniPacks = Math.round(includedMini / 10);
+    const includedSquarePacks = Math.round(includedSquare / 10);
+    const suggestedExtraMini = Math.max(0, packsNeeded - includedMiniPacks);
+
+    let coverage = "";
+    if (polaroidUnits > 0) {
+      if (suggestedExtraMini > 0) {
+        coverage = `Your Polaroid cameras include <strong>${includedMiniPacks} Mini pack${
+          includedMiniPacks === 1 ? "" : "s"
+        }</strong>. Add <strong>${suggestedExtraMini} more</strong>.`;
+      } else {
+        coverage = `Your Polaroid cameras already cover this (<strong>${includedMiniPacks} Mini pack${
+          includedMiniPacks === 1 ? "" : "s"
+        }</strong>).`;
+      }
+      if (includedSquarePacks) {
+        coverage += ` Also includes <strong>${includedSquarePacks} Square</strong>.`;
+      }
+    } else {
+      coverage = `No Polaroid camera yet — add Mini 12 or LiPlay to use Instant film.`;
+    }
+
+    if (extraFilm.mini || extraFilm.square || extraFilm.rolls) {
+      const bits = [];
+      if (extraFilm.mini) bits.push(`${extraFilm.mini} Mini`);
+      if (extraFilm.square) bits.push(`${extraFilm.square} Square`);
+      if (extraFilm.rolls) bits.push(`${extraFilm.rolls} colour`);
+      coverage += ` Extras selected: <strong>${bits.join(", ")}</strong>.`;
+    }
+
+    const rollNote =
+      filmUnits > 0
+        ? `Colour film in your kit: <strong>~${includedFilmShots} shots</strong> on the loaded rolls.`
+        : "";
+
+    const plain = [
+      `${guests} guests`,
+      `~${shots} Polaroid shots`,
+      `${packsNeeded} Mini packs`,
+      coverage.replace(/<[^>]+>/g, ""),
+      rollNote.replace(/<[^>]+>/g, ""),
+    ]
+      .filter(Boolean)
+      .join(". ");
+
+    return {
+      guests,
+      shots,
+      packsNeeded,
+      suggestedExtraMini,
+      coverage,
+      rollNote,
+      plain,
+    };
+  }
+
+  function visibleCameras() {
+    if (activeFilter === "all") return cameras;
+    return cameras.filter((item) => item.category === activeFilter);
+  }
+
+  function renderGrid() {
+    const visible = visibleCameras();
+    if (!visible.length) {
+      grid.innerHTML = `<p class="builder-filter-empty">No cameras in this filter.</p>`;
+      return;
+    }
+
+    const groups = categoryOrder
+      .map((cat) => ({
+        cat,
+        items: visible.filter((item) => item.category === cat),
+      }))
+      .filter((group) => group.items.length);
+
+    grid.innerHTML = groups
+      .map((group) => {
+        const cards = group.items
+          .map((item) => {
+            const qty = qtyById.get(item.id) || 0;
+            const selected = qty > 0;
+            const film = cameraFilmInfo(item);
+            return `
+        <article class="builder-cam${selected ? " is-selected" : ""}" data-builder-id="${item.id}" data-film-kind="${film.kind}">
+          <button type="button" class="builder-cam-toggle" data-builder-toggle="${item.id}" aria-pressed="${selected}">
+            <div class="builder-cam-media">
+              ${
+                item.image
+                  ? `<img src="${item.image}" alt="${item.alt || item.name}" width="400" height="400" loading="lazy" />`
+                  : `<div class="photo-slot">Photo coming soon</div>`
+              }
+              ${selected ? `<span class="builder-cam-check" aria-hidden="true">✓</span>` : ""}
+            </div>
+            <div class="builder-cam-body">
+              <p class="builder-cam-tag">${item.tag || item.category}</p>
+              <h3 class="builder-cam-name">${item.name}</h3>
+              <p class="builder-cam-film"><span class="builder-film-pill">${film.label}</span></p>
+              <p class="builder-cam-meta">${item.price}${
+              film.included ? ` · includes ${film.included}` : ""
+            }</p>
+            </div>
+          </button>
+          <div class="builder-cam-qty" data-builder-qty-wrap="${item.id}" ${selected ? "" : "hidden"}>
+            <button type="button" data-builder-dec="${item.id}" aria-label="Fewer ${item.name}">−</button>
+            <span data-builder-qty="${item.id}">${qty}</span>
+            <button type="button" data-builder-inc="${item.id}" aria-label="More ${item.name}">+</button>
+          </div>
+        </article>`;
+          })
+          .join("");
+
+        const showHeading = activeFilter === "all";
+        return `
+        <div class="builder-cam-group" data-group="${group.cat}">
+          ${showHeading ? `<h3 class="builder-cam-group-title">${categoryLabels[group.cat]}</h3>` : ""}
+          <div class="builder-cam-group-grid">${cards}</div>
+        </div>`;
+      })
+      .join("");
+  }
+
+  function updateSteps(count, ready) {
+    stepEls.forEach((el) => {
+      const step = Number(el.dataset.builderStep);
+      el.classList.toggle("is-active", step === 1 || (step === 2 && count > 0) || (step === 3 && ready));
+      el.classList.toggle("is-done", (step === 1 && count > 0) || (step === 2 && ready));
+    });
+  }
+
+  function submitBundle() {
+    if (cameraCount() < BUNDLE_MIN_CAMERAS) return;
+    const entries = selectedEntries();
+    const list = listTotal();
+    const bundleTotal = Math.round(list * (1 - BUNDLE_DISCOUNT));
+    const tip = filmAdvice();
+
+    state.cart.clear();
+    clearCustomBundle();
+    entries.forEach(({ item, qty }) => {
+      state.cart.set(item.id, qty);
+    });
+    saveCart();
+
+    saveCustomBundle({
+      cameras: entries.map(({ item, qty }) => ({
+        id: item.id,
+        name: item.name,
+        qty,
+        price: parsePrice(item.price),
+      })),
+      listTotal: list,
+      bundleTotal,
+      eventType: eventTypeEl?.value || "",
+      guests: tip.guests,
+      shots: tip.shots,
+      packsNeeded: tip.packsNeeded,
+      extraFilm: { ...extraFilm },
+      filmTipPlain: tip.plain,
+      coveragePlain: String(tip.coverage || "").replace(/<[^>]+>/g, ""),
+    });
+
+    updateCartUI();
+    window.location.href = siteUrl("index.html#enquire");
+  }
+
+  function renderSummary() {
+    updateExtraFilmApplies();
+    const entries = selectedEntries();
+    const count = cameraCount();
+    const ready = count >= BUNDLE_MIN_CAMERAS;
+    const list = listTotal();
+    const bundle = Math.round(list * (1 - BUNDLE_DISCOUNT));
+    const tip = filmAdvice();
+    const unlocked = count > 0;
+
+    eventSection?.classList.toggle("is-locked", !unlocked);
+    updateSteps(count, ready);
+
+    if (cameraCountEl) {
+      cameraCountEl.textContent = `${count} / ${BUNDLE_MIN_CAMERAS}`;
+      cameraCountEl.classList.toggle("is-ready", ready);
+    }
+
+    if (progressEl) {
+      [...progressEl.children].forEach((dot, i) => {
+        dot.classList.toggle("is-on", count > i);
+      });
+    }
+
+    if (statGuestsEl) statGuestsEl.textContent = String(tip.guests);
+    if (statShotsEl) statShotsEl.textContent = `~${tip.shots}`;
+    if (statPacksEl) statPacksEl.textContent = String(tip.packsNeeded);
+    if (coverageEl) coverageEl.innerHTML = tip.coverage;
+    if (rollNoteEl) {
+      rollNoteEl.hidden = !tip.rollNote;
+      rollNoteEl.innerHTML = tip.rollNote || "";
+    }
+    if (matchWrap) {
+      matchWrap.hidden = !(
+        tip.suggestedExtraMini > 0 && camerasForFilmKind("mini").length > 0
+      );
+    }
+    if (extraMiniQtyEl) extraMiniQtyEl.textContent = String(extraFilm.mini);
+    if (extraSquareQtyEl) extraSquareQtyEl.textContent = String(extraFilm.square);
+    if (extraRollQtyEl) extraRollQtyEl.textContent = String(extraFilm.rolls);
+
+    if (summaryEmpty) summaryEmpty.hidden = entries.length > 0;
+
+    if (summaryList) {
+      const lines = entries.map(({ item, qty }) => {
+        const film = cameraFilmInfo(item);
+        return `<li><span>${qty > 1 ? `${item.name} ×${qty}` : item.name}<em class="builder-summary-film">${
+          film.short
+        }</em></span><span>${formatMoney(parsePrice(item.price) * qty)}</span></li>`;
+      });
+      if (extraFilm.mini) {
+        lines.push(
+          `<li><span>Extra Mini packs ×${extraFilm.mini}<em class="builder-summary-film">for Mini cameras</em></span><span>on enquire</span></li>`
+        );
+      }
+      if (extraFilm.square) {
+        lines.push(
+          `<li><span>Extra Square packs ×${extraFilm.square}<em class="builder-summary-film">for SQ40</em></span><span>on enquire</span></li>`
+        );
+      }
+      if (extraFilm.rolls) {
+        lines.push(
+          `<li><span>Extra colour rolls ×${extraFilm.rolls}<em class="builder-summary-film">for M35 / Ektar</em></span><span>on enquire</span></li>`
+        );
+      }
+      summaryList.innerHTML = lines.join("");
+    }
+
+    if (summaryStatus) {
+      summaryStatus.classList.toggle("is-ready", ready);
+      if (!count) {
+        summaryStatus.textContent = `Choose at least ${BUNDLE_MIN_CAMERAS} cameras to unlock 15% off.`;
+      } else if (!ready) {
+        summaryStatus.textContent = `${count} of ${BUNDLE_MIN_CAMERAS} — add ${
+          BUNDLE_MIN_CAMERAS - count
+        } more for 15% off.`;
+      } else {
+        summaryStatus.textContent = `${count} cameras · 15% off unlocked. Plan film, then enquire.`;
+      }
+    }
+
+    if (pricingEl) pricingEl.hidden = !ready;
+    if (listPriceEl) listPriceEl.textContent = formatMoney(list);
+    if (bundlePriceEl) bundlePriceEl.textContent = formatMoney(bundle);
+    if (enquireBtn) {
+      enquireBtn.disabled = !ready;
+      enquireBtn.textContent = ready ? "Add bundle to enquiry" : `Add ${Math.max(0, BUNDLE_MIN_CAMERAS - count)} more camera${BUNDLE_MIN_CAMERAS - count === 1 ? "" : "s"}`;
+    }
+
+    if (mobileCta) mobileCta.hidden = count === 0;
+    if (mobilePrice) mobilePrice.textContent = ready ? formatMoney(bundle) : formatMoney(list);
+    if (mobileStatus) {
+      mobileStatus.textContent = ready
+        ? `${count} cameras · 15% off`
+        : `${count} / ${BUNDLE_MIN_CAMERAS} cameras`;
+    }
+    if (mobileEnquire) {
+      mobileEnquire.disabled = !ready;
+      mobileEnquire.textContent = ready ? "Enquire" : "Keep picking";
+    }
+  }
+
+  function setQty(id, qty) {
+    const next = Math.max(0, Math.min(99, Number(qty) || 0));
+    if (next <= 0) qtyById.delete(id);
+    else qtyById.set(id, next);
+    renderGrid();
+    renderSummary();
+  }
+
+  grid.addEventListener("click", (event) => {
+    const t = event.target.closest("[data-builder-toggle], [data-builder-inc], [data-builder-dec]");
+    if (!t) return;
+    event.preventDefault();
+    if (t.dataset.builderToggle) {
+      const id = t.dataset.builderToggle;
+      const current = qtyById.get(id) || 0;
+      setQty(id, current > 0 ? 0 : 1);
+      return;
+    }
+    if (t.dataset.builderInc) {
+      setQty(t.dataset.builderInc, (qtyById.get(t.dataset.builderInc) || 0) + 1);
+      return;
+    }
+    if (t.dataset.builderDec) {
+      setQty(t.dataset.builderDec, (qtyById.get(t.dataset.builderDec) || 0) - 1);
+    }
+  });
+
+  document.querySelectorAll("[data-builder-filter]").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      activeFilter = btn.dataset.builderFilter || "all";
+      document.querySelectorAll("[data-builder-filter]").forEach((el) => {
+        el.classList.toggle("is-active", el === btn);
+      });
+      renderGrid();
+    });
+  });
+
+  document.getElementById("builder-extra-mini-inc")?.addEventListener("click", () =>
+    setExtraFilm("mini", extraFilm.mini + 1)
+  );
+  document.getElementById("builder-extra-mini-dec")?.addEventListener("click", () =>
+    setExtraFilm("mini", extraFilm.mini - 1)
+  );
+  document.getElementById("builder-extra-square-inc")?.addEventListener("click", () =>
+    setExtraFilm("square", extraFilm.square + 1)
+  );
+  document.getElementById("builder-extra-square-dec")?.addEventListener("click", () =>
+    setExtraFilm("square", extraFilm.square - 1)
+  );
+  document.getElementById("builder-extra-roll-inc")?.addEventListener("click", () =>
+    setExtraFilm("rolls", extraFilm.rolls + 1)
+  );
+  document.getElementById("builder-extra-roll-dec")?.addEventListener("click", () =>
+    setExtraFilm("rolls", extraFilm.rolls - 1)
+  );
+
+  matchFilmTipBtn?.addEventListener("click", () => {
+    const tip = filmAdvice();
+    setExtraFilm("mini", tip.suggestedExtraMini);
+  });
+
+  [eventTypeEl, guestsEl, shotsEl].forEach((el) => {
+    el?.addEventListener("input", renderSummary);
+    el?.addEventListener("change", renderSummary);
+  });
+
+  enquireBtn?.addEventListener("click", submitBundle);
+  mobileEnquire?.addEventListener("click", () => {
+    if (cameraCount() < BUNDLE_MIN_CAMERAS) {
+      document.getElementById("builder-cameras")?.scrollIntoView({ behavior: "smooth", block: "start" });
+      return;
+    }
+    submitBundle();
+  });
+
+  renderGrid();
+  renderSummary();
+}
+
+
+function formatCustomBundleExtras(bundle) {
+  if (!bundle?.extraFilm) return "";
+  const bits = [];
+  if (bundle.extraFilm.mini) {
+    bits.push(`${bundle.extraFilm.mini} Mini pack${bundle.extraFilm.mini === 1 ? "" : "s"}`);
+  }
+  if (bundle.extraFilm.square) {
+    bits.push(`${bundle.extraFilm.square} Square pack${bundle.extraFilm.square === 1 ? "" : "s"}`);
+  }
+  if (bundle.extraFilm.rolls) {
+    bits.push(`${bundle.extraFilm.rolls} colour roll${bundle.extraFilm.rolls === 1 ? "" : "s"}`);
+  }
+  return bits.join(" · ");
+}
+
+function formatCustomBundleEmailText(bundle, entries, listLabel, totalLabel) {
+  const extras = formatCustomBundleExtras(bundle);
+  const lines = [
+    "CUSTOM BUNDLE (15% off)",
+    ...entries.map(({ item, qty }) => `- ${item.name} ×${qty}`),
+    `List ${listLabel} → Bundle ${totalLabel}`,
+  ];
+  if (bundle.eventType) lines.push(`Event: ${bundle.eventType}`);
+  if (bundle.guests) lines.push(`Guests: ${bundle.guests}`);
+  if (bundle.shots && bundle.packsNeeded) {
+    lines.push(`Polaroid plan: ~${bundle.shots} shots · ${bundle.packsNeeded} Mini packs`);
+  }
+  if (bundle.coveragePlain) lines.push(bundle.coveragePlain);
+  if (extras) lines.push(`Extra film: ${extras}`);
+  return lines.join("\n");
+}
+
+function renderCustomBundleEnquireCard(bundle, entries, listLabel, totalLabel) {
+  const extras = formatCustomBundleExtras(bundle);
+  const cameras = entries
+    .map(({ item, qty }) => {
+      const film = cameraFilmInfo(item);
+      return `<li><span>${qty > 1 ? `${item.name} ×${qty}` : item.name}<em>${
+        film.short
+      }</em></span></li>`;
+    })
+    .join("");
+
+  return `
+    <div class="enquire-bundle-card">
+      <p class="enquire-bundle-badge">Custom bundle · 15% off</p>
+      <ul class="enquire-bundle-cameras">${cameras}</ul>
+      <dl class="enquire-bundle-meta">
+        ${bundle.eventType ? `<div><dt>Event</dt><dd>${bundle.eventType}</dd></div>` : ""}
+        ${bundle.guests ? `<div><dt>Guests</dt><dd>${bundle.guests}</dd></div>` : ""}
+        ${
+          bundle.packsNeeded
+            ? `<div><dt>Polaroid</dt><dd>~${bundle.shots} shots · ${bundle.packsNeeded} Mini packs</dd></div>`
+            : ""
+        }
+        ${extras ? `<div><dt>Extra film</dt><dd>${extras}</dd></div>` : ""}
+      </dl>
+      <p class="cart-total"><span>Bundle total</span><strong>${totalLabel}</strong></p>
+      <p class="enquire-bundle-list">List price ${listLabel}</p>
+      <p class="enquire-bundle-edit"><a href="${siteUrl("bundle-builder/index.html")}">Edit bundle</a></p>
+    </div>
+  `;
+}
+
+function applyCustomBundleEnquirePrefill() {
+  const bundle = activeCustomBundle() || loadCustomBundle();
+  if (!bundle) return;
+
+  const eventEl = form?.querySelector('[name="event_type"]');
+  if (eventEl && bundle.eventType) {
+    eventEl.value = bundle.eventType;
+  }
+
+  const messageEl = form?.querySelector('[name="message"]');
+  if (messageEl && !messageEl.value.trim()) {
+    messageEl.placeholder =
+      "Anything else? Pickup/delivery preference, photo export, timing notes…";
+  }
+}
 
 /* ——— From the day modal ——— */
 const dayModal = document.getElementById("day-modal");

@@ -3,27 +3,14 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Keepsakes Brisbane | Guest Books &amp; Photo Albums | Livis</title>
-    <meta
-      name="description"
-      content="Keepsakes from Livis — Vintage Video Guestbook hire, plus Keepsake Album, Accordion Album and Pop-up Gallery to purchase. Brisbane hire."
-    />
-    <link rel="canonical" href="https://livis.com.au/cameras/?filter=keepsakes" />
-    <meta http-equiv="refresh" content="0; url=../cameras/index.html?filter=keepsakes" />
+    <title>Redirecting…</title>
+    <link rel="canonical" href="https://livis.com.au/cameras/" />
+    <meta http-equiv="refresh" content="0; url=../cameras/index.html" />
     <script>
-      (function () {
-        var params = new URLSearchParams(window.location.search);
-        var dest = new URL("../cameras/index.html", window.location.origin);
-        dest.searchParams.set("filter", "keepsakes");
-        if (params.get("product")) dest.searchParams.set("product", params.get("product"));
-        window.location.replace(dest.pathname + dest.search);
-      })();
+      location.replace("../cameras/index.html" + window.location.search + window.location.hash);
     </script>
   </head>
   <body>
-    <p>
-      Keepsakes now live on the
-      <a href="../cameras/index.html?filter=keepsakes">cameras page</a>.
-    </p>
+    <p>This page has moved to <a href="../cameras/index.html">cameras</a>.</p>
   </body>
 </html>

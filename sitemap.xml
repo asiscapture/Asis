@@ -26,6 +26,11 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://livis.com.au/bundle-builder/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://livis.com.au/party-camera-hire/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
