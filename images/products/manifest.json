@@ -1,9 +1,10 @@
 {
   "kodak-pixpro-fz55": {
     "front": "C:/Users/ceris/OneDrive/Documents/Asis webstie/images/products/kodak-pixpro-fz55/front.png",
-    "hover": "C:/Users/ceris/OneDrive/Documents/Asis webstie/images/products/kodak-pixpro-fz55/hover.png",
+    "hover": "images/products/kodak-pixpro-fz55/hover.png",
     "gallery": [
-      "C:/Users/ceris/OneDrive/Documents/Asis webstie/images/products/kodak-pixpro-fz55/hover.png"
+      "images/products/kodak-pixpro-fz55/extra-1.jpg",
+      "images/products/kodak-pixpro-fz55/extra-2.jpg"
     ],
     "lifestyle": false
   },
@@ -109,12 +110,9 @@
     "lifestyle": false
   },
   "weekender-bundle": {
-    "front": "images/products/weekender-bundle/front.png",
+    "front": "C:/Users/ceris/OneDrive/Documents/Asis webstie/images/products/weekender-bundle/front.png",
     "hover": null,
-    "gallery": [
-      "images/products/kodak-pixpro-c1/front.png",
-      "images/products/instax-mini-12/front.png"
-    ],
+    "gallery": [],
     "lifestyle": false
   },
   "happily-ever-after-bundle": {
@@ -223,11 +221,11 @@
     "lifestyle": false
   },
   "casio-exilim-ex-z110": {
-    "front": "c:\\Users\\ceris\\OneDrive\\Documents\\Asis webstie\\images\\products\\casio-exilim-ex-z110\\front.png",
-    "hover": "c:\\Users\\ceris\\OneDrive\\Documents\\Asis webstie\\images\\products\\casio-exilim-ex-z110\\hover.png",
+    "front": "C:/Users/ceris/OneDrive/Documents/Asis webstie/images/products/casio-exilim-ex-z110/front.png",
+    "hover": "C:/Users/ceris/OneDrive/Documents/Asis webstie/images/products/casio-exilim-ex-z110/hover.png",
     "gallery": [
-      "c:\\Users\\ceris\\OneDrive\\Documents\\Asis webstie\\images\\products\\casio-exilim-ex-z110\\hover.png",
-      "c:\\Users\\ceris\\OneDrive\\Documents\\Asis webstie\\images\\products\\casio-exilim-ex-z110\\extra-1.png"
+      "images/products/casio-exilim-ex-z110/extra-1.jpg",
+      "images/products/casio-exilim-ex-z110/extra-2.jpg"
     ],
     "lifestyle": false
   },
@@ -236,8 +234,7 @@
     "hover": "C:/Users/ceris/OneDrive/Documents/Asis webstie/images/products/fujifilm-finepix-z33wp/hover.png",
     "gallery": [
       "C:/Users/ceris/OneDrive/Documents/Asis webstie/images/products/fujifilm-finepix-z33wp/hover.png",
-      "C:/Users/ceris/OneDrive/Documents/Asis webstie/images/products/fujifilm-finepix-z33wp/extra-1.png",
-      "C:/Users/ceris/OneDrive/Documents/Asis webstie/images/products/fujifilm-finepix-z33wp/extra-2.png"
+      "C:/Users/ceris/OneDrive/Documents/Asis webstie/images/products/fujifilm-finepix-z33wp/extra-1.png"
     ],
     "lifestyle": false
   },
@@ -246,6 +243,14 @@
     "hover": "C:/Users/ceris/OneDrive/Documents/Asis webstie/images/products/olympus-vg-170/hover.png",
     "gallery": [
       "C:/Users/ceris/OneDrive/Documents/Asis webstie/images/products/olympus-vg-170/hover.png"
+    ],
+    "lifestyle": false
+  },
+  "instax-mini-liplay": {
+    "front": "C:/Users/ceris/OneDrive/Documents/Asis webstie/images/products/instax-mini-liplay/front.png",
+    "hover": "C:/Users/ceris/OneDrive/Documents/Asis webstie/images/products/instax-mini-liplay/hover.png",
+    "gallery": [
+      "C:/Users/ceris/OneDrive/Documents/Asis webstie/images/products/instax-mini-liplay/hover.png"
     ],
     "lifestyle": false
   }

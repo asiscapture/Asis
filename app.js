@@ -42,6 +42,10 @@ const CATALOGUE = [
     tone: "cool",
     image: siteUrl("images/products/kodak-pixpro-fz55/front.png"),
     imageHover: siteUrl("images/products/kodak-pixpro-fz55/hover.png"),
+    gallery: [
+      siteUrl("images/products/kodak-pixpro-fz55/extra-1.jpg"),
+      siteUrl("images/products/kodak-pixpro-fz55/extra-2.jpg"),
+    ],
     alt: "Kodak PIXPRO FZ55 digital camera for hire in Brisbane",
   },
   {
@@ -89,7 +93,8 @@ const CATALOGUE = [
     image: siteUrl("images/products/casio-exilim-ex-z110/front.png"),
     imageHover: siteUrl("images/products/casio-exilim-ex-z110/hover.png"),
     gallery: [
-      siteUrl("images/products/casio-exilim-ex-z110/extra-1.png")
+      siteUrl("images/products/casio-exilim-ex-z110/extra-1.jpg") + "?v=lower",
+      siteUrl("images/products/casio-exilim-ex-z110/extra-2.jpg"),
     ],
     alt: "Casio Exilim EX-Z110 silver digital camera hire Brisbane",
   },
@@ -292,7 +297,7 @@ const CATALOGUE = [
       },
     ],
     tone: "cool",
-    image: siteUrl("images/products/holy-trinity-bundle/front-dual-bg-backup.png"),
+    image: siteUrl("images/products/holy-trinity-bundle/front.png"),
     gallery: [
       siteUrl("images/products/kodak-pixpro-fz55/front.png"),
       siteUrl("images/products/kodak-ektar-h35/front.png"),
@@ -327,7 +332,7 @@ const CATALOGUE = [
       },
     ],
     tone: "warm",
-    image: siteUrl("images/products/weekender-bundle/front-dual-bg-backup.png"),
+    image: siteUrl("images/products/weekender-bundle/front.png"),
     gallery: [
       siteUrl("images/products/kodak-pixpro-c1/front.png"),
       siteUrl("images/products/instax-mini-12/front.png")
@@ -364,7 +369,7 @@ const CATALOGUE = [
       },
     ],
     tone: "warm",
-    image: siteUrl("images/products/party-bundle/front.png"),
+    image: siteUrl("images/products/party-bundle/front.png") + "?v=20260918b",
     gallery: [
       siteUrl("images/products/instax-mini-liplay/front.png"),
       siteUrl("images/products/kodak-pixpro-c1/front.png"),
@@ -395,7 +400,7 @@ const CATALOGUE = [
       },
     ],
     tone: "warm",
-    image: siteUrl("images/products/wedding-table-pack/front.png"),
+    image: siteUrl("images/products/wedding-table-pack/front.png") + "?v=20260918",
     gallery: [
       siteUrl("images/products/instax-mini-12/front.png"),
     ],
@@ -686,27 +691,68 @@ function getProductGallery(item) {
   };
 
   push(item.image, item.alt || item.name);
-  push(item.imageHover, `${item.name} — alternate angle`);
   (item.gallery || []).forEach((src, i) => {
     push(src, `${item.name} — photo ${i + 2}`);
   });
+  push(item.imageHover, `${item.name} — alternate angle`);
 
   return shots;
 }
 
+function galleryHoverShot(item) {
+  return getProductGallery(item)[1] || null;
+}
+
+function itemMediaClass(item) {
+  const hover = galleryHoverShot(item);
+  return [
+    "item-media",
+    item.image ? "has-photo" : "",
+    item.lifestyle ? "is-lifestyle" : "",
+    hover ? "has-hover" : "",
+    hover?.lifestyle ? "has-lifestyle-hover" : "",
+    item.comingSoon ? "is-coming-soon" : "",
+  ]
+    .filter(Boolean)
+    .join(" ");
+}
+
+function productPageUrl(id) {
+  // index.html is explicit so the link also works when browsing via file://
+  return siteUrl(`product/index.html?id=${encodeURIComponent(id)}`);
+}
+
+function isProductPage() {
+  return document.body?.dataset?.catalogue === "product";
+}
+
 function openProduct(id) {
   const item = getItem(id);
-  if (!item || !productModal || !productPanel) return;
+  if (!item) return;
+
+  if (!isProductPage()) {
+    window.location.href = productPageUrl(id);
+    return;
+  }
+
+  if (!productPanel) return;
   state.productId = id;
   state.galleryIndex = 0;
   state.productQty = getDraftQty(id) || 1;
   renderProductModal();
-  productModal.hidden = false;
-  document.body.classList.add("product-open");
-  productPanel.querySelector(".product-close")?.focus();
+  document.title = `${item.name} | Livis`;
+  const desc = document.querySelector('meta[name="description"]');
+  if (desc) desc.setAttribute("content", item.blurb || item.description || desc.content);
+  const canonical = document.querySelector('link[rel="canonical"]');
+  if (canonical) canonical.setAttribute("href", `https://livis.com.au/product/?id=${encodeURIComponent(id)}`);
+  window.scrollTo(0, 0);
 }
 
 function closeProduct() {
+  if (isProductPage()) {
+    window.location.href = siteUrl("cameras/index.html");
+    return;
+  }
   if (!productModal) return;
   productModal.hidden = true;
   document.body.classList.remove("product-open");
@@ -718,7 +764,6 @@ function renderProductModal() {
   if (!item || !productPanel) return;
 
   const gallery = getProductGallery(item);
-  const active = gallery[state.galleryIndex] || gallery[0];
   const inCart = state.cart.get(item.id) || 0;
   const isPurchase = /purchase/i.test(item.tag || "") || /purchase/i.test(item.detail || "");
   const isAddon = item.category === "addons" || /add-?on/i.test(item.tag || "");
@@ -777,15 +822,39 @@ function renderProductModal() {
         }
       `;
 
+  const onPage = isProductPage();
+  const slidesMarkup = gallery.length
+    ? gallery
+        .map(
+          (shot, i) => `
+            <figure class="product-slide${shot.lifestyle ? " is-lifestyle" : ""}" data-gallery-slide="${i}">
+              <img src="${shot.src}" alt="${shot.alt}" ${i === 0 ? `id="product-main-image"` : ""} />
+            </figure>`
+        )
+        .join("")
+    : `<div class="photo-slot">Photo coming soon</div>`;
+
   productPanel.innerHTML = `
-    <button type="button" class="product-close" aria-label="Close product">Close</button>
+    ${onPage ? "" : `<button type="button" class="product-close" aria-label="Close product">Close</button>`}
     <div class="product-layout">
       <div class="product-gallery">
-        <div class="product-stage${active?.lifestyle ? " is-lifestyle" : ""}${item.comingSoon ? " is-coming-soon" : ""}">
+        <div class="product-stage-wrap${item.comingSoon ? " is-coming-soon" : ""}">
+          <div
+            class="product-stage${gallery.length > 1 ? " is-swipeable" : ""}"
+            id="product-stage"
+            ${gallery.length > 1 ? `tabindex="0" role="region" aria-roledescription="carousel" aria-label="Product photos"` : ""}
+          >
+            ${slidesMarkup}
+          </div>
           ${
-            active
-              ? `<img src="${active.src}" alt="${active.alt}" id="product-main-image" />`
-              : `<div class="photo-slot">Photo coming soon</div>`
+            gallery.length > 1
+              ? `<button type="button" class="product-gallery-nav product-gallery-nav--prev" data-gallery-dir="-1" aria-label="Previous photo">
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5 8 12l7 7" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </button>
+                <button type="button" class="product-gallery-nav product-gallery-nav--next" data-gallery-dir="1" aria-label="Next photo">
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 5 7 7-7 7" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </button>`
+              : ""
           }
           ${item.comingSoon ? `<span class="coming-soon-badge">Coming soon</span>` : ""}
           ${item.mostPopular && !item.comingSoon ? `<span class="most-popular-badge">Most popular</span>` : ""}
@@ -801,6 +870,7 @@ function renderProductModal() {
                     class="product-thumb${i === state.galleryIndex ? " is-active" : ""}${shot.lifestyle ? " is-lifestyle" : ""}"
                     data-gallery-index="${i}"
                     aria-label="View photo ${i + 1}"
+                    ${i === state.galleryIndex ? `aria-current="true"` : ""}
                   >
                     <img src="${shot.src}" alt="" />
                   </button>`
@@ -812,7 +882,7 @@ function renderProductModal() {
       </div>
       <div class="product-info">
         <p class="aside-label">${item.tag}</p>
-        <h2 id="product-title">${item.name}</h2>
+        <${onPage ? "h1" : "h2"} id="product-title">${item.name}</${onPage ? "h1" : "h2"}>
         ${item.subtitle ? `<p class="product-subtitle">${item.subtitle}</p>` : ""}
         <p class="product-price">${item.price}</p>
         <p class="product-price-note">${item.detail}</p>
@@ -845,10 +915,190 @@ function renderProductModal() {
             ? `<h3 class="product-subhead">How it works</h3><ol class="product-steps">${howItWorks}</ol>`
             : ""
         }
-        <button type="button" class="text-link product-back" data-close-product>Back to catalogue</button>
+        <a class="text-link product-back" href="${siteUrl("cameras/index.html")}">← Back to cameras</a>
       </div>
     </div>
+    ${onPage ? relatedSectionMarkup(item) : ""}
   `;
+
+  wireImageFallbacks(productPanel);
+  bindProductGallery(gallery.length);
+  if (typeof refreshItemReveal === "function") refreshItemReveal();
+}
+
+function syncProductThumbs(index) {
+  if (!productPanel) return;
+  productPanel.querySelectorAll("[data-gallery-index]").forEach((btn) => {
+    const on = Number(btn.dataset.galleryIndex) === index;
+    btn.classList.toggle("is-active", on);
+    if (on) btn.setAttribute("aria-current", "true");
+    else btn.removeAttribute("aria-current");
+  });
+}
+
+function goToProductPhoto(index, { smooth = true } = {}) {
+  const item = getItem(state.productId);
+  const count = item ? getProductGallery(item).length : 0;
+  if (!count) return;
+  const next = Math.max(0, Math.min(count - 1, index));
+  state.galleryIndex = next;
+  syncProductThumbs(next);
+  const stage = document.getElementById("product-stage");
+  if (stage) {
+    stage.scrollTo({ left: stage.clientWidth * next, behavior: smooth ? "smooth" : "auto" });
+  }
+}
+
+function stepProductPhoto(dir) {
+  const item = getItem(state.productId);
+  const count = item ? getProductGallery(item).length : 0;
+  if (count < 2) return;
+  goToProductPhoto((state.galleryIndex + dir + count) % count);
+}
+
+function bindProductGallery(count) {
+  const stage = document.getElementById("product-stage");
+  if (!stage || count < 2) return;
+
+  let ticking = false;
+  stage.addEventListener(
+    "scroll",
+    () => {
+      if (ticking) return;
+      ticking = true;
+      requestAnimationFrame(() => {
+        ticking = false;
+        const width = stage.clientWidth;
+        if (!width) return;
+        const next = Math.max(0, Math.min(count - 1, Math.round(stage.scrollLeft / width)));
+        if (next === state.galleryIndex) return;
+        state.galleryIndex = next;
+        syncProductThumbs(next);
+      });
+    },
+    { passive: true }
+  );
+
+  stage.addEventListener("keydown", (event) => {
+    if (event.key === "ArrowRight") {
+      event.preventDefault();
+      stepProductPhoto(1);
+    } else if (event.key === "ArrowLeft") {
+      event.preventDefault();
+      stepProductPhoto(-1);
+    }
+  });
+
+  if (state.galleryIndex > 0) {
+    goToProductPhoto(state.galleryIndex, { smooth: false });
+  }
+}
+
+const RELATED_LIMIT = 4;
+
+function relatedItems(item, limit = RELATED_LIMIT) {
+  const pool = CATALOGUE.filter(
+    (other) => other.id !== item.id && CAMERA_PAGE_CATEGORIES.has(other.category)
+  );
+
+  // Closest match first: same category, then the neighbouring shelf, then add-ons.
+  const rank = (other) => {
+    if (other.category === item.category) return 0;
+    if (CAMERA_CATEGORIES.has(item.category)) {
+      if (CAMERA_CATEGORIES.has(other.category)) return 1;
+      return other.category === "bundles" ? 2 : 3;
+    }
+    if (other.category === "addons") return 3;
+    return 2;
+  };
+
+  const sorted = [...pool].sort((a, b) => {
+    const byRank = rank(a) - rank(b);
+    if (byRank) return byRank;
+    const bySoon = Number(!!a.comingSoon) - Number(!!b.comingSoon);
+    if (bySoon) return bySoon;
+    const byPopular = Number(!!b.mostPopular) - Number(!!a.mostPopular);
+    if (byPopular) return byPopular;
+    return parsePrice(a.price) - parsePrice(b.price);
+  });
+
+  const picked = [];
+  const add = (candidate) => {
+    if (!candidate || picked.length >= limit) return;
+    if (picked.some((chosen) => chosen.id === candidate.id)) return;
+    picked.push(candidate);
+  };
+
+  // Hand-picked ids on a catalogue item always lead.
+  (item.related || []).forEach((id) => add(pool.find((other) => other.id === id)));
+
+  // A camera keeps one slot for a bundle so the row isn't four near-identical bodies.
+  const bundlePick =
+    CAMERA_CATEGORIES.has(item.category) && picked.every((chosen) => chosen.category !== "bundles")
+      ? sorted.find((other) => other.category === "bundles" && !other.comingSoon)
+      : null;
+
+  const cap = bundlePick ? limit - 1 : limit;
+  sorted.forEach((other) => {
+    if (picked.length >= cap) return;
+    if (bundlePick && other.id === bundlePick.id) return;
+    add(other);
+  });
+  add(bundlePick);
+
+  return picked;
+}
+
+function relatedCardMarkup(item) {
+  const descriptor = cardDescriptor(item);
+  return `
+    <article class="item" data-category="${item.category}">
+      <a class="item-open" href="${productPageUrl(item.id)}">
+        <div class="${itemMediaClass(item)}" data-tone="${item.tone}">
+          ${mediaMarkup(item)}
+          ${item.comingSoon ? `<span class="coming-soon-badge">Coming soon</span>` : ""}
+          ${item.mostPopular && !item.comingSoon ? `<span class="most-popular-badge">Most popular</span>` : ""}
+        </div>
+        <div class="item-body-preview">
+          <h3>${item.name}</h3>
+          ${descriptor ? `<p class="item-descriptor">${descriptor}</p>` : ""}
+          <p class="item-price">${item.price}</p>
+        </div>
+      </a>
+    </article>
+  `;
+}
+
+function relatedSectionMarkup(item) {
+  const picks = relatedItems(item);
+  if (!picks.length) return "";
+
+  return `
+    <section class="related" aria-labelledby="related-title">
+      <div class="related-head">
+        <h2 id="related-title">You may also like</h2>
+        <a class="text-link" href="${siteUrl("cameras/index.html")}">View all</a>
+      </div>
+      <div class="related-grid">${picks.map(relatedCardMarkup).join("")}</div>
+    </section>
+  `;
+}
+
+function wireImageFallbacks(root) {
+  if (!root) return;
+  root.querySelectorAll("img[data-fallback]").forEach((img) => {
+    img.addEventListener("error", () => {
+      const parent = img.parentElement;
+      if (!parent) return;
+      parent.classList.remove("has-photo");
+      img.replaceWith(
+        Object.assign(document.createElement("div"), {
+          className: "photo-slot",
+          textContent: `Drop ${img.dataset.fallback}`,
+        })
+      );
+    });
+  });
 }
 
 function cardDescriptor(item) {
@@ -871,17 +1121,17 @@ function mediaMarkup(item) {
 
   const filename = item.image.replace(/^images\//, "");
   const alt = item.alt || `${item.name} for hire`;
-  const hoverSrc = item.imageHover || "";
+  const hover = galleryHoverShot(item);
 
   const primary = `<img class="item-photo item-photo-primary" src="${item.image}" alt="${alt}" loading="lazy" data-fallback="${filename}" />`;
 
-  if (!hoverSrc) {
+  if (!hover) {
     return primary;
   }
 
   return `
     ${primary}
-    <img class="item-photo item-photo-hover" src="${hoverSrc}" alt="" loading="lazy" aria-hidden="true" />
+    <img class="item-photo item-photo-hover${hover.lifestyle ? " is-lifestyle" : ""}" src="${hover.src}" alt="" loading="lazy" aria-hidden="true" />
   `;
 }
 
@@ -934,7 +1184,7 @@ function renderCatalogue() {
 
     article.innerHTML = `
       <button type="button" class="item-open" data-open-product="${item.id}" aria-label="View ${item.name}">
-        <div class="item-media${item.image ? " has-photo" : ""}${item.lifestyle ? " is-lifestyle" : ""}${item.imageHover ? " has-hover" : ""}${item.comingSoon ? " is-coming-soon" : ""}" data-tone="${item.tone}">
+        <div class="${itemMediaClass(item)}" data-tone="${item.tone}">
           ${mediaMarkup(item)}
           ${item.comingSoon ? `<span class="coming-soon-badge">Coming soon</span>` : ""}
           ${item.mostPopular && !item.comingSoon ? `<span class="most-popular-badge">Most popular</span>` : ""}
@@ -961,19 +1211,7 @@ function renderCatalogue() {
     catalogueEl.appendChild(article);
   });
 
-  catalogueEl.querySelectorAll("img[data-fallback]").forEach((img) => {
-    img.addEventListener("error", () => {
-      const parent = img.parentElement;
-      if (!parent) return;
-      parent.classList.remove("has-photo");
-      img.replaceWith(
-        Object.assign(document.createElement("div"), {
-          className: "photo-slot",
-          textContent: `Drop ${img.dataset.fallback}`,
-        })
-      );
-    });
-  });
+  wireImageFallbacks(catalogueEl);
 
   if (typeof refreshItemReveal === "function") {
     refreshItemReveal();
@@ -1003,6 +1241,22 @@ function cartLineMarkup(entry) {
       <button type="button" class="cart-remove" data-remove="${item.id}">Remove</button>
     </div>
   `;
+}
+
+function setupSelectionBar() {
+  if (!selectionBar) return;
+
+  const summary = selectionBar.querySelector(".selection-summary");
+  if (summary) summary.setAttribute("aria-live", "polite");
+
+  // The bar goes full-width on phones, where the long label crowds out the count.
+  const enquire = selectionBar.querySelector(".btn-primary");
+  if (enquire && !enquire.querySelector(".btn-label--full")) {
+    const full = enquire.textContent.trim();
+    enquire.innerHTML =
+      `<span class="btn-label--full">${full}</span>` +
+      `<span class="btn-label--short">Enquire</span>`;
+  }
 }
 
 function updateCartUI() {
@@ -1194,10 +1448,15 @@ document.addEventListener("click", (event) => {
     return;
   }
 
+  const galleryNav = event.target.closest("[data-gallery-dir]");
+  if (galleryNav && productPanel?.contains(galleryNav)) {
+    stepProductPhoto(Number(galleryNav.dataset.galleryDir));
+    return;
+  }
+
   const thumb = event.target.closest("[data-gallery-index]");
   if (thumb && productPanel?.contains(thumb)) {
-    state.galleryIndex = Number(thumb.dataset.galleryIndex);
-    renderProductModal();
+    goToProductPhoto(Number(thumb.dataset.galleryIndex));
     return;
   }
 
@@ -1272,11 +1531,20 @@ function applyFilterFromUrl() {
 
 function applyProductFromUrl() {
   const params = new URLSearchParams(window.location.search);
-  let productId = params.get("product");
+  let productId = params.get("id") || params.get("product");
   if (productId === "instax-mini-evo") productId = "instax-mini-liplay";
-  if (!productId || !getItem(productId)) return;
-  // Open after catalogue is ready so focus/modal markup is available
-  requestAnimationFrame(() => openProduct(productId));
+  if (!productId || !getItem(productId)) {
+    if (isProductPage()) window.location.replace(siteUrl("cameras/index.html"));
+    return;
+  }
+  if (isProductPage()) {
+    openProduct(productId);
+    return;
+  }
+  // Legacy ?product= links on catalogue pages → dedicated product page
+  if (params.get("product")) {
+    window.location.replace(productPageUrl(productId));
+  }
 }
 
 navToggle?.addEventListener("click", () => {
@@ -1481,6 +1749,7 @@ setupHeroParallax();
   update();
 })();
 renderCatalogue();
+setupSelectionBar();
 updateCartUI();
 applyProductFromUrl();
 
@@ -2198,11 +2467,7 @@ dayCameraLink?.addEventListener("click", () => {
   const cameraId = dayCameraLink.dataset.dayCamera;
   if (!cameraId) return;
   closeDayModal();
-  if (productModal && productPanel) {
-    openProduct(cameraId);
-  } else {
-    window.location.href = siteUrl(`cameras/index.html?product=${encodeURIComponent(cameraId)}`);
-  }
+  window.location.href = productPageUrl(cameraId);
 });
 
 document.addEventListener("keydown", (event) => {
