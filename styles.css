@@ -1085,6 +1085,7 @@ body[data-catalogue="home"] .site-header:has(.nav.is-open) .nav-toggle span {
 .item-media.has-photo {
   background: var(--product-plate);
   position: relative;
+  cursor: pointer;
 }
 
 .coming-soon-badge {
@@ -1165,44 +1166,112 @@ body[data-catalogue="home"] .site-header:has(.nav.is-open) .nav-toggle span {
   filter: none;
 }
 
-.item-media.has-hover .item-photo {
+.item-media.is-swipeable .item-stage {
   position: absolute;
   inset: 0;
+  display: flex;
+  align-items: stretch;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-snap-type: x mandatory;
+  overscroll-behavior-x: contain;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  touch-action: pan-x;
 }
 
-.item-media.has-hover .item-photo-hover {
-  opacity: 0;
-  pointer-events: none;
+.item-media.is-swipeable .item-stage::-webkit-scrollbar {
+  display: none;
 }
 
-.item-open:hover .item-media.has-hover .item-photo-primary,
-.item-media.has-hover:hover .item-photo-primary {
-  opacity: 0;
+.item-slide {
+  flex: 0 0 100%;
+  width: 100%;
+  min-width: 100%;
+  height: 100%;
+  margin: 0;
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+  display: grid;
+  place-items: center;
 }
 
-.item-open:hover .item-media.has-hover .item-photo-hover,
-.item-media.has-hover:hover .item-photo-hover {
-  opacity: 1;
-}
-
-.item-media.has-photo.has-lifestyle-hover:not(.is-lifestyle) .item-photo-hover {
+.item-media.has-photo:not(.is-lifestyle) .item-slide.is-lifestyle img {
   object-fit: cover;
   padding: 0;
 }
 
-@media (hover: none) {
-  .item-open:hover .item-media.has-hover .item-photo-primary,
-  .item-media.has-hover:hover .item-photo-primary {
-    opacity: 1;
-  }
+.item-slide.is-lifestyle img[src*="casio-exilim-ex-z110/extra-1.jpg"] {
+  object-position: center bottom;
+}
 
-  .item-open:hover .item-media.has-hover .item-photo-hover,
-  .item-media.has-hover:hover .item-photo-hover {
-    opacity: 0;
+.item-dots {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0.55rem;
+  z-index: 2;
+  display: none;
+  justify-content: center;
+  gap: 0.28rem;
+  pointer-events: none;
+}
+
+.item-dot {
+  width: 0.38rem;
+  height: 0.38rem;
+  border-radius: 999px;
+  background: rgba(252, 252, 252, 0.55);
+  box-shadow: 0 0 0 1px rgba(26, 23, 23, 0.18);
+}
+
+.item-dot.is-active {
+  background: rgba(252, 252, 252, 0.95);
+}
+
+@media (max-width: 980px) {
+  .item-media.is-swipeable .item-dots {
+    display: flex;
   }
 }
 
-.item:hover .item-media:not(.has-hover) img {
+@media (hover: hover) and (pointer: fine) and (min-width: 981px) {
+  .item-media.is-swipeable .item-stage {
+    display: block;
+    overflow: hidden;
+    touch-action: auto;
+  }
+
+  .item-media.is-swipeable .item-slide {
+    position: absolute;
+    inset: 0;
+    flex: none;
+    min-width: 0;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.35s var(--ease);
+  }
+
+  .item-media.is-swipeable .item-slide:first-child {
+    position: relative;
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .item:hover .item-media.is-swipeable .item-slide:first-child {
+    opacity: 0;
+  }
+
+  .item:hover .item-media.is-swipeable .item-slide:nth-child(2) {
+    opacity: 1;
+  }
+
+  .item-media.is-swipeable .item-dots {
+    display: none;
+  }
+}
+
+.item:hover .item-media:not(.is-swipeable) img {
   transform: scale(1.04);
 }
 

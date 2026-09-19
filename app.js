@@ -699,18 +699,15 @@ function getProductGallery(item) {
   return shots;
 }
 
-function galleryHoverShot(item) {
-  return getProductGallery(item)[1] || null;
-}
-
 function itemMediaClass(item) {
-  const hover = galleryHoverShot(item);
+  const gallery = getProductGallery(item);
+  const extra = gallery[1] || null;
   return [
     "item-media",
     item.image ? "has-photo" : "",
     item.lifestyle ? "is-lifestyle" : "",
-    hover ? "has-hover" : "",
-    hover?.lifestyle ? "has-lifestyle-hover" : "",
+    extra ? "is-swipeable" : "",
+    extra?.lifestyle ? "has-lifestyle-hover" : "",
     item.comingSoon ? "is-coming-soon" : "",
   ]
     .filter(Boolean)
@@ -923,6 +920,7 @@ function renderProductModal() {
 
   wireImageFallbacks(productPanel);
   bindProductGallery(gallery.length);
+  bindCatalogueGalleries(productPanel);
   if (typeof refreshItemReveal === "function") refreshItemReveal();
 }
 
@@ -1052,13 +1050,13 @@ function relatedItems(item, limit = RELATED_LIMIT) {
 function relatedCardMarkup(item) {
   const descriptor = cardDescriptor(item);
   return `
-    <article class="item" data-category="${item.category}">
+    <article class="item" data-category="${item.category}" data-product-id="${item.id}">
+      <div class="${itemMediaClass(item)}" data-tone="${item.tone}">
+        ${mediaMarkup(item)}
+        ${item.comingSoon ? `<span class="coming-soon-badge">Coming soon</span>` : ""}
+        ${item.mostPopular && !item.comingSoon ? `<span class="most-popular-badge">Most popular</span>` : ""}
+      </div>
       <a class="item-open" href="${productPageUrl(item.id)}">
-        <div class="${itemMediaClass(item)}" data-tone="${item.tone}">
-          ${mediaMarkup(item)}
-          ${item.comingSoon ? `<span class="coming-soon-badge">Coming soon</span>` : ""}
-          ${item.mostPopular && !item.comingSoon ? `<span class="most-popular-badge">Most popular</span>` : ""}
-        </div>
         <div class="item-body-preview">
           <h3>${item.name}</h3>
           ${descriptor ? `<p class="item-descriptor">${descriptor}</p>` : ""}
@@ -1088,9 +1086,9 @@ function wireImageFallbacks(root) {
   if (!root) return;
   root.querySelectorAll("img[data-fallback]").forEach((img) => {
     img.addEventListener("error", () => {
-      const parent = img.parentElement;
+      const parent = img.closest(".item-media") || img.parentElement;
       if (!parent) return;
-      parent.classList.remove("has-photo");
+      parent.classList.remove("has-photo", "is-swipeable");
       img.replaceWith(
         Object.assign(document.createElement("div"), {
           className: "photo-slot",
@@ -1115,24 +1113,103 @@ function cardDescriptor(item) {
 }
 
 function mediaMarkup(item) {
-  if (!item.image) {
+  const gallery = getProductGallery(item);
+  if (!gallery.length) {
     return `<div class="photo-slot">Photo coming soon</div>`;
   }
 
-  const filename = item.image.replace(/^images\//, "");
-  const alt = item.alt || `${item.name} for hire`;
-  const hover = galleryHoverShot(item);
+  const filename = (item.image || "").replace(/^images\//, "");
+  const alt = gallery[0].alt || item.alt || `${item.name} for hire`;
 
-  const primary = `<img class="item-photo item-photo-primary" src="${item.image}" alt="${alt}" loading="lazy" data-fallback="${filename}" />`;
-
-  if (!hover) {
-    return primary;
+  if (gallery.length === 1) {
+    return `<img class="item-photo item-photo-primary" src="${gallery[0].src}" alt="${alt}" loading="lazy" data-fallback="${filename}" />`;
   }
 
+  const slides = gallery
+    .map(
+      (shot, i) => `
+      <figure class="item-slide${shot.lifestyle ? " is-lifestyle" : ""}">
+        <img
+          class="item-photo"
+          src="${shot.src}"
+          alt="${i === 0 ? alt : ""}"
+          ${i === 0 ? "" : `aria-hidden="true"`}
+          loading="lazy"
+          ${i === 0 ? `data-fallback="${filename}"` : ""}
+        />
+      </figure>`
+    )
+    .join("");
+
+  const dots = gallery
+    .map((_, i) => `<span class="item-dot${i === 0 ? " is-active" : ""}"></span>`)
+    .join("");
+
   return `
-    ${primary}
-    <img class="item-photo item-photo-hover${hover.lifestyle ? " is-lifestyle" : ""}" src="${hover.src}" alt="" loading="lazy" aria-hidden="true" />
+    <div class="item-stage" role="group" aria-label="${item.name} photos">
+      ${slides}
+    </div>
+    <div class="item-dots" aria-hidden="true">${dots}</div>
   `;
+}
+
+function bindCatalogueGalleries(root) {
+  if (!root) return;
+
+  root.querySelectorAll(".item-media.is-swipeable .item-stage").forEach((stage) => {
+    if (stage.dataset.bound === "1") return;
+    stage.dataset.bound = "1";
+
+    const media = stage.closest(".item-media");
+    const itemEl = stage.closest(".item");
+    const dots = media?.querySelectorAll(".item-dot") || [];
+    let originLeft = 0;
+    let swiped = false;
+    let ticking = false;
+
+    const productId = () =>
+      itemEl?.dataset.productId || itemEl?.querySelector("[data-open-product]")?.dataset.openProduct;
+
+    const syncDots = () => {
+      if (!dots.length) return;
+      const width = stage.clientWidth;
+      if (!width) return;
+      const index = Math.max(0, Math.min(dots.length - 1, Math.round(stage.scrollLeft / width)));
+      dots.forEach((dot, i) => dot.classList.toggle("is-active", i === index));
+    };
+
+    stage.addEventListener("pointerdown", () => {
+      originLeft = stage.scrollLeft;
+      swiped = false;
+    });
+
+    stage.addEventListener(
+      "scroll",
+      () => {
+        if (Math.abs(stage.scrollLeft - originLeft) > 6) swiped = true;
+        if (ticking) return;
+        ticking = true;
+        requestAnimationFrame(() => {
+          ticking = false;
+          syncDots();
+        });
+      },
+      { passive: true }
+    );
+
+    stage.addEventListener("click", (event) => {
+      if (swiped) {
+        event.preventDefault();
+        event.stopPropagation();
+        swiped = false;
+        return;
+      }
+      const id = productId();
+      if (!id) return;
+      event.preventDefault();
+      openProduct(id);
+    });
+  });
 }
 
 function qtyControlsMarkup(id, qty, scope) {
@@ -1180,15 +1257,16 @@ function renderCatalogue() {
     const article = document.createElement("article");
     article.className = "item";
     article.dataset.category = item.category;
+    article.dataset.productId = item.id;
     article.style.setProperty("--reveal-delay", `${Math.min(index % 3, 2) * 70}ms`);
 
     article.innerHTML = `
+      <div class="${itemMediaClass(item)}" data-tone="${item.tone}">
+        ${mediaMarkup(item)}
+        ${item.comingSoon ? `<span class="coming-soon-badge">Coming soon</span>` : ""}
+        ${item.mostPopular && !item.comingSoon ? `<span class="most-popular-badge">Most popular</span>` : ""}
+      </div>
       <button type="button" class="item-open" data-open-product="${item.id}" aria-label="View ${item.name}">
-        <div class="${itemMediaClass(item)}" data-tone="${item.tone}">
-          ${mediaMarkup(item)}
-          ${item.comingSoon ? `<span class="coming-soon-badge">Coming soon</span>` : ""}
-          ${item.mostPopular && !item.comingSoon ? `<span class="most-popular-badge">Most popular</span>` : ""}
-        </div>
         <div class="item-body-preview">
           <h3>${item.name}</h3>
           ${descriptor ? `<p class="item-descriptor">${descriptor}</p>` : ""}
@@ -1212,6 +1290,7 @@ function renderCatalogue() {
   });
 
   wireImageFallbacks(catalogueEl);
+  bindCatalogueGalleries(catalogueEl);
 
   if (typeof refreshItemReveal === "function") {
     refreshItemReveal();
