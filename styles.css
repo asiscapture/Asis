@@ -4050,6 +4050,18 @@ body.day-open {
     gap: 0.85rem 0.7rem;
   }
 
+  .page-hire .catalogue {
+    width: calc(100% + (2 * var(--page-edge)));
+    max-width: none;
+    margin-inline: calc(var(--page-edge) * -1);
+  }
+
+  .page-hire .item-open,
+  .page-hire .item-actions,
+  .page-hire .in-cart-note {
+    padding-inline: 0.55rem;
+  }
+
   .trust-list {
     grid-template-columns: 1fr 1fr;
   }
