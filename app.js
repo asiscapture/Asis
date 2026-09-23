@@ -120,7 +120,6 @@ const CATALOGUE = [
     imageHover: siteUrl("images/products/fujifilm-finepix-z33wp/hover.png"),
     gallery: [
       siteUrl("images/products/fujifilm-finepix-z33wp/extra-1.png"),
-      siteUrl("images/products/fujifilm-finepix-z33wp/extra-2.png")
     ],
     alt: "Fujifilm FinePix Z33WP waterproof digital camera hire Brisbane",
   },
