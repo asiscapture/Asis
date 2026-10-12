@@ -14,6 +14,15 @@ function siteUrl(path) {
   return SITE_ROOT + String(path || "").replace(/^\//, "");
 }
 
+// Keep address bar clean: /page/index.html → /page/
+if (typeof location !== "undefined" && /\/index\.html$/i.test(location.pathname)) {
+  history.replaceState(
+    null,
+    "",
+    location.pathname.replace(/\/index\.html$/i, "/") + location.search + location.hash
+  );
+}
+
 /* Livis — camera hire catalogue */
 
 /*
@@ -481,9 +490,9 @@ const BUNDLE_MIN_CAMERAS = 3;
 const catalogueScope = document.body.dataset.catalogue || "all";
 
 const BROWSE_BY_SCOPE = {
-  cameras: siteUrl("cameras/index.html"),
-  home: siteUrl("index.html#explore-categories"),
-  day: siteUrl("cameras/index.html"),
+  cameras: siteUrl("cameras/"),
+  home: siteUrl("#explore-categories"),
+  day: siteUrl("cameras/"),
 };
 
 const state = {
@@ -612,7 +621,7 @@ function scopedCatalogue() {
 }
 
 function browseHref() {
-  return BROWSE_BY_SCOPE[catalogueScope] || siteUrl("index.html#explore-categories");
+  return BROWSE_BY_SCOPE[catalogueScope] || siteUrl("#explore-categories");
 }
 
 function getItem(id) {
@@ -714,8 +723,8 @@ function itemMediaClass(item) {
 }
 
 function productPageUrl(id) {
-  // index.html is explicit so the link also works when browsing via file://
-  return siteUrl(`product/index.html?id=${encodeURIComponent(id)}`);
+  // ./ is explicit so the link also works when browsing via file://
+  return siteUrl(`product/?id=${encodeURIComponent(id)}`);
 }
 
 function isProductPage() {
@@ -746,7 +755,7 @@ function openProduct(id) {
 
 function closeProduct() {
   if (isProductPage()) {
-    window.location.href = siteUrl("cameras/index.html");
+    window.location.href = siteUrl("cameras/");
     return;
   }
   if (!productModal) return;
@@ -911,7 +920,7 @@ function renderProductModal() {
             ? `<h3 class="product-subhead">How it works</h3><ol class="product-steps">${howItWorks}</ol>`
             : ""
         }
-        <a class="text-link product-back" href="${siteUrl("cameras/index.html")}">← Back to cameras</a>
+        <a class="text-link product-back" href="${siteUrl("cameras/")}">← Back to cameras</a>
       </div>
     </div>
     ${onPage ? relatedSectionMarkup(item) : ""}
@@ -1074,7 +1083,7 @@ function relatedSectionMarkup(item) {
     <section class="related" aria-labelledby="related-title">
       <div class="related-head">
         <h2 id="related-title">You may also like</h2>
-        <a class="text-link" href="${siteUrl("cameras/index.html")}">View all</a>
+        <a class="text-link" href="${siteUrl("cameras/")}">View all</a>
       </div>
       <div class="related-grid">${picks.map(relatedCardMarkup).join("")}</div>
     </section>
@@ -1612,7 +1621,7 @@ function applyProductFromUrl() {
   let productId = params.get("id") || params.get("product");
   if (productId === "instax-mini-evo") productId = "instax-mini-liplay";
   if (!productId || !getItem(productId)) {
-    if (isProductPage()) window.location.replace(siteUrl("cameras/index.html"));
+    if (isProductPage()) window.location.replace(siteUrl("cameras/"));
     return;
   }
   if (isProductPage()) {
@@ -2226,7 +2235,7 @@ function setupBundleBuilder() {
     });
 
     updateCartUI();
-    window.location.href = siteUrl("index.html#enquire");
+    window.location.href = siteUrl("#enquire");
   }
 
   function renderSummary() {
@@ -2470,7 +2479,7 @@ function renderCustomBundleEnquireCard(bundle, entries, listLabel, totalLabel) {
       </dl>
       <p class="cart-total"><span>Bundle total</span><strong>${totalLabel}</strong></p>
       <p class="enquire-bundle-list">List price ${listLabel}</p>
-      <p class="enquire-bundle-edit"><a href="${siteUrl("bundle-builder/index.html")}">Edit bundle</a></p>
+      <p class="enquire-bundle-edit"><a href="${siteUrl("bundle-builder/")}">Edit bundle</a></p>
     </div>
   `;
 }
