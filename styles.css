@@ -686,6 +686,14 @@ body[data-catalogue="home"] .site-header:has(.nav.is-open) .nav-toggle span {
   line-height: 1.5;
 }
 
+.film-guide-line {
+  display: block;
+}
+
+.film-guide-line + .film-guide-line {
+  margin-top: 0.55rem;
+}
+
 .landing-note {
   display: block;
   margin-top: 0.25rem;
@@ -3562,6 +3570,124 @@ body.day-open {
   font-size: clamp(1.6rem, 3vw, 2.2rem);
   letter-spacing: -0.02em;
   margin: 0 0 0.85rem;
+}
+
+.film-calc-page {
+  padding-inline: 0;
+  padding-bottom: 0;
+}
+
+.film-calc-page > .section-head {
+  max-width: none;
+  margin: 0 0 clamp(1.75rem, 4vw, 2.75rem);
+  padding: 0 var(--page-edge);
+  text-align: left;
+}
+
+.film-calc-page .section-head p + p {
+  margin-top: 1rem;
+}
+
+.film-calc-page .film-guide-band .film-guide {
+  max-width: none;
+  margin: 0;
+}
+
+.film-guide-controls--three {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  max-width: 40rem;
+}
+
+.film-guide-controls--four {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  max-width: 40rem;
+}
+
+@media (min-width: 720px) {
+  .film-guide-controls--four {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    max-width: 52rem;
+  }
+}
+
+.film-calc-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.85rem;
+  margin-top: 1.75rem;
+  padding-top: 0.35rem;
+}
+
+.film-calc-actions .btn-ghost.landing-ghost {
+  background: #dce4da;
+  border-color: #9aad94;
+  color: var(--accent);
+  box-shadow: 0 2px 10px rgba(63, 79, 60, 0.1);
+}
+
+.film-calc-actions .btn-ghost.landing-ghost:hover,
+.film-calc-actions .btn-ghost.landing-ghost:focus-visible {
+  background: var(--accent-soft);
+  border-color: var(--accent-soft);
+  color: var(--on-accent);
+  box-shadow: 0 4px 14px rgba(63, 79, 60, 0.16);
+}
+
+.film-calc-copy {
+  max-width: none;
+  margin: clamp(2.5rem, 6vw, 4rem) 0 0;
+  padding: 0 var(--page-edge);
+}
+
+.film-calc-copy h2 {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: clamp(1.85rem, 4vw, 2.75rem);
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+  margin: 0 0 1rem;
+}
+
+.film-calc-copy h2 + p,
+.film-calc-copy ul {
+  color: var(--ink-soft);
+}
+
+.film-calc-copy ul {
+  margin: 0 0 2rem;
+  padding-left: 1.2rem;
+}
+
+.film-calc-copy li {
+  margin-bottom: 0.45rem;
+}
+
+.film-calc-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem 1.25rem;
+  margin-top: 1rem;
+}
+
+.film-calc-links a {
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.film-calc-links a:hover {
+  text-decoration: underline;
+}
+
+.landing-picks--calc {
+  padding-top: clamp(1.5rem, 3.5vw, 2.25rem);
+}
+
+@media (max-width: 720px) {
+  .film-guide-controls--three,
+  .film-guide-controls--four {
+    grid-template-columns: 1fr;
+  }
 }
 
 .landing-after {

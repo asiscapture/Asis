@@ -10,17 +10,60 @@ const SITE_ROOT = (() => {
   }
   return "";
 })();
-function siteUrl(path) {
-  return SITE_ROOT + String(path || "").replace(/^\//, "");
+
+const IS_FILE_PROTOCOL =
+  typeof location !== "undefined" && location.protocol === "file:";
+
+/** On file://, directory URLs need an explicit index.html */
+function withFileIndex(path) {
+  let p = String(path || "");
+  if (!IS_FILE_PROTOCOL) return p;
+  if (p === "" || p === "./" || p === ".") return "index.html";
+  if (p === "../" || p === "..") return "../index.html";
+  if (p.startsWith("#") || p.startsWith("?")) return `index.html${p}`;
+  if (p.endsWith("/")) return `${p}index.html`;
+  return p.replace(/\/(\?|#)/, "/index.html$1");
 }
 
-// Keep address bar clean: /page/index.html → /page/
-if (typeof location !== "undefined" && /\/index\.html$/i.test(location.pathname)) {
+function siteUrl(path) {
+  return SITE_ROOT + withFileIndex(String(path || "").replace(/^\//, ""));
+}
+
+// Keep address bar clean on the live site only (file:// cannot serve folder URLs)
+if (
+  typeof location !== "undefined" &&
+  !IS_FILE_PROTOCOL &&
+  /\/index\.html$/i.test(location.pathname)
+) {
   history.replaceState(
     null,
     "",
     location.pathname.replace(/\/index\.html$/i, "/") + location.search + location.hash
   );
+}
+
+// Offline file:// browsing: rewrite clean folder links to index.html
+if (IS_FILE_PROTOCOL) {
+  const fixHref = (href) => {
+    if (
+      !href ||
+      href.startsWith("http://") ||
+      href.startsWith("https://") ||
+      href.startsWith("mailto:") ||
+      href.startsWith("tel:") ||
+      href.startsWith("javascript:") ||
+      href.startsWith("#")
+    ) {
+      return href;
+    }
+    return withFileIndex(href);
+  };
+
+  document.querySelectorAll("a[href]").forEach((anchor) => {
+    const href = anchor.getAttribute("href");
+    const next = fixHref(href);
+    if (next !== href) anchor.setAttribute("href", next);
+  });
 }
 
 /* Livis — camera hire catalogue */
@@ -1843,42 +1886,74 @@ applyProductFromUrl();
 function setupFilmGuide() {
   const guestsEl = document.getElementById("guest-count");
   const shotsEl = document.getElementById("shots-per-guest");
+  const packEl = document.getElementById("shots-per-pack");
+  const occasionEl = document.getElementById("film-guide-occasion");
   const out = document.getElementById("film-guide-result");
   const guide = document.getElementById("film-guide");
   if (!guestsEl || !shotsEl || !out) return;
 
-  const isParty = guide?.dataset.variant === "party";
+  const pageVariant = guide?.dataset.variant || "wedding";
 
   const update = () => {
     const guests = Math.max(1, Number(guestsEl.value) || 0);
     const per = Number(shotsEl.value) || 2.5;
+    const perPack = Math.max(1, Number(packEl?.value) || 10);
     const shots = Math.ceil(guests * per);
-    const packs = Math.ceil(shots / 10);
-    let tip = `About <strong>${shots} shots</strong> → <strong>${packs} Instax Mini packs</strong> · 10 shots each.`;
+    const packs = Math.ceil(shots / perPack);
+    const packNoun = packs === 1 ? "pack" : "packs";
+    const packLabel = perPack === 10 ? `Instax ${packNoun}` : `film ${packNoun}`;
+    const packUnit = perPack === 10 ? "Instax pack" : "film pack";
+    const line1 = `About <strong>${shots} shots</strong> = <strong>${packs} ${packLabel}</strong> · ${perPack} shots each ${packUnit}.`;
 
-    if (isParty) {
-      if (shots <= 20) {
-        tip += ` The <strong>Weekender</strong> (1 Mini pack included) plus an extra pack usually covers a smaller night.`;
-      } else if (shots <= 30) {
-        tip += ` The <strong>Party Camera Kit</strong> already includes 3 Mini packs · 30 shots — a strong match for this count.`;
-      } else if (shots <= 50) {
-        tip += ` Start with the <strong>Party Camera Kit</strong> and ask us for more Mini packs on enquiry so guests don’t run out.`;
+    const occasion = occasionEl?.value || (pageVariant === "party" ? "party" : "wedding");
+    const isParty = occasion === "party";
+    let line2 = "";
+
+    // Hire tips assume standard Instax Mini 10-shot packs in our kits
+    if (perPack === 10) {
+      if (isParty) {
+        const partyIncluded = 3;
+        const partyExtra = Math.max(0, packs - partyIncluded);
+        if (shots <= 20) {
+          const weekenderExtra = Math.max(0, packs - 1);
+          line2 =
+            weekenderExtra > 0
+              ? `Start with the <strong>Weekender</strong> and ask for <strong>${weekenderExtra}</strong> extra Mini ${weekenderExtra === 1 ? "pack" : "packs"} on enquiry so guests don’t run out.`
+              : `The <strong>Weekender</strong> (1 Mini pack included) usually covers a smaller night.`;
+        } else if (packs <= partyIncluded) {
+          line2 = `The <strong>Party Camera Kit</strong> already includes 3 Mini packs · 30 shots — a strong match for this count.`;
+        } else {
+          line2 = `Start with the <strong>Party Camera Kit</strong> and ask for <strong>${partyExtra}</strong> extra Mini ${partyExtra === 1 ? "pack" : "packs"} on enquiry so guests don’t run out.`;
+        }
+      } else if (occasion === "other") {
+        line2 = `Browse our <strong>Polaroid cameras</strong> and ask for <strong>${packs}</strong> Mini ${packNoun} on enquiry.`;
       } else {
-        tip += ` Ask us to build a bigger Polaroid kit for the crowd when you enquire.`;
+        const weddingIncluded = 4;
+        const weddingExtra = Math.max(0, packs - weddingIncluded);
+        if (packs <= weddingIncluded) {
+          line2 = `The <strong>Wedding Table Pack</strong> includes 4 Mini packs · 40 shots — a strong match for cameras on the tables.`;
+        } else {
+          line2 = `Start with the <strong>Wedding Table Pack</strong> and ask for <strong>${weddingExtra}</strong> extra Mini ${weddingExtra === 1 ? "pack" : "packs"} on enquiry so guests don’t run out.`;
+        }
       }
     } else {
-      if (packs <= 4) {
-        tip += ` The <strong>Wedding Table Pack</strong> includes 4 Mini packs · 40 shots — a strong match for cameras on the tables.`;
-      } else {
-        tip += ` Start with the <strong>Wedding Table Pack</strong> and ask for extra Mini packs on enquiry so guests don’t run out.`;
-      }
+      line2 = `Tell us your pack size when you enquire and we’ll match film to your hire.`;
     }
 
-    out.innerHTML = tip;
+    out.innerHTML = line2 ? `<span class="film-guide-line">${line1}</span><span class="film-guide-line">${line2}</span>` : line1;
   };
 
   guestsEl.addEventListener("input", update);
   shotsEl.addEventListener("change", update);
+  packEl?.addEventListener("change", update);
+  occasionEl?.addEventListener("change", () => {
+    if (occasionEl.value === "party" && Number(guestsEl.value) > 120) {
+      guestsEl.value = "40";
+    } else if (occasionEl.value === "wedding" && Number(guestsEl.value) < 20) {
+      guestsEl.value = "80";
+    }
+    update();
+  });
   update();
 }
 
