@@ -120,8 +120,10 @@ const CATALOGUE = [
     image: siteUrl("images/products/kodak-pixpro-c1/front.png"),
     imageHover: siteUrl("images/products/kodak-pixpro-c1/hover.png"),
     gallery: [
+      siteUrl("images/products/kodak-pixpro-c1/extra-1.jpg"),
+      siteUrl("images/products/kodak-pixpro-c1/extra-2.jpg"),
       siteUrl("images/products/kodak-pixpro-c1/extra-1.png"),
-      siteUrl("images/products/kodak-pixpro-c1/extra-2.png")
+      siteUrl("images/products/kodak-pixpro-c1/extra-2.png"),
     ],
     alt: "Kodak PIXPRO C1 compact digital camera hire",
   },
@@ -173,6 +175,8 @@ const CATALOGUE = [
     gallery: [
       siteUrl("images/products/fujifilm-finepix-z33wp/extra-1.jpg"),
       siteUrl("images/products/fujifilm-finepix-z33wp/extra-2.jpg"),
+      siteUrl("images/products/fujifilm-finepix-z33wp/extra-1.png"),
+      siteUrl("images/products/fujifilm-finepix-z33wp/extra-3.png"),
     ],
     alt: "Fujifilm FinePix Z33WP waterproof digital camera hire Brisbane",
   },
