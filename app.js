@@ -171,7 +171,8 @@ const CATALOGUE = [
     image: siteUrl("images/products/fujifilm-finepix-z33wp/front.png"),
     imageHover: siteUrl("images/products/fujifilm-finepix-z33wp/hover.png"),
     gallery: [
-      siteUrl("images/products/fujifilm-finepix-z33wp/extra-1.png"),
+      siteUrl("images/products/fujifilm-finepix-z33wp/extra-1.jpg"),
+      siteUrl("images/products/fujifilm-finepix-z33wp/extra-2.jpg"),
     ],
     alt: "Fujifilm FinePix Z33WP waterproof digital camera hire Brisbane",
   },
@@ -195,6 +196,10 @@ const CATALOGUE = [
     comingSoon: true,
     image: siteUrl("images/products/olympus-vg-170/front.png"),
     imageHover: siteUrl("images/products/olympus-vg-170/hover.png"),
+    gallery: [
+      siteUrl("images/products/olympus-vg-170/extra-1.jpg"),
+      siteUrl("images/products/olympus-vg-170/extra-2.jpg"),
+    ],
     alt: "Olympus VG-170 digital camera hire Brisbane",
   },
 
