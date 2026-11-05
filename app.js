@@ -1709,7 +1709,7 @@ form?.addEventListener("submit", async (event) => {
   const accessKey = form.querySelector('[name="access_key"]').value.trim();
   if (!accessKey || accessKey === "YOUR_WEB3FORMS_ACCESS_KEY") {
     formStatus.textContent =
-      "Almost there — add your Web3Forms access key in / so enquiries reach livis.hires@gmail.com.";
+      "Almost there — add your Web3Forms access key in / so enquiries reach hello@livis.com.au.";
     formStatus.classList.add("is-error");
     return;
   }
@@ -1754,7 +1754,7 @@ form?.addEventListener("submit", async (event) => {
     formStatus.textContent = "Enquiry sent — we’ll aim to reply within one business day.";
   } catch (error) {
     formStatus.textContent =
-      "Couldn’t send just now. Please try again, or email livis.hires@gmail.com.";
+      "Couldn’t send just now. Please try again, or email hello@livis.com.au.";
     formStatus.classList.add("is-error");
     console.error(error);
   } finally {
