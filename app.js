@@ -779,6 +779,40 @@ function productPageUrl(id) {
   return siteUrl(`product/?id=${encodeURIComponent(id)}`);
 }
 
+function setMetaBySelector(selector, content) {
+  const el = document.querySelector(selector);
+  if (el && content) el.setAttribute("content", content);
+}
+
+function upsertProductJsonLd(item) {
+  let el = document.getElementById("product-jsonld");
+  if (!el) {
+    el = document.createElement("script");
+    el.type = "application/ld+json";
+    el.id = "product-jsonld";
+    document.head.appendChild(el);
+  }
+  const url = `https://livis.com.au/product/?id=${encodeURIComponent(item.id)}`;
+  el.textContent = JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "Product",
+    name: item.name,
+    description: item.blurb || item.description || item.alt || item.name,
+    image: item.image,
+    brand: { "@type": "Brand", name: "Livis" },
+    url,
+    offers: {
+      "@type": "Offer",
+      url,
+      priceCurrency: "AUD",
+      price: String(parsePrice(item.price)),
+      availability: item.comingSoon
+        ? "https://schema.org/PreOrder"
+        : "https://schema.org/InStock",
+    },
+  });
+}
+
 function isProductPage() {
   return document.body?.dataset?.catalogue === "product";
 }
@@ -797,11 +831,24 @@ function openProduct(id) {
   state.galleryIndex = 0;
   state.productQty = getDraftQty(id) || 1;
   renderProductModal();
-  document.title = `${item.name} | Livis`;
-  const desc = document.querySelector('meta[name="description"]');
-  if (desc) desc.setAttribute("content", item.blurb || item.description || desc.content);
+  const title = `${item.name} | Livis`;
+  const description =
+    item.blurb ||
+    item.description ||
+    `${item.name} camera hire in Brisbane from Livis.`;
+  const url = `https://livis.com.au/product/?id=${encodeURIComponent(id)}`;
+  document.title = title;
+  setMetaBySelector('meta[name="description"]', description);
+  setMetaBySelector('meta[property="og:title"]', title);
+  setMetaBySelector('meta[property="og:description"]', description);
+  setMetaBySelector('meta[property="og:url"]', url);
+  setMetaBySelector('meta[property="og:image"]', item.image);
+  setMetaBySelector('meta[name="twitter:title"]', title);
+  setMetaBySelector('meta[name="twitter:description"]', description);
+  setMetaBySelector('meta[name="twitter:image"]', item.image);
   const canonical = document.querySelector('link[rel="canonical"]');
-  if (canonical) canonical.setAttribute("href", `https://livis.com.au/product/?id=${encodeURIComponent(id)}`);
+  if (canonical) canonical.setAttribute("href", url);
+  upsertProductJsonLd(item);
   window.scrollTo(0, 0);
 }
 

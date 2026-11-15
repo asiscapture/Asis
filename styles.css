@@ -323,6 +323,24 @@ body[data-catalogue="home"] .site-header:has(.nav.is-open) .nav-toggle span {
   animation: rise 1.1s var(--ease) both;
 }
 
+.hero-heading {
+  margin: 0;
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
 .hero-brand {
   font-family: var(--font-display);
   font-weight: 500;

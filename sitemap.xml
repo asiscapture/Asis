@@ -11,9 +11,84 @@
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://livis.com.au/product/</loc>
+    <loc>https://livis.com.au/product/?id=kodak-pixpro-fz55</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://livis.com.au/product/?id=kodak-pixpro-c1</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://livis.com.au/product/?id=casio-exilim-ex-z110</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://livis.com.au/product/?id=fujifilm-finepix-z33wp</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://livis.com.au/product/?id=olympus-vg-170</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://livis.com.au/product/?id=kodak-ektar-h35</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://livis.com.au/product/?id=kodak-m35</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://livis.com.au/product/?id=instax-mini-liplay</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://livis.com.au/product/?id=instax-mini-12</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://livis.com.au/product/?id=instax-square-sq40</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://livis.com.au/product/?id=holy-trinity-bundle</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://livis.com.au/product/?id=weekender-bundle</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://livis.com.au/product/?id=party-bundle</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://livis.com.au/product/?id=wedding-table-pack</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://livis.com.au/product/?id=film-table-kit</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://livis.com.au/product/?id=addon-prints</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
   </url>
   <url>
     <loc>https://livis.com.au/from-the-day/</loc>
