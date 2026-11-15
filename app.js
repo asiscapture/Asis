@@ -2291,7 +2291,6 @@ function setupBundleBuilder() {
     const entries = selectedEntries();
     const list = listTotal();
     const bundleTotal = Math.round(list * (1 - BUNDLE_DISCOUNT));
-    const tip = filmAdvice();
 
     state.cart.clear();
     clearCustomBundle();
@@ -2300,6 +2299,8 @@ function setupBundleBuilder() {
     });
     saveCart();
 
+    const eventType = eventTypeEl?.value || "";
+    const guestsValue = Number(guestsEl?.value);
     saveCustomBundle({
       cameras: entries.map(({ item, qty }) => ({
         id: item.id,
@@ -2309,13 +2310,10 @@ function setupBundleBuilder() {
       })),
       listTotal: list,
       bundleTotal,
-      eventType: eventTypeEl?.value || "",
-      guests: tip.guests,
-      shots: tip.shots,
-      packsNeeded: tip.packsNeeded,
+      eventType: eventType && eventType !== "Birthday / party" ? eventType : "",
+      guests:
+        Number.isFinite(guestsValue) && guestsValue > 0 && guestsValue !== 40 ? guestsValue : "",
       extraFilm: { ...extraFilm },
-      filmTipPlain: tip.plain,
-      coveragePlain: String(tip.coverage || "").replace(/<[^>]+>/g, ""),
     });
 
     updateCartUI();
@@ -2526,12 +2524,12 @@ function formatCustomBundleEmailText(bundle, entries, listLabel, totalLabel) {
     ...entries.map(({ item, qty }) => `- ${item.name} ×${qty}`),
     `List ${listLabel} → Bundle ${totalLabel}`,
   ];
-  if (bundle.eventType) lines.push(`Event: ${bundle.eventType}`);
-  if (bundle.guests) lines.push(`Guests: ${bundle.guests}`);
-  if (bundle.shots && bundle.packsNeeded) {
-    lines.push(`Polaroid plan: ~${bundle.shots} shots · ${bundle.packsNeeded} Mini packs`);
+  if (bundle.eventType && bundle.eventType !== "Birthday / party") {
+    lines.push(`Event: ${bundle.eventType}`);
   }
-  if (bundle.coveragePlain) lines.push(bundle.coveragePlain);
+  if (bundle.guests && Number(bundle.guests) !== 40) {
+    lines.push(`Guests: ${bundle.guests}`);
+  }
   if (extras) lines.push(`Extra film: ${extras}`);
   return lines.join("\n");
 }
@@ -2552,11 +2550,14 @@ function renderCustomBundleEnquireCard(bundle, entries, listLabel, totalLabel) {
       <p class="enquire-bundle-badge">Custom bundle · 15% off</p>
       <ul class="enquire-bundle-cameras">${cameras}</ul>
       <dl class="enquire-bundle-meta">
-        ${bundle.eventType ? `<div><dt>Event</dt><dd>${bundle.eventType}</dd></div>` : ""}
-        ${bundle.guests ? `<div><dt>Guests</dt><dd>${bundle.guests}</dd></div>` : ""}
         ${
-          bundle.packsNeeded
-            ? `<div><dt>Polaroid</dt><dd>~${bundle.shots} shots · ${bundle.packsNeeded} Mini packs</dd></div>`
+          bundle.eventType && bundle.eventType !== "Birthday / party"
+            ? `<div><dt>Event</dt><dd>${bundle.eventType}</dd></div>`
+            : ""
+        }
+        ${
+          bundle.guests && Number(bundle.guests) !== 40
+            ? `<div><dt>Guests</dt><dd>${bundle.guests}</dd></div>`
             : ""
         }
         ${extras ? `<div><dt>Extra film</dt><dd>${extras}</dd></div>` : ""}
