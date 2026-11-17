@@ -19,9 +19,17 @@
       name="description"
       content="Hire film, Polaroid and digital cameras in Brisbane. View details, what’s included, and send an enquiry with Livis."
     />
-    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <meta name="robots" content="noindex, follow" />
     <meta name="author" content="Livis" />
-    <link rel="canonical" href="https://livis.com.au/product/" />
+    <link rel="canonical" href="https://livis.com.au/cameras/" />
+    <script>
+      (function () {
+        var params = new URLSearchParams(location.search);
+        var id = params.get("id") || params.get("product");
+        if (id === "instax-mini-evo") id = "instax-mini-liplay";
+        location.replace(id ? "../cameras/" + encodeURIComponent(id) + "/" : "../cameras/");
+      })();
+    </script>
 
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="en_AU" />
@@ -160,6 +168,6 @@
       </div>
     </footer>
 
-    <script src="../app.js?v=20261115b"></script>
+    <script src="../app.js?v=20261117a"></script>
   </body>
 </html>

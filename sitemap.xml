@@ -2,131 +2,157 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://livis.com.au/</loc>
+    <lastmod>2026-11-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://livis.com.au/cameras/</loc>
+    <lastmod>2026-11-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://livis.com.au/product/?id=kodak-pixpro-fz55</loc>
+    <loc>https://livis.com.au/cameras/kodak-pixpro-fz55/</loc>
+    <lastmod>2026-11-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://livis.com.au/product/?id=kodak-pixpro-c1</loc>
+    <loc>https://livis.com.au/cameras/kodak-pixpro-c1/</loc>
+    <lastmod>2026-11-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://livis.com.au/product/?id=casio-exilim-ex-z110</loc>
+    <loc>https://livis.com.au/cameras/casio-exilim-ex-z110/</loc>
+    <lastmod>2026-11-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://livis.com.au/product/?id=fujifilm-finepix-z33wp</loc>
+    <loc>https://livis.com.au/cameras/fujifilm-finepix-z33wp/</loc>
+    <lastmod>2026-11-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://livis.com.au/product/?id=olympus-vg-170</loc>
+    <loc>https://livis.com.au/cameras/olympus-vg-170/</loc>
+    <lastmod>2026-11-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://livis.com.au/product/?id=kodak-ektar-h35</loc>
+    <loc>https://livis.com.au/cameras/kodak-ektar-h35/</loc>
+    <lastmod>2026-11-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://livis.com.au/product/?id=kodak-m35</loc>
+    <loc>https://livis.com.au/cameras/kodak-m35/</loc>
+    <lastmod>2026-11-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://livis.com.au/product/?id=instax-mini-liplay</loc>
+    <loc>https://livis.com.au/cameras/instax-mini-liplay/</loc>
+    <lastmod>2026-11-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://livis.com.au/product/?id=instax-mini-12</loc>
+    <loc>https://livis.com.au/cameras/instax-mini-12/</loc>
+    <lastmod>2026-11-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://livis.com.au/product/?id=instax-square-sq40</loc>
+    <loc>https://livis.com.au/cameras/instax-square-sq40/</loc>
+    <lastmod>2026-11-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://livis.com.au/product/?id=holy-trinity-bundle</loc>
+    <loc>https://livis.com.au/cameras/holy-trinity-bundle/</loc>
+    <lastmod>2026-11-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://livis.com.au/product/?id=weekender-bundle</loc>
+    <loc>https://livis.com.au/cameras/weekender-bundle/</loc>
+    <lastmod>2026-11-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://livis.com.au/product/?id=party-bundle</loc>
+    <loc>https://livis.com.au/cameras/party-bundle/</loc>
+    <lastmod>2026-11-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://livis.com.au/product/?id=wedding-table-pack</loc>
+    <loc>https://livis.com.au/cameras/wedding-table-pack/</loc>
+    <lastmod>2026-11-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://livis.com.au/product/?id=film-table-kit</loc>
+    <loc>https://livis.com.au/cameras/film-table-kit/</loc>
+    <lastmod>2026-11-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://livis.com.au/product/?id=addon-prints</loc>
-    <changefreq>monthly</changefreq>
+    <loc>https://livis.com.au/cameras/addon-prints/</loc>
+    <lastmod>2026-11-17</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://livis.com.au/from-the-day/</loc>
+    <lastmod>2026-11-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://livis.com.au/our-story/</loc>
+    <lastmod>2026-11-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://livis.com.au/wedding-camera-hire/</loc>
+    <lastmod>2026-11-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://livis.com.au/bundle-builder/</loc>
+    <lastmod>2026-11-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://livis.com.au/party-camera-hire/</loc>
+    <lastmod>2026-11-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://livis.com.au/polaroid-film-calculator/</loc>
+    <lastmod>2026-11-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://livis.com.au/terms/</loc>
+    <lastmod>2026-11-17</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
     <loc>https://livis.com.au/privacy/</loc>
+    <lastmod>2026-11-17</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>

@@ -92,8 +92,8 @@ const CATALOGUE = [
       { label: "Includes", value: "Camera, SD card, rechargeable battery" },
     ],
     tone: "cool",
-    image: siteUrl("images/products/kodak-pixpro-fz55/front.png"),
-    imageHover: siteUrl("images/products/kodak-pixpro-fz55/hover.png"),
+    image: siteUrl("images/products/kodak-pixpro-fz55/front.webp"),
+    imageHover: siteUrl("images/products/kodak-pixpro-fz55/hover.webp"),
     gallery: [
       siteUrl("images/products/kodak-pixpro-fz55/extra-1.jpg"),
       siteUrl("images/products/kodak-pixpro-fz55/extra-2.jpg"),
@@ -117,8 +117,8 @@ const CATALOGUE = [
       { label: "Includes", value: "Camera, SD card, battery" },
     ],
     tone: "soft",
-    image: siteUrl("images/products/kodak-pixpro-c1/front.png"),
-    imageHover: siteUrl("images/products/kodak-pixpro-c1/hover.png"),
+    image: siteUrl("images/products/kodak-pixpro-c1/front.webp"),
+    imageHover: siteUrl("images/products/kodak-pixpro-c1/hover.webp"),
     gallery: [
       siteUrl("images/products/kodak-pixpro-c1/extra-1.jpg"),
       siteUrl("images/products/kodak-pixpro-c1/extra-2.jpg"),
@@ -144,8 +144,8 @@ const CATALOGUE = [
       { label: "Includes", value: "Camera, SD card, battery" },
     ],
     tone: "cool",
-    image: siteUrl("images/products/casio-exilim-ex-z110/front.png"),
-    imageHover: siteUrl("images/products/casio-exilim-ex-z110/hover.png"),
+    image: siteUrl("images/products/casio-exilim-ex-z110/front.webp"),
+    imageHover: siteUrl("images/products/casio-exilim-ex-z110/hover.webp"),
     gallery: [
       siteUrl("images/products/casio-exilim-ex-z110/extra-1.jpg") + "?v=lower",
       siteUrl("images/products/casio-exilim-ex-z110/extra-2.jpg"),
@@ -170,8 +170,8 @@ const CATALOGUE = [
     ],
     tone: "soft",
     comingSoon: true,
-    image: siteUrl("images/products/fujifilm-finepix-z33wp/front.png"),
-    imageHover: siteUrl("images/products/fujifilm-finepix-z33wp/hover.png"),
+    image: siteUrl("images/products/fujifilm-finepix-z33wp/front.webp"),
+    imageHover: siteUrl("images/products/fujifilm-finepix-z33wp/hover.webp"),
     gallery: [
       siteUrl("images/products/fujifilm-finepix-z33wp/extra-1.jpg"),
       siteUrl("images/products/fujifilm-finepix-z33wp/extra-2.jpg"),
@@ -198,8 +198,8 @@ const CATALOGUE = [
     ],
     tone: "cool",
     comingSoon: true,
-    image: siteUrl("images/products/olympus-vg-170/front.png"),
-    imageHover: siteUrl("images/products/olympus-vg-170/hover.png"),
+    image: siteUrl("images/products/olympus-vg-170/front.webp"),
+    imageHover: siteUrl("images/products/olympus-vg-170/hover.webp"),
     gallery: [
       siteUrl("images/products/olympus-vg-170/extra-1.jpg"),
       siteUrl("images/products/olympus-vg-170/extra-2.jpg"),
@@ -225,8 +225,8 @@ const CATALOGUE = [
       { label: "Includes", value: "Camera, film, battery" },
     ],
     tone: "warm",
-    image: siteUrl("images/products/kodak-ektar-h35/front.png"),
-    imageHover: siteUrl("images/products/kodak-ektar-h35/hover.png"),
+    image: siteUrl("images/products/kodak-ektar-h35/front.webp"),
+    imageHover: siteUrl("images/products/kodak-ektar-h35/hover.webp"),
     alt: "Kodak Ektar H35 half-frame film camera hire Brisbane",
   },
   {
@@ -246,8 +246,8 @@ const CATALOGUE = [
       { label: "Includes", value: "Camera, film, battery" },
     ],
     tone: "soft",
-    image: siteUrl("images/products/kodak-m35/front.png"),
-    imageHover: siteUrl("images/products/kodak-m35/hover.png"),
+    image: siteUrl("images/products/kodak-m35/front.webp"),
+    imageHover: siteUrl("images/products/kodak-m35/hover.webp"),
     alt: "Kodak M35 yellow reusable 35mm film camera for hire",
   },
 
@@ -269,8 +269,8 @@ const CATALOGUE = [
       { label: "Includes", value: "Camera, film, battery" },
     ],
     tone: "soft",
-    image: siteUrl("images/products/instax-mini-liplay/front.png"),
-    imageHover: siteUrl("images/products/instax-mini-liplay/hover.png"),
+    image: siteUrl("images/products/instax-mini-liplay/front.webp"),
+    imageHover: siteUrl("images/products/instax-mini-liplay/hover.webp"),
     gallery: [
       siteUrl("images/products/instax-mini-liplay/extra-1.png")
     ],
@@ -294,8 +294,8 @@ const CATALOGUE = [
       { label: "Includes", value: "Camera, film, battery" },
     ],
     tone: "warm",
-    image: siteUrl("images/products/instax-mini-12/front.png"),
-    imageHover: siteUrl("images/products/instax-mini-12/hover.png"),
+    image: siteUrl("images/products/instax-mini-12/front.webp"),
+    imageHover: siteUrl("images/products/instax-mini-12/hover.webp"),
     gallery: [
       siteUrl("images/products/instax-mini-12/extra-1.png")
     ],
@@ -318,8 +318,8 @@ const CATALOGUE = [
       { label: "Includes", value: "Camera, film, battery" },
     ],
     tone: "cool",
-    image: siteUrl("images/products/instax-square-sq40/front.png"),
-    imageHover: siteUrl("images/products/instax-square-sq40/hover.png"),
+    image: siteUrl("images/products/instax-square-sq40/front.webp"),
+    imageHover: siteUrl("images/products/instax-square-sq40/hover.webp"),
     gallery: [
       siteUrl("images/products/instax-square-sq40/extra-1.png")
     ],
@@ -357,11 +357,11 @@ const CATALOGUE = [
       },
     ],
     tone: "cool",
-    image: siteUrl("images/products/holy-trinity-bundle/front.png"),
+    image: siteUrl("images/products/holy-trinity-bundle/front.webp"),
     gallery: [
-      siteUrl("images/products/kodak-pixpro-fz55/front.png"),
-      siteUrl("images/products/kodak-ektar-h35/front.png"),
-      siteUrl("images/products/instax-square-sq40/front.png")
+      siteUrl("images/products/kodak-pixpro-fz55/front.webp"),
+      siteUrl("images/products/kodak-ektar-h35/front.webp"),
+      siteUrl("images/products/instax-square-sq40/front.webp")
     ],
     alt: "The Full Mix camera hire bundle — FZ55, Ektar H35 and Instax Square SQ40",
   },
@@ -392,10 +392,10 @@ const CATALOGUE = [
       },
     ],
     tone: "warm",
-    image: siteUrl("images/products/weekender-bundle/front.png"),
+    image: siteUrl("images/products/weekender-bundle/front.webp"),
     gallery: [
-      siteUrl("images/products/kodak-pixpro-c1/front.png"),
-      siteUrl("images/products/instax-mini-12/front.png")
+      siteUrl("images/products/kodak-pixpro-c1/front.webp"),
+      siteUrl("images/products/instax-mini-12/front.webp")
     ],
     alt: "The Weekender camera hire bundle — PIXPRO C1 and Instax Mini 12",
   },
@@ -429,11 +429,11 @@ const CATALOGUE = [
       },
     ],
     tone: "warm",
-    image: siteUrl("images/products/party-bundle/front.png") + "?v=20260918b",
+    image: siteUrl("images/products/party-bundle/front.webp") + "?v=20260918b",
     gallery: [
-      siteUrl("images/products/instax-mini-liplay/front.png"),
-      siteUrl("images/products/kodak-pixpro-c1/front.png"),
-      siteUrl("images/products/kodak-m35/front.png")
+      siteUrl("images/products/instax-mini-liplay/front.webp"),
+      siteUrl("images/products/kodak-pixpro-c1/front.webp"),
+      siteUrl("images/products/kodak-m35/front.webp")
     ],
     alt: "Party Camera Kit — Instax Mini LiPlay, PIXPRO C1 and Kodak M35",
   },
@@ -460,9 +460,9 @@ const CATALOGUE = [
       },
     ],
     tone: "warm",
-    image: siteUrl("images/products/wedding-table-pack/front.png") + "?v=20260918",
+    image: siteUrl("images/products/wedding-table-pack/front.webp") + "?v=20260918",
     gallery: [
-      siteUrl("images/products/instax-mini-12/front.png"),
+      siteUrl("images/products/instax-mini-12/front.webp"),
     ],
     alt: "Wedding Table Pack — two Instax Mini 12 Polaroid cameras for guest tables",
   },
@@ -496,8 +496,8 @@ const CATALOGUE = [
       },
     ],
     tone: "soft",
-    image: siteUrl("images/products/film-table-kit/front.png"),
-    gallery: [siteUrl("images/products/film-table-kit/front.png")],
+    image: siteUrl("images/products/film-table-kit/front.webp"),
+    gallery: [siteUrl("images/products/film-table-kit/front.webp")],
     alt: "Film Table Kit — four marble grey Kodak M35 film cameras for guest tables",
   },
 
@@ -519,7 +519,7 @@ const CATALOGUE = [
       { label: "Note", value: "Ektar H35 = two print orders" },
     ],
     tone: "warm",
-    image: siteUrl("images/photos.jpg?v=2"),
+    image: siteUrl("images/photos.webp?v=2"),
     lifestyle: true,
     alt: "Printed photo pack from Livis",
   },
@@ -775,8 +775,20 @@ function itemMediaClass(item) {
 }
 
 function productPageUrl(id) {
-  // ./ is explicit so the link also works when browsing via file://
-  return siteUrl(`product/?id=${encodeURIComponent(id)}`);
+  return siteUrl(`cameras/${encodeURIComponent(id)}/`);
+}
+
+function canonicalProductUrl(id) {
+  return `https://livis.com.au/cameras/${encodeURIComponent(id)}/`;
+}
+
+function productIdFromPath() {
+  const path = (location.pathname || "").replace(/\/index\.html$/i, "/");
+  const match = path.match(/\/cameras\/([^/]+)\/?$/);
+  if (!match) return null;
+  const id = decodeURIComponent(match[1]);
+  if (!id || id === "index.html") return null;
+  return id;
 }
 
 function setMetaBySelector(selector, content) {
@@ -792,7 +804,7 @@ function upsertProductJsonLd(item) {
     el.id = "product-jsonld";
     document.head.appendChild(el);
   }
-  const url = `https://livis.com.au/product/?id=${encodeURIComponent(item.id)}`;
+  const url = canonicalProductUrl(item.id);
   el.textContent = JSON.stringify({
     "@context": "https://schema.org",
     "@type": "Product",
@@ -826,17 +838,24 @@ function openProduct(id) {
     return;
   }
 
+  const currentId =
+    document.body?.dataset?.productId || productIdFromPath() || null;
+  if (currentId && currentId !== id) {
+    window.location.href = productPageUrl(id);
+    return;
+  }
+
   if (!productPanel) return;
   state.productId = id;
   state.galleryIndex = 0;
   state.productQty = getDraftQty(id) || 1;
   renderProductModal();
-  const title = `${item.name} | Livis`;
+  const title = `${item.name} Hire Brisbane | Livis`;
   const description =
     item.blurb ||
     item.description ||
     `${item.name} camera hire in Brisbane from Livis.`;
-  const url = `https://livis.com.au/product/?id=${encodeURIComponent(id)}`;
+  const url = canonicalProductUrl(id);
   document.title = title;
   setMetaBySelector('meta[name="description"]', description);
   setMetaBySelector('meta[property="og:title"]', title);
@@ -1373,13 +1392,13 @@ function renderCatalogue() {
         ${item.comingSoon ? `<span class="coming-soon-badge">Coming soon</span>` : ""}
         ${item.mostPopular && !item.comingSoon ? `<span class="most-popular-badge">Most popular</span>` : ""}
       </div>
-      <button type="button" class="item-open" data-open-product="${item.id}" aria-label="View ${item.name}">
+      <a class="item-open" href="${productPageUrl(item.id)}" data-open-product="${item.id}" aria-label="View ${item.name}">
         <div class="item-body-preview">
           <h3>${item.name}</h3>
           ${descriptor ? `<p class="item-descriptor">${descriptor}</p>` : ""}
           <p class="item-price">${item.price}</p>
         </div>
-      </button>
+      </a>
       <div class="item-actions">
         ${
           item.comingSoon
@@ -1717,20 +1736,29 @@ function applyFilterFromUrl() {
 
 function applyProductFromUrl() {
   const params = new URLSearchParams(window.location.search);
-  let productId = params.get("id") || params.get("product");
+  let productId =
+    params.get("id") ||
+    params.get("product") ||
+    document.body?.dataset?.productId ||
+    productIdFromPath();
   if (productId === "instax-mini-evo") productId = "instax-mini-liplay";
-  if (!productId || !getItem(productId)) {
-    if (isProductPage()) window.location.replace(siteUrl("cameras/"));
-    return;
-  }
-  if (isProductPage()) {
-    openProduct(productId);
-    return;
-  }
-  // Legacy ?product= links on catalogue pages → dedicated product page
-  if (params.get("product")) {
+
+  const path = (location.pathname || "").replace(/\/index\.html$/i, "/");
+  const onLegacyProductShell = /\/product\/?$/.test(path);
+  const onCatalogue = document.body?.dataset?.catalogue === "cameras";
+
+  if (productId && getItem(productId) && (onLegacyProductShell || (onCatalogue && params.get("product")))) {
     window.location.replace(productPageUrl(productId));
+    return;
   }
+
+  if (!isProductPage()) return;
+
+  if (!productId || !getItem(productId)) {
+    window.location.replace(siteUrl("cameras/"));
+    return;
+  }
+  openProduct(productId);
 }
 
 navToggle?.addEventListener("click", () => {
