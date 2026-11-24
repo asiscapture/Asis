@@ -1775,6 +1775,31 @@ nav?.querySelectorAll("a").forEach((link) => {
 });
 
 
+function setupHireDateFields() {
+  const startEl = form?.querySelector('[name="hire_start"]');
+  const endEl = form?.querySelector('[name="hire_end"]');
+  if (!startEl || !endEl) return;
+
+  const today = new Date();
+  const yyyy = today.getFullYear();
+  const mm = String(today.getMonth() + 1).padStart(2, "0");
+  const dd = String(today.getDate()).padStart(2, "0");
+  const todayStr = `${yyyy}-${mm}-${dd}`;
+
+  startEl.min = todayStr;
+  endEl.min = todayStr;
+
+  startEl.addEventListener("change", () => {
+    const start = startEl.value;
+    endEl.min = start || todayStr;
+    if (endEl.value && start && endEl.value < start) {
+      endEl.value = start;
+    }
+  });
+}
+
+setupHireDateFields();
+
 form?.addEventListener("submit", async (event) => {
   event.preventDefault();
   if (!formStatus || !submitBtn || !selectedItemsField) return;
@@ -1792,6 +1817,9 @@ form?.addEventListener("submit", async (event) => {
   const data = new FormData(form);
   const name = (data.get("name") || "").toString().trim();
   const eventType = (data.get("event_type") || "").toString().trim();
+  const hireStart = (data.get("hire_start") || "").toString().trim();
+  const hireEnd = (data.get("hire_end") || "").toString().trim();
+  const collection = (data.get("collection_method") || "").toString().trim();
 
   if (!name) {
     formStatus.textContent = "Please enter your name.";
@@ -1800,10 +1828,17 @@ form?.addEventListener("submit", async (event) => {
     return;
   }
 
+  if (hireStart && hireEnd && hireEnd < hireStart) {
+    formStatus.textContent = "Hire end date can’t be before the start date.";
+    formStatus.classList.add("is-error");
+    form.querySelector('[name="hire_end"]')?.focus();
+    return;
+  }
+
   data.set("name", name);
   data.set(
     "message",
-    `${data.get("message") || ""}\n\nEnquiry cart: ${selectedItemsField.value || "None"}\nEvent type: ${eventType || "—"}`
+    `${data.get("message") || ""}\n\nEnquiry cart: ${selectedItemsField.value || "None"}\nEvent type: ${eventType || "—"}\nHire start: ${hireStart || "—"}\nHire end: ${hireEnd || "—"}\nCollection: ${collection || "—"}`
   );
 
   submitBtn.disabled = true;

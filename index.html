@@ -55,7 +55,7 @@
       href="https://fonts.googleapis.com/css2?family=Cedarville+Cursive&family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="styles.css?v=20261115a" />
+    <link rel="stylesheet" href="styles.css?v=20261124d" />
 
     <script type="application/ld+json">
       {
@@ -785,12 +785,40 @@
             </select>
           </label>
 
+          <div class="field-row">
+            <label class="field">
+              <span>Hire start date</span>
+              <input type="date" name="hire_start" id="hire-start" />
+            </label>
+            <label class="field">
+              <span>Hire end date</span>
+              <input type="date" name="hire_end" id="hire-end" />
+            </label>
+          </div>
+
+          <fieldset class="field field-choices">
+            <legend><span>Pick up or delivery</span></legend>
+            <div class="choice-row">
+              <label class="choice">
+                <input type="radio" name="collection_method" value="Pickup — Woolloongabba" />
+                <span class="choice-label">Pick up <em>(Woolloongabba)</em></span>
+              </label>
+              <label class="choice">
+                <input type="radio" name="collection_method" value="Delivery — extra fee applies" />
+                <span class="choice-label">Delivery <em>(extra fee applies)</em></span>
+              </label>
+            </div>
+          </fieldset>
+          <p class="form-hint">
+            We’ll quote delivery pricing on enquiry.
+          </p>
+
           <label class="field">
             <span>Message</span>
             <textarea
               name="message"
               rows="6"
-              placeholder="Anything else we should know? e.g. pickup or delivery preference, extra film packs needed, photo export, occasion details…"
+              placeholder="Anything else we should know? e.g. delivery suburb, extra film packs needed, photo export, occasion details…"
             ></textarea>
           </label>
 
@@ -931,6 +959,6 @@
       </div>
     </footer>
 
-    <script src="app.js?v=20261117a"></script>
+    <script src="app.js?v=20261124c"></script>
   </body>
 </html>

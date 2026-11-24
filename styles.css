@@ -3974,7 +3974,7 @@ body.day-open {
   letter-spacing: 0;
 }
 
-.field input,
+.field input:not([type="radio"]):not([type="checkbox"]),
 .field textarea,
 .field select {
   width: 100%;
@@ -3989,6 +3989,69 @@ body.day-open {
   color: inherit;
   border-radius: 0;
   appearance: none;
+}
+
+.field-choices {
+  border: 0;
+  padding: 0;
+  margin: 0 0 1rem;
+  min-width: 0;
+}
+
+.field-choices legend {
+  padding: 0;
+  margin: 0 0 0.55rem;
+}
+
+.field-choices legend span {
+  font-family: var(--font-body);
+  font-size: 0.68rem;
+  font-weight: 400;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
+
+.field-choices .choice-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem 1rem;
+}
+
+.field-choices .choice {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.65rem;
+  margin: 0;
+  cursor: pointer;
+  font: inherit;
+  color: var(--ink);
+}
+
+.field-choices .choice input[type="radio"] {
+  width: 1.05rem;
+  height: 1.05rem;
+  margin: 0.15rem 0 0;
+  flex-shrink: 0;
+  accent-color: var(--accent);
+  cursor: pointer;
+  appearance: auto;
+  border: 0;
+  background: transparent;
+  padding: 0;
+}
+
+.field-choices .choice-label {
+  font-size: 0.95rem;
+  letter-spacing: 0;
+  text-transform: none;
+  color: var(--ink);
+  line-height: 1.35;
+}
+
+.field-choices .choice-label em {
+  font-style: normal;
+  color: var(--muted);
 }
 
 .field select {
@@ -4009,7 +4072,7 @@ body.day-open {
   color: var(--muted);
 }
 
-.field input:focus,
+.field input:not([type="radio"]):not([type="checkbox"]):focus,
 .field textarea:focus,
 .field select:focus {
   border-bottom-color: var(--ink);
@@ -4021,6 +4084,13 @@ body.day-open {
   opacity: 0;
   height: 0;
   width: 0;
+}
+
+.form-hint {
+  margin: -0.35rem 0 1.65rem;
+  font-size: 0.88rem;
+  line-height: 1.45;
+  color: var(--muted);
 }
 
 .form-note {
@@ -4208,7 +4278,8 @@ body.day-open {
   .steps,
   .steps-four,
   .discover-grid,
-  .field-row {
+  .field-row,
+  .field-choices .choice-row {
     grid-template-columns: 1fr;
   }
 
