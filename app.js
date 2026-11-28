@@ -144,6 +144,7 @@ const CATALOGUE = [
       { label: "Includes", value: "Camera, SD card, battery" },
     ],
     tone: "cool",
+    comingSoon: true,
     image: siteUrl("images/products/casio-exilim-ex-z110/front.webp"),
     imageHover: siteUrl("images/products/casio-exilim-ex-z110/hover.webp"),
     gallery: [
@@ -547,6 +548,8 @@ const BROWSE_BY_SCOPE = {
   day: siteUrl("cameras/"),
 };
 
+const MAX_HIRE_QTY = 4;
+
 const state = {
   cart: new Map(), // id -> quantity
   filter: "all",
@@ -592,7 +595,8 @@ function loadCart() {
     const data = JSON.parse(raw);
     Object.entries(data).forEach(([id, qty]) => {
       const n = Number(qty);
-      if (getItem(id) && n > 0) state.cart.set(id, Math.min(99, n));
+      const item = getItem(id);
+      if (item && !item.comingSoon && n > 0) state.cart.set(id, Math.min(MAX_HIRE_QTY, n));
     });
     saveCart();
     localStorage.removeItem("vera-enquiry-cart");
@@ -716,11 +720,11 @@ function getDraftQty(id) {
 }
 
 function setDraftQty(id, qty) {
-  state.draftQty.set(id, Math.max(1, Math.min(99, qty)));
+  state.draftQty.set(id, Math.max(1, Math.min(MAX_HIRE_QTY, qty)));
 }
 
 function setCartQty(id, qty) {
-  const next = Math.max(0, Math.min(99, qty));
+  const next = Math.max(0, Math.min(MAX_HIRE_QTY, qty));
   if (next <= 0) state.cart.delete(id);
   else state.cart.set(id, next);
   saveCart();
@@ -733,7 +737,7 @@ function addToCart(id, qty = 1) {
     return false;
   }
   if (item.comingSoon) return false;
-  const amount = Math.max(1, Math.min(99, Number(qty) || 1));
+  const amount = Math.max(1, Math.min(MAX_HIRE_QTY, Number(qty) || 1));
   const current = state.cart.get(id) || 0;
   setCartQty(id, current + amount);
   return true;
@@ -1019,6 +1023,7 @@ function renderProductModal() {
           </button>`
           }
         </div>
+        ${item.comingSoon ? "" : `<p class="qty-cap-note">Up to 4 of each camera online. Need more of the same camera? Send an enquiry and we’ll check the dates.</p>`}
         ${inCart ? `<p class="in-cart-note">${inCart} already in cart</p>` : ""}
         ${
           item.note
@@ -1511,7 +1516,7 @@ function updateCartUI() {
     if (!units) {
       cartBody.innerHTML = `<p class="cart-empty">Your cart is empty. <a href="${browse}">Browse products</a></p>`;
     } else {
-      cartBody.innerHTML = entries.map(cartLineMarkup).join("");
+      cartBody.innerHTML = `<p class="qty-cap-note">Up to 4 of each camera online. Need more of the same camera? Send an enquiry and we’ll check the dates.</p>${entries.map(cartLineMarkup).join("")}`;
     }
   }
 
@@ -1618,7 +1623,7 @@ document.addEventListener("click", (event) => {
     if (scope === "product") {
       const next =
         qtyBtn.dataset.qtyAction === "inc" ? state.productQty + 1 : state.productQty - 1;
-      state.productQty = Math.max(1, Math.min(99, next));
+      state.productQty = Math.max(1, Math.min(MAX_HIRE_QTY, next));
       wrap.querySelector(".qty-value").textContent = String(state.productQty);
       return;
     }
@@ -2207,7 +2212,7 @@ function setupBundleBuilder() {
     selectedEntries().reduce((sum, { item, qty }) => sum + parsePrice(item.price) * qty, 0);
 
   function setExtraFilm(kind, qty) {
-    const next = Math.max(0, Math.min(99, Number(qty) || 0));
+    const next = Math.max(0, Math.min(MAX_HIRE_QTY, Number(qty) || 0));
     if (kind === "mini") extraFilm.mini = next;
     if (kind === "square") extraFilm.square = next;
     if (kind === "rolls") extraFilm.rolls = next;
@@ -2533,7 +2538,7 @@ function setupBundleBuilder() {
   }
 
   function setQty(id, qty) {
-    const next = Math.max(0, Math.min(99, Number(qty) || 0));
+    const next = Math.max(0, Math.min(MAX_HIRE_QTY, Number(qty) || 0));
     if (next <= 0) qtyById.delete(id);
     else qtyById.set(id, next);
     renderGrid();

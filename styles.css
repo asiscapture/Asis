@@ -531,6 +531,22 @@ body[data-catalogue="home"] .site-header:has(.nav.is-open) .nav-toggle span {
   font-weight: 700;
 }
 
+.qty-cap-note {
+  margin: 0.7rem 0 0;
+  max-width: 36rem;
+  font-size: 0.84rem;
+  line-height: 1.45;
+  color: var(--muted, #6d675f);
+}
+
+.qty-cap-note--page {
+  margin: 0 0 1.1rem;
+}
+
+.cart-body .qty-cap-note {
+  margin: 0 0 0.9rem;
+}
+
 .in-cart-note {
   margin: 0.55rem 0 0;
   font-family: var(--font-display);
@@ -4522,6 +4538,10 @@ body.day-open {
   color: var(--muted);
   max-width: 36rem;
   line-height: 1.45;
+}
+
+.builder-section .section-head p + p {
+  margin-top: 0.45rem;
 }
 
 .builder-count-pill {
